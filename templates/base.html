@@ -18,6 +18,12 @@
         <!--<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Varela+Round&display=swap" rel="stylesheet">-->
         <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+        <!--Favicon-->
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
     {% endblock %}
 
     {% block extra_css %}
@@ -39,9 +45,9 @@
     <body>
         <header class="container-fluid fixed-top">
             <div class="row">
-                <div class="col-12 d-flex justify-content-center align-items-center">
+                <div id="top-header" class="col-12 d-flex justify-content-center align-items-center">
                     <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                        <img src="media/logo.webp" alt="logo" height="300px" width="400px">
+                        <img src="media/cropped_logo.png" alt="logo" height="300px" width="300px">
                     </a>
                 </div>
             </div>

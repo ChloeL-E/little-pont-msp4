@@ -8,6 +8,17 @@ body {
     font-family: 'Amatic SC';
 }
 
+#top-header {
+    background: url('/media/sky.jpg') no-repeat center center fixed;
+	background-size: cover;
+    top: 0;
+    left: 0;
+}
+
+.nav-link {
+    padding-bottom: 0;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;

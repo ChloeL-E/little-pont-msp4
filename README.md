@@ -309,7 +309,9 @@ exit()
    ### Media Images
 
 - https://imageresizer.com/
-
+- canva https://www.canva.com/
+- favicon https://favicon.io/favicon-converter/
+- image cropper https://www.iloveimg.com/crop-image
 - - - 
 
 ## Acknowledgements

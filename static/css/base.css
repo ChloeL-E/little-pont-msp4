@@ -13,10 +13,17 @@ body {
 	background-size: cover;
     top: 0;
     left: 0;
+    border-bottom: 0.5px solid black;
 }
 
 .nav-link {
     padding-bottom: 0;
+}
+
+.nav-item,
+.list-inline-item {
+    padding: 20px;
+    font-size: 20px;
 }
 
 /* from Bulma */
@@ -28,15 +35,14 @@ body {
     width: 1.5rem;
 }
 
-/*.logo-font {
-    text-transform: uppercase;
-}
+#content {
+    background: url('') no-repeat center center fixed;
+    background-size: cover;
+    top: 0;
+    left: 0;
+}   
 
-.main-logo-link {
-    width: fit-content;
-}*/
-
-.shop-now-button {
+.book-now-button {
     background: #ff99c8;
     color: black;
     font-weight: 600;
@@ -48,9 +54,9 @@ body {
     color: black;
 }
 
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus,
+.book-now-button:hover,
+.book-now-button:active,
+.book-now-button:focus,
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
@@ -59,6 +65,10 @@ body {
 
 .text-black {
     color: #000 !important;
+}
+
+.font-weight-bold {
+    font-weight: 800 !important;
 }
 
 .border-black {

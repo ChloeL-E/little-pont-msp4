@@ -1,13 +1,15 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="home-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="home-link"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Home
             </a>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="about-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="about-link"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 About
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="about-link">
@@ -19,13 +21,15 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="contact-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="contact-link"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Contact
             </a>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="courses-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="courses-link" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
                 Courses
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="courses-link">
@@ -37,7 +41,8 @@
         </li>
 
         <li class="list-inline-item dropdown">
-            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
                 <div class="text-center">
                     <div><i class="fas fa-user fa-lg"></i></div>
                     <p class="my-0">My Account</p>
@@ -45,14 +50,14 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="user-options">
                 {% if request.user.is_authenticated %}
-                    {% if request.user.is_superuser %}
-                        <a href="" class="dropdown-item">Order Management</a>
-                    {% endif %}
-                    <a href="" class="dropdown-item">My Profile</a>
-                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                {% if request.user.is_superuser %}
+                <a href="" class="dropdown-item">Order Management</a>
+                {% endif %}
+                <a href="" class="dropdown-item">My Profile</a>
+                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                 {% else %}
-                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                 {% endif %}
             </div>
         </li>
@@ -62,9 +67,9 @@
                     <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                     <p class="my-0">
                         {% if grand_total %}
-                            ${{ grand_total|floatformat:2 }}
+                        ${{ grand_total|floatformat:2 }}
                         {% else %}
-                            $0.00
+                        $0.00
                         {% endif %}
                     </p>
                 </div>
@@ -72,9 +77,4 @@
         </li>
     </ul>
 </div>
-
-<div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-    <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-  
-    </ul>
 </div>

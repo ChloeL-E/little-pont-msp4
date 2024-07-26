@@ -8,6 +8,8 @@ body {
     font-family: 'Amatic SC';
 }
 
+/* Header */
+
 header {
     position: relative;
 }
@@ -31,6 +33,8 @@ header {
     border-bottom: 0.5px solid white;
 }
 
+/* Navbar */
+
 .nav-link {
     padding-bottom: 0;
 }
@@ -50,13 +54,31 @@ header {
     width: 1.5rem;
 } 
 
+/*  -------------------------------- Home page */
+/* Hero Image Carousel*/
+
+#myCarousel, .carousel-inner, .carousel-item {
+    height: 100%;
+  }
+  
+  .carousel-inner {
+    display: flex;
+    align-items: center;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+  }
+
 #hero {
     width: 100%;
-    height: 100vh;
-    background: #000;
+    height: 75vh;
+    background: #fff;
     overflow: hidden;
     position: relative;
   }
+
   @media (max-height: 500px) {
     #hero {
       height: 150vh;
@@ -80,25 +102,32 @@ header {
     background-repeat: no-repeat;
   }
   
-  #hero .hero-item::before {
-    content: "";
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-  
   #hero .intro-container {
-    display: flex;
+    /*display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     bottom: 0;
-    top: 70px;
+    top: 10px;
     left: 50px;
-    right: 50px;
+    right: 50px;*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0); 
+    padding: 20px;
+    border-radius: 10px;
   }
 
-  
   #hero .container {
     text-align: center;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    color: #000;
   }
   
   #hero h2 {
@@ -137,10 +166,10 @@ header {
     padding: 8px 32px;
     border-radius: 25px;
     transition: 0.5s;
-    margin: 5px;
+    margin-top: 15px;
     background: #d0f4de;
     color: black;
-    font-weight: 600;
+    width: 150px;
   }
   
   #hero .book-now-button:hover {

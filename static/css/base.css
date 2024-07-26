@@ -73,7 +73,7 @@ header {
 
 #hero {
     width: 100%;
-    height: 75vh;
+    height: 90vh;
     background: #fff;
     overflow: hidden;
     position: relative;
@@ -103,14 +103,6 @@ header {
   }
   
   #hero .intro-container {
-    /*display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
-    top: 10px;
-    left: 50px;
-    right: 50px;*/
     position: absolute;
     top: 50%;
     left: 50%;

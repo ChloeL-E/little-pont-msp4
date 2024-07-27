@@ -74,7 +74,6 @@ header {
 #hero {
     width: 100%;
     height: 90vh;
-    background: #fff;
     overflow: hidden;
     position: relative;
   }
@@ -116,14 +115,9 @@ header {
   #hero .container {
     text-align: center;
   }
-
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    color: #000;
-  }
   
   #hero h2 {
-    color: #fff;
+    color:#fff;
     margin-bottom: 30px;
     font-size: 60px;
     font-weight: 900;
@@ -179,6 +173,189 @@ header {
 .border-black {
     border: 1px solid black !important;
 }
+
+/*-------------------------------- Section */
+section {
+  padding: 60px 0;
+}
+
+.section-bg {
+  background-color: #fbfbfb;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.section-title h2::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(50% - 60px);
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #ff99c8;
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+/*-------------------------------- What We Do */
+.about .icon-box {
+  text-align: center;
+  padding: 30px 20px;
+  transition: all ease-in-out 0.3s;
+  background: #fff;
+}
+
+.about .icon-box .icon {
+  margin: 0 auto;
+  width: 64px;
+  height: 64px;
+  background: #eaf4fb;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: ease-in-out 0.3s;
+}
+
+.about .icon-box .icon i {
+  color: #3498db;
+  font-size: 28px;
+}
+
+.about.icon-box h4 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.about .icon-box h4 a {
+  color: #384046;
+  transition: ease-in-out 0.3s;
+}
+
+.about .icon-box p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.about .icon-box:hover {
+  border-color: #fff;
+  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+}
+
+.about .icon-box:hover h4 a,
+.about .icon-box:hover .icon i {
+  color: #3498db;
+}
+
+/*--------------------------------  About */
+
+.what-we-offer {
+  padding: 10px 0;
+}
+
+.what-we-offer h3 {
+  font-weight: 600;
+  font-size: 32px;
+}
+
+.what-we-offer ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+
+.what-we-offer ul li+li {
+  margin-top: 10px;
+}
+
+.what-we-offer ul li {
+  position: relative;
+  padding-left: 26px;
+}
+
+.what-we-offer ul i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 22px;
+  color: #ff99c8;
+}
+
+.what-we-offer .icon-box {
+  padding-top: 10px;
+}
+
+.what-we-offer .icon-box h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.what-we-offer .icon-box h4 a {
+  color: #ff99c8;
+}
+
+.what-we-offer .icon-box i {
+  font-size: 48px;
+  color: #ff99c8;
+}
+
+.what-we-offer .icon-box p {
+  font-size: 15px;
+  color: #000;
+}
+
+.what-we-offer .icon-box:hover {
+  box-shadow: 0px 2px 22px rgba(0, 0, 0, 0.08);
+}
+
+.what-we-offer-content{
+  --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1* var(--bs-gutter-y));
+    margin-right: calc(-.5* var(--bs-gutter-x));
+    margin-left: calc(-.5* var(--bs-gutter-x);
+}
+
+/*.content-center {
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  flex-direction: row;
+  justify-content: center;
+}*/
 
 /* -------------------------------- Media Queries */
 

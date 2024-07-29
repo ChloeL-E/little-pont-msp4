@@ -1,3 +1,14 @@
+/*------- ROOT VARIABLES -------*/
+:root {
+  --font-header: "Amatic SC";
+  --font-main: "Roboto";
+  --pink: #ff99c8;
+  --green: #d0f4de;
+  --blue: #a9def9;
+  --yellow: #fcf6bd;
+  --purple: #e4c1f9;
+}
+
 html {
     height: 100%;
 }
@@ -5,7 +16,7 @@ html {
 body {
     height: calc(100vh - 164px);
     color: black;
-    font-family: 'Amatic SC';
+    font-family: var(--font-main);
 }
 
 /* Header */
@@ -21,13 +32,14 @@ header {
     left: 0;
     z-index: 10; /* Ensure it's above the image */
     background: rgba(255, 255, 255, 0);
+    font-family: var(--font-header);
 }
 
 #top-header-image {
     position: relative; /* Ensure it is positioned relative for .top-header to overlay correctly */
     z-index: 1; /* Ensure it is below .top-header */
     background: url('/media/sky.jpg') no-repeat center center fixed;
-	background-size: cover;
+	  background-size: cover;
     top: 0;
     left: 0;
     border-bottom: 0.5px solid white;
@@ -43,6 +55,7 @@ header {
 .list-inline-item {
     padding: 10px;
     font-size: 20px;
+    font-family: var(--font-header);
 }
 
 /* from Bulma */
@@ -117,10 +130,11 @@ header {
   }
   
   #hero h2 {
-    color:#fff;
+    color:#000;
     margin-bottom: 30px;
     font-size: 60px;
     font-weight: 900;
+    font-family: var(--font-header);
   }
   
   @media (max-width: 768px) {
@@ -132,9 +146,10 @@ header {
   #hero p {
     width: 80%;
     margin: 0 auto 30px auto;
-    color: #fff;
-    font-size: 45px;
+    color: #000;
+    font-size: 35px;
     font-weight: 600px;
+    font-family: var(--font-main);
   }
   
   @media (min-width: 1024px) {
@@ -144,7 +159,7 @@ header {
   }
   
   #hero .book-now-button {
-    font-family: "Amatic SC", sans-serif;
+    font-family: var(--font-header), sans-serif;
     font-weight: 600;
     font-size: 30px;
     letter-spacing: 1px;
@@ -153,13 +168,13 @@ header {
     border-radius: 25px;
     transition: 0.5s;
     margin-top: 15px;
-    background: #d0f4de;
-    color: black;
+    background: var(--green);
+    color: #000;
     width: 150px;
   }
   
   #hero .book-now-button:hover {
-    background: #ff99c8;
+    background: var(--pink);
   }
 
 .text-black {
@@ -171,7 +186,7 @@ header {
 }
 
 .border-black {
-    border: 1px solid black !important;
+    border: 1px solid #000 !important;
 }
 
 /*-------------------------------- Section */
@@ -194,6 +209,7 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
+  font-family: var(--font-header);
 }
 
 .section-title h2::before {
@@ -213,7 +229,7 @@ section {
   display: block;
   width: 40px;
   height: 3px;
-  background: #ff99c8;
+  background: var(--pink);
   bottom: 0;
   left: calc(50% - 20px);
 }
@@ -222,15 +238,16 @@ section {
   margin-bottom: 0;
 }
 
-/*-------------------------------- What We Do */
-.about .icon-box {
+/*-------------------------------- About Us */
+.about .icon-box,
+.meet-the-team .icon-box {
   text-align: center;
   padding: 30px 20px;
   transition: all ease-in-out 0.3s;
   background: #fff;
 }
 
-.about .icon-box .icon {
+/*.about .icon-box .icon {
   margin: 0 auto;
   width: 64px;
   height: 64px;
@@ -241,21 +258,22 @@ section {
   justify-content: center;
   margin-bottom: 20px;
   transition: ease-in-out 0.3s;
-}
+}*/
 
-.about .icon-box .icon i {
-  color: #3498db;
+/*.about .icon-box .icon i {
+  color: var(--blue);
   font-size: 28px;
-}
+}*/
 
 .about.icon-box h4 {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 24px;
+  font-family: var(--font-header);
 }
 
 .about .icon-box h4 a {
-  color: #384046;
+  color: #000;
   transition: ease-in-out 0.3s;
 }
 
@@ -272,10 +290,10 @@ section {
 
 .about .icon-box:hover h4 a,
 .about .icon-box:hover .icon i {
-  color: #3498db;
+  color: var(--blue);
 }
 
-/*--------------------------------  About */
+/*--------------------------------  What we offer */
 
 .what-we-offer {
   padding: 10px 0;
@@ -284,6 +302,7 @@ section {
 .what-we-offer h3 {
   font-weight: 600;
   font-size: 32px;
+  font-family: var(--font-header);
 }
 
 .what-we-offer ul {
@@ -306,34 +325,44 @@ section {
   left: 0;
   top: 0;
   font-size: 22px;
-  color: #ff99c8;
+  color: var(--pink);
 }
 
 .what-we-offer .icon-box {
   padding-top: 10px;
+  margin-left: 5px;
 }
 
-.what-we-offer .icon-box h4 {
+.what-we-offer h4 {
   font-size: 20px;
   font-weight: 700;
   margin-top: 5px;
+  margin-left: 5px;
+  font-family: var(--font-header);
+  color: #000;
 }
 
 .what-we-offer .icon-box h4 a {
-  color: #ff99c8;
+  color: #000;
+}
+
+.what-we-offer .icon-box h4 a:hover {
+  color: var(--pink);
 }
 
 .what-we-offer .icon-box i {
   font-size: 48px;
-  color: #ff99c8;
+  color: var(--pink);
 }
 
-.what-we-offer .icon-box p {
+.icon-box p {
   font-size: 15px;
   color: #000;
+  margin:15px;
 }
 
-.what-we-offer .icon-box:hover {
+.what-we-offer .icon-box:hover,
+.meet-the-team .icon-box:hover {
   box-shadow: 0px 2px 22px rgba(0, 0, 0, 0.08);
 }
 
@@ -344,18 +373,83 @@ section {
     flex-wrap: wrap;
     margin-top: calc(-1* var(--bs-gutter-y));
     margin-right: calc(-.5* var(--bs-gutter-x));
-    margin-left: calc(-.5* var(--bs-gutter-x);
+    margin-left: calc(-.5* var(--bs-gutter-x));
 }
 
-/*.content-center {
+
+/* -------------------------------- Meet The Team */
+
+.team-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/*.about-team {
   display: flex;
-  -ms-flex-wrap: wrap;
+  justify-content: space-between;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
   flex-direction: row;
-  justify-content: center;
 }*/
+
+.team-content {
+  flex: 1;
+  display: inline-block;
+  padding: 30px 20px;
+  margin: 0 auto;
+}
+
+.team-img {
+  height: 300px;
+  width: 200px;
+  overflow: hidden;
+  margin-left: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.team-img img {
+  max-height: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/*.team-content h4 {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  color: #000;
+  text-transform: capitalize;
+  text-align: center;
+}*/
+
+/* shows treatment price and treatment time on mouse hover*/
+.img-overlay { 
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: rgba(169, 222, 249, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: 0.6s;
+}
+
+.img-overlay:hover {
+  opacity: 1;
+}
+
+.img-overlay h4 {
+  font-family: var(--font-header);
+  color: #000;
+  font-size: 23px;
+  font-weight:600; 
+}
 
 /* -------------------------------- Media Queries */
 

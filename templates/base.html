@@ -15,15 +15,19 @@
     {% endblock %}
 
     {% block corecss %}
+    <!--main bootstrap css-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!--<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Varela+Round&display=swap" rel="stylesheet">-->
+    <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+    <!--Font Awesome Icons-->
+    <script src="https://kit.fontawesome.com/f6a0c3659f.js" crossorigin="anonymous"></script>
 
     <!--Favicon-->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
@@ -36,15 +40,9 @@
     {% endblock %}
 
     {% block corejs %}
-    <script src="https://kit.fontawesome.com/f6a0c3659f.js" crossorigin="anonymous"></script>
+    <!--JQuery-->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
     {% endblock %}
 
@@ -67,14 +65,14 @@
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 top-header">
                     <ul class="list-inline list-unstyled text-end my-0">
                         <li class="list-inline-item dropdown">
-                            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
+                            <a class="text-black nav-link" href="#" id="account-link" data-toggle="dropdown" data-target="#account-dropdown"
                                 aria-haspopup="true" aria-expanded="false">
                                 <div class="text-center">
                                     <div><i class="fas fa-user fa-lg"></i></div>
-                                    <p class="my-0">My Account</p>
+                                    <p class="my-0">My Account <i class="fa-solid fa-caret-down"></i></p>
                                 </div>
                             </a>
-                            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                            <div class="dropdown-menu border-0" id="account-dropdown" aria-labelledby="accounts-dropdown" style="cursor:pointer">
                                 {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                 <a href="" class="dropdown-item">Product Management</a>
@@ -88,7 +86,7 @@
                             </div>
                         </li>
                         <li class="list-inline-item">
-                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" style="cursor:pointer"
                                 href="">
                                 <div class="text-center">
                                     <div><i class="fas fa-shopping-bag fa-lg"></i></div>
@@ -130,6 +128,13 @@
         {% endblock %}
 
         {% block postloadjs %}
+        <!--Main Bootstrap JS and popper files-->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+        </script>
         {% endblock %}
 
 

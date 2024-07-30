@@ -1,5 +1,5 @@
 <h1 align="center">Little Pont</h1>
-<h2 align="center">Role Play Village</h2>
+<h2 align="center">Immersive Role Play Village</h2>
 
 - - - 
 ![Responsive Mockup]()
@@ -84,13 +84,19 @@ This website has been built using HTML, CSS, Javascript and Python.
         3. As a registered user, i want to be able to recover my password if i have forgotten it
         4. As a registered user, i want to recieve an email to confirm that i have successfully regitered an account
         5. As site admin, i want to ensure all form fields are completed correctly
-        6. As a site admin, i want ot be able to easily add, edit and delete courses so that i have full control over what courses i make available to the user
-        7. As a site admin, i want to eaasily be able to add, edit or delete a users order in case they have made a booking error and it needs to be ammended, in order to provide a good user experience for them.
-        8. 
+        6. As a site user i want to be able to edit or update my profile details
+
+    -   #### Purchasing and Checkout
+        1. As a parent/guardian, i want to select and purchase a course for my child
+        2. As a site user, i want an easy and streamlined payment process
+        3. As a site administrator, i want to be able to track all course bookings to ensure that they are processed correctly and payment is recieved
 
     -   #### Site Administrator
 
-        1. As the site administrator, 
+        1. As a site admin, i want to be able to easily add, edit and delete courses so that i have full control over what courses i make available to the user
+        2. As a site admin, i want to easily be able to add, edit or delete a users order in case they have made a booking error and it needs to be ammended, in order to provide a good user experience for them.
+        3. As an admin, i want to have a clear view of courses, bookings and payment status to ensure good business management
+        
 - - - 
 
 ## Design

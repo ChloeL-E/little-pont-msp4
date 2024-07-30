@@ -58,6 +58,10 @@ header {
     font-family: var(--font-header);
 }
 
+.dropdown-toggle {
+  color: black;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;

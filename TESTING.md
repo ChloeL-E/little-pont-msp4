@@ -153,7 +153,7 @@ The deployed site sent to friends and young family members to review the site an
 
 -   ### Fixed Bugs
 
-    * Dropdown-toggle not working correctly in the topnav or main-nav. Ensured the selector was correctly identified within the html using the id and #prefix in the data-toggle attribute but this did not fix the problem. Tried moving the js files to the postload block at the bottom of the base.html body to ensure all content loading first but this also did not fix the problem.
+    * Dropdown-toggle not working correctly in the topnav or main-nav. Ensured the selector was correctly identified within the html using the id and #prefix in the data-toggle attribute but this did not fix the problem. Tried moving the js files to the postload block at the bottom of the base.html body to ensure all content loading first but this also did not fix the problem. Found that i had accidentally used data-bs-toggle on the account dropdown which is only compatible with Bootstrap 5. I used Bootstrap 4 which uses the dtat-toggle attribute. Once this was corrected the dropdown functionality worked. Although i noted that if i went to click to close the dropdown on the About and Courses dropdowns, neither closed, however the account dropdown closed when clicked again. 
 
     * 
 

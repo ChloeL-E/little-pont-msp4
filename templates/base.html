@@ -56,10 +56,10 @@
 
 <body>
         <header class="container-fluid">
-            <div class="row">
+            <div id="top-nav" class="row">
                 <div id="top-header-image" class="col-12 d-flex justify-content-center align-items-center">
                     <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                        <img src="media/cropped_logo.png" alt="logo" height="300px" width="300px">
+                        <img src="{{ MEDIA_URL }}media/cropped_logo.png" alt="logo" height="300px" width="300px">
                     </a>
                 
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 top-header">
@@ -74,7 +74,7 @@
                             <div class="dropdown-menu border-0" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
-                                        <a href=""  class="dropdown-item">Product Management</a>
+                                        <a href=""  class="dropdown-item">Course Management</a>
                                     {% endif %}
                                     <a href="" class="dropdown-item">My Profile</a>
                                     <a href="" class="dropdown-item">Logout</a>
@@ -106,11 +106,11 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    {% include 'includes/mobile-top-header.html' %}
                     {% include 'includes/main-nav.html' %}
                 </nav>
             </div>
         </div>
+    </header>
                 <!--<div class="col-12 col-lg-4 my-auto py-1 py-lg-0 top-header"> col-12 col-lg-4 my-auto py-1 py-lg-0
                     <ul class="list-inline list-unstyled text-end my-0"> list-inline list-unstyled text-center text-lg-right my-0
                         <li class="list-inline-item dropdown">
@@ -164,7 +164,7 @@
                     {% include 'includes/main-nav.html' %}
                 </nav>
             </div>-->
-        </header>
+       
 
         <!--- {% if messages %}
         <div class="message-container"></div>

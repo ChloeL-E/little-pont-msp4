@@ -157,8 +157,8 @@ span .carousel-control-next-icon {
   text-align: center;
 }
 
-.index-hero {
-  background-image: url('./media/frying-eggs.webp');
+#hero .index-hero {
+  background-image: url('/media/frying-eggs.webp');
 }
   
 #hero h2 {

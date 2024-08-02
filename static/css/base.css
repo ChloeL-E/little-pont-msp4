@@ -44,6 +44,7 @@ header {
   top: 0;
   left: 0;
   border-bottom: 0.5px solid white;
+  height: 308px;;
 }
 
 /* Navbar */
@@ -113,7 +114,8 @@ span .carousel-control-next-icon {
 }
 
 @media (max-height: 500px) {
-  #hero {
+  #hero,
+  #babies-hero {
     height: 150vh;
   }
 }
@@ -130,7 +132,6 @@ span .carousel-control-next-icon {
 }
   
 #hero .hero-item {
-  background-image: url("/media/frying-eggs.webp")
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -149,10 +150,6 @@ span .carousel-control-next-icon {
 
 #hero .container {
   text-align: center;
-}
-
-.hero-index {
-  background-image: (url 'media/frying-eggs.webp') no-repeat center center fixed;
 }
   
 #hero h2 {
@@ -479,9 +476,13 @@ section {
 
 /* -------------------------------- Course pages */
 
-#babies-hero{
-  background-image: url('media/babies-hero.webp') cover center center fixed;
+#hero .hero-item {
+  background-image: url("/media/babies-hero.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 
 #about-groups {
   background: #fff;
@@ -560,7 +561,7 @@ section {
   color: #020924;
 }
 
-#babies-hero .btn-get-started {
+#hero .btn-get-started {
   font-family: "Amatic SC", sans-serif;
   font-weight: 700;
   font-size: 14px;
@@ -574,7 +575,7 @@ section {
   background: var(--purple);
 }
 
-#babies-hero .btn-get-started:hover {
+#hero .btn-get-started:hover {
   background: var(--yellow);
   color: #000;
 }

@@ -1,100 +1,88 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col">
-        </div>
-    </div>
-</div>
-{% endblock %}
-
 {% block content %}
 <!-- Hero Header section adapted from BootstrapMade.com template-->
-<section id="hero">
-    <div class="hero-container container">
-      <div class="hero-level">
-        <div class="groups-inner">
-          <div class="groups-item active" style="background-image: url('{{ MEDIA_URL }}media/babies-hero.webp')">
-            <div class="groups">
-              <div class="container">
-                <h2>Babies Group</h2>
-                <p>A class designed specifically for children from birth to 1 year</p>
-                <a href="#scroll-to-levels" class="btn-get-started scrollto">Book Now</a>
-              </div>
-            </div>
+<section id="babies-hero">
+  <div class="hero-container container h-100">
+    <div class="hero-item active">
+      <div class="row h-100">
+        <div class="col-7 col-md-6 my-auto">
+          <h2 class="display-4 logo-font text-black">
+            Babies Group
+          </h2>
+          <div class="my-5">
+            <p>A class designed specifically for children from birth to 1 year</p>
+            <a href="" class="btn-get-started scrollto">Book Now</a>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <!-- End Hero Section -->
- <!-- About groups section -->
-  <section id="about-groups">
-    <div class="container">
-      <header class="section-header">
-        <h3>Baby Bells</h3>
-        <p>Our baby group is suitable for babies from birth upto 12 months. The sessions aim to ignite and delight our little ones to new experiences in our magical baby area.</p>
-      </header>
-      <div class="row about-container">
-        <div class="col-lg-6 content order-lg-1 order-2">
-          <p>
-            Connection
-          </p>
-          <div class="icon-box">
-            <div class="icon"><i class="fa-solid fa-circle-check"></i></div>
-            <h4 class="title"></h4>
-            <p class="description">In a world of 'busy', this class is great for providing a calm space to just 'be' with your baby. Time to connect with your baby and meeting new friends</p>
-          </div>
-          <div class="icon-box">
-            <div class="icon"><i class="fa-solid fa-circle-check"></i></div>
-            <h4 class="title">Sensory</h4>
-            <p class="description">Gentle sensorial play is a key focus of the session. Held in our indoor 'baby garden', twinkling lights, beautiful colours and nature sounds are used to nourish those newly developing senses without being overstimulating</p>
-          </div>
-          <div class="icon-box">
-            <div class="icon"><i class="fa-solid fa-circle-check"></i></div>
-            <h4 class="title">Development</h4>
-            <p class="description">Your baby's brain is miraculous, each experience forms millions of new connections and supports growth and development. Our teachers Katie and Janine teach new and exciting STEM sessions within each class to help your baby explore the world in new ways! </p>
-          </div>
+  </div>
+</section>
+<!-- End Hero Section -->
+<!-- About groups section -->
+<section id="about-groups">
+  <div class="container">
+    <header class="section-header text-center">
+      <h3>Baby Bells</h3>
+      <p>Our baby group is suitable for babies from birth up to 12 months. The sessions aim to ignite and delight our
+        little ones to new experiences in our magical baby area.</p>
+    </header>
+    <div class="row about-container">
+      <div class="col-lg-6 content order-lg-1 order-2">
+        <p>
+          Connection
+        </p>
+        <div class="icon-box">
+          <div class="icon"><i class="fa-regular fa-star"></i></div>
+          <h4 class="title"></h4>
+          <p class="description">In a world of 'busy', this class is great for providing a calm space to just 'be' with
+            your baby. Time to connect with your baby and meeting new friends</p>
         </div>
-        <div class="col-lg-6 background order-lg-2">
-          <img src="" class="img-fluid" alt="">
+        <div class="icon-box">
+          <div class="icon"><i class="fa-regular fa-star"></i></div>
+          <h4 class="title">Sensory</h4>
+          <p class="description">Gentle sensorial play is a key focus of the session. Held in our indoor 'baby garden',
+            twinkling lights, beautiful colours and nature sounds are used to nourish those newly developing senses
+            without being overstimulating</p>
+        </div>
+        <div class="icon-box">
+          <div class="icon"><i class="fa-regular fa-star"></i></div>
+          <h4 class="title">Development</h4>
+          <p class="description">Your baby's brain is miraculous, each experience forms millions of new connections and
+            supports growth and development. Our teachers Katie and Janine teach new and exciting STEM sessions within
+            each class to help your baby explore the world in new ways!</p>
         </div>
       </div>
-      <div class="row about-extra">
-        <div class="col-lg-6">
-          <img src="" class="img-fluid" alt="">
-        </div>
-        <div class="col-lg-6 pt-5 pt-lg-0" id="scroll-to-levels">
-          <h4></h4>
-          <p>
-            
-          </p>
-          <p>
-            
-          </p>
-          <!-- Loop through courses and display course details -->
-          <form class="form" action="" method="POST">
-            {% csrf_token %}
-            <ul class="ps-0" style="list-style-type: none;">
-                {% for course in courses %}
-                <li>
-                    <input type="radio" class="me-3 mt-3" id="" name="course_id" value="">
-                    <label for=""><strong></strong></label><br>
-                    Start Date: <br>
-                    End Date: <br>
-                    Price: £
-                </li>
-                {% endfor %}
-            </ul>
-            <input type="submit" class="btn-get-started mt-3" id="book-now-btn" value="Book Now">
-            <input type="hidden" name="redirect_url" value="">
-          </form>
-        </div>
+      <div class="col-lg-6 pt-5 pt-lg-0" id="s">
+        <h4>Course Details</h4>
+        <p>
+        </p>
+        <p>
+        </p>
+        <!-- Loop through courses and display course details -->
+        <form class="form" action="" method="POST">
+          {% csrf_token %}
+          <ul class="ps-0" style="list-style-type: none;">
+            {% for course in courses %}
+            <li>
+              <input type="radio" class="me-3 mt-3" id="" name="course_id"
+                value="">
+              <label for=""><strong></strong></label><br>
+              Start Date: <br>
+              End Date: <br>
+              Price: £
+            </li>
+            {% endfor %}
+          </ul>
+          <input type="submit" class="btn-get-started mt-3" id="btn-get-started" value="Book Now">
+          <input type="hidden" name="redirect_url" value="">
+        </form>
       </div>
     </div>
-  </section>
-  <!--End About Groups Section -->
-  
+  </div>
+</section>
+<!--End About Groups Section -->
+
 {% endblock %}

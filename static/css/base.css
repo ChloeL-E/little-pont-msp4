@@ -104,7 +104,8 @@ span .carousel-control-next-icon {
   font-style: bold;
 }
 
-#hero {
+#hero,
+#babies-hero {
   width: 100%;
   height: 90vh;
   overflow: hidden;
@@ -129,6 +130,7 @@ span .carousel-control-next-icon {
 }
   
 #hero .hero-item {
+  background-image: url("/media/frying-eggs.webp")
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -182,7 +184,7 @@ span .carousel-control-next-icon {
   }
 }
   
-#hero .book-now-button {
+.book-now-button {
   font-family: var(--font-header), sans-serif;
   font-weight: 600;
   font-size: 30px;
@@ -197,7 +199,7 @@ span .carousel-control-next-icon {
   width: 150px;
 }
   
-#hero .book-now-button:hover {
+.book-now-button:hover {
   background: var(--pink);
 }
 
@@ -475,102 +477,106 @@ section {
   font-weight:600; 
 }
 
-#levels {
+/* -------------------------------- Course pages */
+
+#babies-hero{
+  background-image: url('media/babies-hero.webp') cover center center fixed;
+}
+
+#about-groups {
   background: #fff;
   padding: 60px 0 60px 0;
   overflow: hidden;
 }
 
-#levels .levels-img {
+#about-groups .levels-img {
   text-align: center;
   padding-top: 20px;
 }
 
 @media (min-width: 769px) {
-  #levels .levels-img {
+  #about-groups .groups-img {
     padding-top: 120px;
     margin-top: -200px;
   }
 }
 
-/* -------------------------------- Course pages */
-
-#groups .groups-img img {
+#about-groups .groups-img img {
   max-width: 100%;
 }
 
-#groups .box {
+#about-groups .box {
   margin-bottom: 15px;
   text-align: center;
 }
 
-#groups .icon {
+#about-groups .icon {
   margin-bottom: 10px;
 }
 
-#groups .icon i {
+#about-groups .icon i {
   color: #85cfeb;
   font-size: 40px;
   transition: 0.5s;
 }
 
-#groups .icon i:before {
-  background: #85cfeb;
+#about-groups .icon i:before {
+  background: var(--yellow);
   background: linear-gradient(45deg, #1dc8cd 0%, #85cfeb 100%);
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-#groups .title {
+#about-groups .title {
   font-weight: 300;
   margin-bottom: 15px;
   font-size: 22px;
 }
 
-#groups .title a {
+#about-groups .title a {
   color: #020924;
   text-decoration: underline;
   text-decoration-color: #85cfeb;
 }
 
-#groups .title a:hover {
+#about-groups .title a:hover {
   color: #85cfeb;
   font-size: 26px;
 
 }
 
-#groups .description {
+#about-groups .description {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 10px;
 }
 
-#groups .section-description {
+#about-groups .section-description {
   padding-bottom: 10px;
 }
 
-#groups .groups-title {
+#about-groups .groups-title {
   color: #020924;
 }
 
-#groups .btn-get-started {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  font-size: 12px;
+#babies-hero .btn-get-started {
+  font-family: "Amatic SC", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
   letter-spacing: 1px;
   display: inline-block;
   padding: 8px 32px;
   border-radius: 50px;
   transition: 0.5s;
   margin: 10px;
-  color: #020924;
-  background: #85cfeb;
+  color: #000;
+  background: var(--purple);
 }
 
-#groups .btn-get-started:hover {
-  background: #020924;
-  color: #85cfeb;
+#babies-hero .btn-get-started:hover {
+  background: var(--yellow);
+  color: #000;
 }
 
 /* -------------------------------- Media Queries */

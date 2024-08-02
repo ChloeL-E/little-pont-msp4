@@ -64,9 +64,9 @@
         <div id="top-nav" class="row d-flex flex-wrap flex-row justify-content-center">
             <div id="top-header-image" class="col-12 d-flex justify-content-center align-items-center">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <img src="{{ MEDIA_URL }}media/cropped_logo.png" alt="logo" height="300px" width="300px">
+                    <img src="./media/cropped_logo.png" alt="logo" height="300px" width="300px">
                 </a>
-
+                <!--Account dropdown-->
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 top-header">
                     <ul class="list-inline list-unstyled text-end my-0">
                         <li class="list-inline-item dropdown">
@@ -90,6 +90,7 @@
                                 {% endif %}
                             </div>
                         </li>
+                        <!--Shopping bag-->
                         <li class="list-inline-item">
                             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
                                 href="">

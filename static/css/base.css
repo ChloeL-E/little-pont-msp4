@@ -47,6 +47,11 @@ header {
   height: 308px;;
 }
 
+#top-header-image img {
+  height: 300px;
+  width: 300px;
+}
+
 /* Navbar */
 
 .nav-center {
@@ -150,6 +155,10 @@ span .carousel-control-next-icon {
 
 #hero .container {
   text-align: center;
+}
+
+.index-hero {
+  background-image: url('./media/frying-eggs.webp');
 }
   
 #hero h2 {
@@ -270,23 +279,10 @@ section {
   background: #fff;
 }
 
-/*.about .icon-box .icon {
-  margin: 0 auto;
-  width: 64px;
-  height: 64px;
-  background: #eaf4fb;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  transition: ease-in-out 0.3s;
-}*/
-
-/*.about .icon-box .icon i {
-  color: var(--blue);
-  font-size: 28px;
-}*/
+.about .icon-box img {
+  width:600px; 
+  height:400px;
+}
 
 .about.icon-box h4 {
   font-weight: 700;
@@ -476,13 +472,30 @@ section {
 
 /* -------------------------------- Course pages */
 
-#hero .hero-item {
-  background-image: url("/media/babies-hero.webp");
+#hero .babies-hero,
+#hero .toddlers-hero,
+#hero .preschoolers-hero,
+#hero .early-years-hero {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
+#hero .babies-hero {
+  background-image: url('/media/babies-hero.webp');
+}
+
+#hero .toddlers-hero {
+  background-image: url('/media/high-angle-view-kids-sitting-inside-tepee.webp')
+}
+
+#hero .preschoolers-hero {
+  background-image: url('/media/little-boy-playing-with-construction-equipment-white.webp')
+}
+
+#hero .early-years-hero {
+  background-image: url('/media/little-girls-science-class.webp')
+}
 
 #about-groups {
   background: #fff;

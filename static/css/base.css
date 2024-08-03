@@ -221,6 +221,17 @@ span .carousel-control-next-icon {
   border: 1px solid #000 !important;
 }
 
+.main-heading {
+  font-family: var(--font-header);
+  font-weight: 600;
+  font-size: 44px;
+}
+
+.title-font {
+  font-family: var(--font-header);
+  font-weight: 600;
+}
+
 /*-------------------------------- Section */
 section {
   padding: 60px 0;

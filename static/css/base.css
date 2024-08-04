@@ -538,20 +538,20 @@ section {
 #about-groups .icon {
   margin-bottom: 10px;
 }
-
+/*
 #about-groups .icon i {
-  color: #85cfeb;
+  color: var(--purple);
   font-size: 40px;
   transition: 0.5s;
-}
-
+}*/
+/*
 #about-groups .icon i:before {
   background: var(--yellow);
   background: linear-gradient(45deg, #1dc8cd 0%, #85cfeb 100%);
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
+}*/
 
 #about-groups .title {
   font-weight: 300;
@@ -560,15 +560,13 @@ section {
 }
 
 #about-groups .title a {
-  color: #020924;
+  color: #000;
   text-decoration: underline;
-  text-decoration-color: #85cfeb;
+  text-decoration-color: var(--pink);
 }
 
 #about-groups .title a:hover {
-  color: #85cfeb;
   font-size: 26px;
-
 }
 
 #about-groups .description {
@@ -582,7 +580,7 @@ section {
 }
 
 #about-groups .groups-title {
-  color: #020924;
+  color: #000;
 }
 
 #hero .btn-get-started {
@@ -598,10 +596,27 @@ section {
   color: #000;
   background: var(--purple);
 }
-
+/*
 #hero .btn-get-started:hover {
   background: var(--yellow);
   color: #000;
+}*/
+
+.btt-button {
+  height: 42px;
+  width: 42px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: var(--purple);
+}
+
+.btt-button:hover {
+  background: var(--yellow);
+}
+
+.btt-link {
+  cursor: pointer;
 }
 
 /* -------------------------------- Media Queries */

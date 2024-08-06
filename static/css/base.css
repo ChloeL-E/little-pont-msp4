@@ -230,6 +230,7 @@ span .carousel-control-next-icon {
 .title-font {
   font-family: var(--font-header);
   font-weight: 600;
+  font-size: 24px;
 }
 
 /*-------------------------------- Section */
@@ -551,7 +552,7 @@ section {
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}*/
+}
 
 #about-groups .title {
   font-weight: 300;
@@ -580,7 +581,7 @@ section {
 }
 
 #about-groups .groups-title {
-  color: #000;
+
 }
 
 #hero .btn-get-started {
@@ -617,6 +618,29 @@ section {
 
 .btt-link {
   cursor: pointer;
+}
+
+/* -------------------------------- Shopping bag */
+
+.btt-back-to-courses {
+  font-family: var(--font-header), sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 4px 20px;
+  border-radius: 25px;
+  transition: 0.5s;
+  margin: 10px 10px 10px 0;
+  background: var(--green);
+  color: #000;
+  width: fit-content;
+}
+  
+.btt-back-to-courses:hover {
+  background: var(--pink);
+  text-decoration: none;
+  color: #000;
 }
 
 /* -------------------------------- Media Queries */

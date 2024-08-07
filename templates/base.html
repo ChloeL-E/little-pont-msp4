@@ -66,7 +66,7 @@
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
                     <img src="/media/cropped_logo.png" alt="logo" class="img-fluid">
                 </a>
-                <!--Account dropdown-->
+               <!--Account dropdown-->
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 top-header">
                     <ul class="list-inline list-unstyled text-end my-0">
                         <li class="list-inline-item dropdown">
@@ -90,7 +90,7 @@
                                 {% endif %}
                             </div>
                         </li>
-                        <!--Shopping bag-->
+                        <!--shopping bag-->
                         <li class="list-inline-item">
                             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
                                 href="{% url 'view_bag' %}">
@@ -120,7 +120,7 @@
             </div>
         </div>
     </header>
-
+    
     {% block page_header %}
     {% endblock %}
 

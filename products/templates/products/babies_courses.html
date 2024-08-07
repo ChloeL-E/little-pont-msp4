@@ -21,70 +21,117 @@
   </div>
 </section>
 <!-- End Hero Section -->
-<!-- About groups section -->
+<!---Course Details section-->
 <section id="about-groups">
   <div class="container">
     <header class="section-header text-center">
       <h3 class="main-heading">Baby Class</h3>
-      <p>Our baby group is suitable for babies from birth up to 12 months. The sessions aim to ignite and delight our
+      <p>Our baby group is suitable for babies from birth up to 12 months. The sessions aim to ignite and delight
+        our
         little ones to new experiences in our magical baby area.</p>
     </header>
+    <div class="col-lg-6 content order-lg-1 order-2" id="">
+      <h4 class="title-font">Course Details</h4>
+      <p>
+        Courses run in 4 week blocks so you will get 4 classes per booking. Each of our age groups run every day
+        Monday - Thursday. The times differ to give you choice over the most suitable time for you and your child.
+      </p>
+      <p>
+        Check out our courses below to find the best day and time for you!
+        Once you have chosen your child's course, click the button and you
+        will be asked to complete some details in order to set up your account
+        before proceeding to payment. We look forward to welcoming you and your
+        child to Little Pont. If you have any probems or enquiries dont hesitate
+        to
+        <a href="#">get in touch</a>
+      </p>
+      <div class="col-lg-6 background order-lg-2">
+        <img class="img-fluid" src="/media/happy-boy-jumping-cartoon-character.webp"
+          alt="happy boy jumping cartoon character">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End About groups section -->
+<!-- About groups section -->
+<section>
+  <div class="container">
     <div class="row about-container">
-      <div class="col-lg-6 content order-lg-1 order-2">
-        <p>
-          Connection
-        </p>
+      <div class="col-lg-6 content">
         <div class="icon-box">
-          <div class="icon"><i class="fa-regular fa-star"></i></div>
-          <h4 class="title"></h4>
-          <p class="description">In a world of 'busy', this class is great for providing a calm space to just 'be' with
+          <div class="icon"><i class="fa-regular fa-star mr-3"></i></div>
+          <h4 class="title-font">Connection</h4>
+          <p class="description">In a world of 'busy', this class is great for providing a calm space to just 'be'
+            with
             your baby. Time to connect with your baby and meeting new friends</p>
         </div>
         <div class="icon-box">
-          <div class="icon"><i class="fa-regular fa-star"></i></div>
-          <h4 class="title">Sensory</h4>
-          <p class="description">Gentle sensorial play is a key focus of the session. Held in our indoor 'baby garden',
+          <div class="icon"><i class="fa-regular fa-star mr-3"></i></div>
+          <h4 class="title-font">Sensory</h4>
+          <p class="description">Gentle sensorial play is a key focus of the session. Held in our indoor 'baby
+            garden',
             twinkling lights, beautiful colours and nature sounds are used to nourish those newly developing senses
             without being overstimulating</p>
         </div>
         <div class="icon-box">
-          <div class="icon"><i class="fa-regular fa-star"></i></div>
-          <h4 class="title">Development</h4>
-          <p class="description">Your baby's brain is miraculous, each experience forms millions of new connections and
-            supports growth and development. Our teachers Katie and Janine teach new and exciting STEM sessions within
+          <div class="icon"><i class="fa-regular fa-star mr-3"></i></div>
+          <h4 class="title-font">Development</h4>
+          <p class="description">Your baby's brain is miraculous, each experience forms millions of new connections
+            and
+            supports growth and development. Our teachers Katie and Janine teach new and exciting STEM sessions
+            within
             each class to help your baby explore the world in new ways!</p>
         </div>
-      </div>
-      <div class="col-lg-6 pt-5 pt-lg-0" id="">
-        <h4 class="title-font">Course Details</h4>
-        <p>
-          Courses run in 4 week blocks so you will get 4 classes per booking. Each of our age groups run every day
-          Monday - Thursday. The times differ to give you choice over the most suitable time for you and your child.
-        </p>
-        <p>
-          Check out our courses below to find the best day and time for you!
-        </p>
-        <!-- Loop through courses and display course details -->
-        <form class="form" action="" method="POST">
-          {% csrf_token %}
-          <ul class="ps-0" style="list-style-type: none;">
-            {% for course in courses %}
-            <li>
-              <input type="radio" class="me-3 mt-3" id="" name="course_id" value="">
-              <label for=""><strong></strong></label><br>
-              Start Date: <br>
-              End Date: <br>
-              Price: £
-            </li>
-            {% endfor %}
-          </ul>
-          <input type="submit" class="btn-get-started mt-3" id="btn-get-started" value="Book Now">
-          <input type="hidden" name="redirect_url" value="">
-        </form>
       </div>
     </div>
   </div>
 </section>
 <!--End About Groups Section -->
+
+<!--Course Booking Section -->
+<!-- Loop through courses and display course details -->
+<section>
+  <div class="container">
+    <div class="col-lg-6 pt-5 pt-lg-0" id="">
+      <h4 class="title-font">Course Booking</h4>
+      <form class="form" action="" method="POST">
+        {% csrf_token %}
+        <div class="form-row">
+          <div class="col-12">
+            <ul class="ps-0" style="list-style-type: none;">
+              {% for course in courses %}
+              <li>
+                <input type="radio" class="me-3 mt-3" id="" name="course_id" value="">
+                <label for="course_{{ course.id }}"><strong>{{ course.name }}</strong></label><br>
+                Start Date: {{ course.start_date }}<br>
+                End Date: {{ course.end_date }}<br>
+                Price: £{{ course.price }}
+              </li>
+              {% endfor %}
+            </ul>
+            <p class="mt-3"><strong>Quantity:</strong></p>
+            <div class="form-group w-50">
+              <div class="input-group">
+                <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99"
+                  data-item_id="{{ course.id }}" id="id_qty_{{ course.id }}">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 pt-5 pt-lg-0" id="">
+            <input type="submit" class="book-now-button mt-3" id="book-now-button" value="Book Now"><br>
+            <input type="hidden" name="redirect_url" value="">
+
+            <span class="text-uppercase">Not the right course? Check these out...</span><br>
+            <a href="{% url 'toddlers_courses' %}" class="btt-back-to-courses rounded-4">Toddlers</a>
+            <a href="{% url 'preschooler_courses' %}" class="btt-back-to-courses rounded-4">Preschool</a>
+            <a href="{% url 'early_years_courses' %}" class="btt-back-to-courses rounded-4">EarlyYears</a><br>
+          </div>
+        </div>
+      </form>
+  </div>
+</section>
+<!--End Course Booking Section -->
+
 
 {% endblock %}

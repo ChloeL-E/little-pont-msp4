@@ -71,26 +71,8 @@
 </section>
 <!-- End About groups section -->
 
-<!-- About groups section -->
-<section>
-  <div class="container">
-    <div class="row container">
-      <div class="col-lg-6 content order-lg-2 order-1">
-        <h4 class="title-font mt-3">Course Details</h4>
-        <p>
-          Courses run in 4 week blocks so you will get 4 classes per booking. Each of our age groups run every day Monday - Thursday. The times differ to give you choice over the most suitable time for you and your child.
-        </p>
-        <p>
-          Check out our courses below to find the best day and time for you! Once you have chosen your child's course, click the button and you will be asked to complete some details in order to set up your account before proceeding to payment. We look forward to welcoming you and your child to Little Pont. If you have any problems or enquiries don't hesitate to <a href="#">get in touch</a>.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-<!--End About Groups Section -->
-
 <!--Course Booking Section -->
-<!-- About groups section and Course Booking Section Side by Side -->
+<!-- Course Details section and Course Booking Section Side by Side -->
 <section id="course-details">
   <div class="container">
     <div class="row">
@@ -99,17 +81,19 @@
         <div class="content mb-5">
           <h4 class="title-font">Course Details</h4>
           <p>
-            Courses run in 4 week blocks so you will get 4 classes per booking. 
-            Each of our age groups run every day Monday - Thursday. The times differ 
+            Courses run in 4 week blocks so you will get 4 classes per booking.
+            Each of our age groups run every day Monday - Thursday. The times differ
             to give you choice over the most suitable time for you and your child.
+            Each class runs for 90 minutes from the start time, so there is plenty of 
+            time for your litte one to enjoy themselves.
           </p>
           <p>
-            Check out our courses below to find the best day and time for you! 
-            Once you have chosen your child's course, click the button and you 
-            will be asked to complete some details in order to set up your account 
-            before proceeding to payment. We look forward to welcoming you and your 
-            child to Little Pont. If you have any problems or enquiries don't 
-            hesitate to 
+            Check out our courses below to find the best day and time for you!
+            Once you have chosen your child's course, click the button and you
+            will be asked to complete some details in order to set up your account
+            before proceeding to payment. We look forward to welcoming you and your
+            child to Little Pont. If you have any problems or enquiries don't
+            hesitate to
             <strong>
               <a href="#">get in touch</a>
             </strong>.
@@ -124,49 +108,49 @@
       </div>
       <!-- End Course Details Section -->
 
-            <!-- Course Booking Section -->
-            <div class="col-lg-6">
-              <div class="pt-5 pt-lg-0">
-                <h4 class="title-font">Course Booking</h4>
-                <form id="courseForm" class="form" method="POST">
-                  {% csrf_token %}
-                  <div class="form-row">
-                    <div class="col-12">
-                      <ul class="ps-0" style="list-style-type: none;">
-                        {% for course in courses %}
-                        <li>
-                          <input type="radio" class="me-3 mt-3" id="course_{{ course.id }}" name="course_id"
-                            value="{{ course.id }}">
-                          <label for="course_{{ course.id }}"><strong>{{ course.name }}</strong></label><br>
-                          Start Date: {{ course.start_date }}<br>
-                          End Date: {{ course.end_date }}<br>
-                          Price: £{{ course.price }}
-                        </li>
-                        {% endfor %}
-                      </ul>
-                      <div class="col-12">
-                        <p class="mt-3"><strong>Quantity:</strong></p>
-                        <div class="form-group w-50">
-                          <div class="input-group">
-                            <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99"
-                              id="id_qty_{{ course.id }}">
-                          </div>
-                          <div class="input-group">
-                            <input type="submit" class="book-now-button mt-3 mb-3" id="book-now-button" value="Book Now"><br>
-                          </div>
-      
-                          <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                        </div>
-                      </div>
+      <!-- Course Booking Section -->
+      <div class="col-lg-6">
+        <div class="pt-5 pt-lg-0">
+          <h4 class="title-font">Course Booking</h4>
+          <form id="courseForm" class="form" method="POST">
+            {% csrf_token %}
+            <div class="form-row">
+              <div class="col-12">
+                <ul class="ps-0" style="list-style-type: none;">
+                  {% for course in courses %}
+                  <li>
+                    <input type="radio" class="me-3 mt-3" id="course_{{ course.id }}" name="course_id"
+                      value="{{ course.id }}">
+                    <label for="course_{{ course.id }}"><strong>{{ course.name }}</strong></label><br>
+                    Start Date: {{ course.start_date }}<br>
+                    End Date: {{ course.end_date }}<br>
+                    Price: £{{ course.price }}
+                  </li>
+                  {% endfor %}
+                </ul>
+                <div class="col-12">
+                  <p class="mt-3"><strong>Quantity:</strong></p>
+                  <div class="form-group w-50">
+                    <div class="input-group">
+                      <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99"
+                        id="id_qty_{{ course.id }}">
                     </div>
-                </form>
+                    <div class="input-group">
+                      <input type="submit" class="book-now-button mt-3 mb-3" id="book-now-button" value="Book Now"><br>
+                    </div>
+
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                  </div>
+                </div>
               </div>
-            </div>
-            <!-- End Course Booking Section -->
-          </div>
+          </form>
         </div>
-      </section>
-      <!--End Course Booking Section -->
+      </div>
+    </div>
+  </div>
+</section>
+<!--End Course Booking Section -->
+  
       
       <div class="scroll-button shadow-sm rounded">
         <a class="btt-link d-flex h-100">

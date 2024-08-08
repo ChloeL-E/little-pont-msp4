@@ -73,30 +73,8 @@
 </section>
 <!-- End About groups section -->
 
-<!-- About groups section -->
-<section>
-  <div class="container">
-    <div class="row container">
-      <div class="col-lg-6 content order-lg-2 order-1">
-        <h4 class="title-font mt-3">Course Details</h4>
-        <p>
-          Courses run in 4 week blocks so you will get 4 classes per booking. Each of our age groups run every day
-          Monday - Thursday. The times differ to give you choice over the most suitable time for you and your child.
-        </p>
-        <p>
-          Check out our courses below to find the best day and time for you! Once you have chosen your child's course,
-          click the button and you will be asked to complete some details in order to set up your account before
-          proceeding to payment. We look forward to welcoming you and your child to Little Pont. If you have any
-          problems or enquiries don't hesitate to <a href="#">get in touch</a>.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-<!--End About Groups Section -->
-
 <!--Course Booking Section -->
-<!-- About groups section and Course Booking Section Side by Side -->
+<!-- Course Details section and Course Booking Section Side by Side -->
 <section id="course-details">
   <div class="container">
     <div class="row">
@@ -108,6 +86,8 @@
             Courses run in 4 week blocks so you will get 4 classes per booking.
             Each of our age groups run every day Monday - Thursday. The times differ
             to give you choice over the most suitable time for you and your child.
+            Each class runs for 90 minutes from the start time, so there is plenty of 
+            time for your litte one to enjoy themselves.
           </p>
           <p>
             Check out our courses below to find the best day and time for you!
@@ -146,7 +126,8 @@
                     <label for="course_{{ course.id }}"><strong>{{ course.name }}</strong></label><br>
                     Start Date: {{ course.start_date }}<br>
                     End Date: {{ course.end_date }}<br>
-                    Price: £{{ course.price }}
+                    Start Time: {{ course.start_time }}<br>
+                    Price: £{{ course.price }}<br>
                   </li>
                   {% endfor %}
                 </ul>
@@ -168,7 +149,6 @@
           </form>
         </div>
       </div>
-      <!-- End Course Booking Section -->
     </div>
   </div>
 </section>

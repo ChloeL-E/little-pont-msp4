@@ -9,6 +9,7 @@ class CourseAdmin(admin.ModelAdmin):
         'age_group',
         'start_date',
         'end_date',
+        'start_time',
         'price'
     )
 

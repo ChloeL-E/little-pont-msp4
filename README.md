@@ -307,7 +307,7 @@ exit()
 
    ### Content
 
-- 
+- [JavaTPoint](https://www.javatpoint.com/time-datatype-in-sql#:~:text=To%20store%20the%20time%20in%20your%20SQL%20tables%2C%20your%20first,%3AMM%3ASS%22%20format) for Time datatype.
 - Content was written by Chloe Livingstone-Evans.
 
 - - - - 

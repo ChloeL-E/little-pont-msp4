@@ -14,8 +14,9 @@ class Course(models.Model):
 
     name = models.CharField(max_length=100)
     description = models.TextField()
-    start_date = models.DateField()
-    end_date = models.DateField()
+    start_date = models.DateField(null=True, blank=True)
+    end_date = models.DateField(null=True, blank=True)
+    start_time = models.TimeField(null=True, blank=True)
     price = models.DecimalField(max_digits=5, decimal_places=2)
     age_group = models.CharField(max_length=11, choices=AGE_GROUP)
     # instructor = models.ForeignKey('Instructor', on_delete=models.CASCADE)

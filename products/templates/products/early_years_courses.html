@@ -115,9 +115,6 @@
             </strong>.
           </p>
         </div>
-
-        <input type="submit" class="book-now-button mt-3 mb-3" id="book-now-button" value="Book Now"><br>
-        <input type="hidden" name="redirect_url" value="">
         <br>
         <span class="title-font">Not the right course? Check out our other courses...</span><br>
         <br>
@@ -127,41 +124,80 @@
       </div>
       <!-- End Course Details Section -->
 
-      <!-- Course Booking Section -->
-      <div class="col-lg-6">
-        <div class="pt-5 pt-lg-0">
-          <h4 class="title-font">Course Booking</h4>
-          <form class="form" action="" method="POST">
-            {% csrf_token %}
-            <div class="form-row">
-              <div class="col-12">
-                <ul class="ps-0" style="list-style-type: none;">
-                  {% for course in courses %}
-                  <li>
-                    <input type="radio" class="me-3 mt-3" id="course_{{ course.id }}" name="course_id" value="{{ course.id }}">
-                    <label for="course_{{ course.id }}"><strong>{{ course.name }}</strong></label><br>
-                    Start Date: {{ course.start_date }}<br>
-                    End Date: {{ course.end_date }}<br>
-                    Price: £{{ course.price }}
-                  </li>
-                  {% endfor %}
-                </ul>
-                <p class="mt-3"><strong>Quantity:</strong></p>
-                <div class="form-group w-50">
-                  <div class="input-group">
-                    <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99"
-                      id="id_qty_{{ course.id }}">
-                  </div>
-                </div>
+            <!-- Course Booking Section -->
+            <div class="col-lg-6">
+              <div class="pt-5 pt-lg-0">
+                <h4 class="title-font">Course Booking</h4>
+                <form id="courseForm" class="form" method="POST">
+                  {% csrf_token %}
+                  <div class="form-row">
+                    <div class="col-12">
+                      <ul class="ps-0" style="list-style-type: none;">
+                        {% for course in courses %}
+                        <li>
+                          <input type="radio" class="me-3 mt-3" id="course_{{ course.id }}" name="course_id"
+                            value="{{ course.id }}">
+                          <label for="course_{{ course.id }}"><strong>{{ course.name }}</strong></label><br>
+                          Start Date: {{ course.start_date }}<br>
+                          End Date: {{ course.end_date }}<br>
+                          Price: £{{ course.price }}
+                        </li>
+                        {% endfor %}
+                      </ul>
+                      <div class="col-12">
+                        <p class="mt-3"><strong>Quantity:</strong></p>
+                        <div class="form-group w-50">
+                          <div class="input-group">
+                            <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99"
+                              id="id_qty_{{ course.id }}">
+                          </div>
+                          <div class="input-group">
+                            <input type="submit" class="book-now-button mt-3 mb-3" id="book-now-button" value="Book Now"><br>
+                          </div>
+      
+                          <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        </div>
+                      </div>
+                    </div>
+                </form>
               </div>
             </div>
-          </form>
+            <!-- End Course Booking Section -->
+          </div>
         </div>
+      </section>
+      <!--End Course Booking Section -->
+      
+      <div class="scroll-button shadow-sm rounded">
+        <a class="btt-link d-flex h-100">
+          <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+        </a>
       </div>
-      <!-- End Course Booking Section -->
-    </div>
-  </div>
-</section>
-<!--End About Groups Section -->
-
-{% endblock %}
+      {% endblock %}
+      
+      {% block postloadjs %}
+      {{ block.super }}
+      <script type="text/javascript">
+        $(document).ready(function() {
+          $('#courseForm').submit(function(event) {
+              event.preventDefault();
+      
+              // Get the selected course ID
+              let selectedCourse = $('input[name="course_id"]:checked').val();
+      
+              if (selectedCourse) {
+                  // Construct the action URL manually using jQuery
+                  $(this).attr('action', "/bag/add/" + selectedCourse + "/");
+      
+                  // Submit the form with the correct action URL
+                  this.submit();
+              } else {
+                  alert('Please select a course before submitting.');
+              }
+          });
+      
+          // Scroll to top button functionality
+          $('.btt-link').click(function (e) {
+              window.scrollTo(0, 0);
+          });
+      });

@@ -19,7 +19,7 @@
       <hr>
     </div>
   </div>
-
+<!-- Order summary table -->
   <div class="row">
     <div class="col">
       {% if bag_items %}
@@ -29,8 +29,8 @@
             <tr>
               <th scope="col">Course Name</th>
               <th scope="col">Start Time</th>
-              <th scope="col">Quantity</th>
               <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
               <th scope="col">Subtotal</th>
             </tr>
           </thead>
@@ -43,7 +43,11 @@
             <td class="py-3">
               <p class="my-0">{{ item.course.start_time }}</p>
             </td>
+            <td class="py-3">
+              <p class="my-0">£{{ item.course.price }}</p>
+            </td>
             <td class="py-3 w-25">
+              <!-- Quantity update form -->
               <form class="form update-form" method="POST" action="">
                 {% csrf_token %}
                 <div class="form-group">
@@ -70,18 +74,17 @@
                   </div>
                 </div>
               </form>
-              <a class="update-link text-info"><small>Update</small></a>
-              <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+              <!--Update and remove quantity buttons -->
+              <a class="update-link"><small>Update</small></a>
+              <a class="remove-item float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
             </td>
-            </td>
-            <td class="py-3 w-25">
-              <p class="my-0">£{{ item.course.price }}</p>
             </td>
             <td class="py-3">
               <p class="my-0">£{{ item.course.price }}</p>
             </td>
           </tr>
           {% endfor %}
+          <!-- Bag totals -->
           <tr>
             <td colspan="5" class="pt-5 text-right">
               <h6 class="title-font"><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
@@ -89,6 +92,7 @@
             </td>
           </tr>
           <tr>
+            <!--Home and checkout buttons -->
             <td colspan="5" class="text-right">
               <a href="{% url 'home' %}" class="btn btn-outline-black rounded-0 btn-lg">
                 <span class="icon">
@@ -107,6 +111,7 @@
         </table>
       </div>
       {% else %}
+      <!--Bag empty course links-->
       <p class="lead mb-5 main-heading">Your bag is empty!</p>
       <p class="title-font">View our courses...</p>
       <span class="icon mb-5 d-flex justify-content-between">
@@ -126,6 +131,25 @@
 {% include 'products/includes/quantity_input_script.html' %}
 
 <script type="text/javascript">
+  // Update quantity on click
+  $('.update-link').click(function(e) {
+      var form = $(this).prev('.update-form');
+      form.submit();
+  })
+
+  // Remove item and reload on click
+  $('.remove-item').click(function(e) {
+      var csrfToken = "{{ csrf_token }}";
+      var itemId = $(this).attr('id').split('remove_')[1];
+      var url = `/bag/remove/${itemId}`;
+
+      $.post(url)
+       .done(function() {
+           location.reload();
+       });
+  })
+
+  // scroll to top button 
   $('.btt-link').click(function (e) {
     window.scrollTo(0, 0)
   })

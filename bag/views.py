@@ -14,7 +14,8 @@ def view_bag(request):
 def add_to_bag(request, item_id):
     """ Add a quantity of the course to the shopping bag """
 
-    course = get_object_or_404(Course, pk=item_id)
+    course = Course.objects.get(pk=item_id)
+    #course = get_object_or_404(Course, pk=item_id)
 
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
@@ -23,7 +24,7 @@ def add_to_bag(request, item_id):
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
         messages.success(
-                request, (f"You have added another {course.name} to your bag")
+                request, (f"You have added {course.name} to your bag")
             )
     else:
         bag[item_id] = quantity

@@ -669,6 +669,30 @@ section {
   color: var(--font-color-main);
 }
 
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]+label {
+  display: inline;
+  font-size: 22px;
+  font-family: 'Amatic SC';
+}
+
+input[type="radio"]+label:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+}
+
+input[type="radio"]:checked +label i  {
+  content: '';
+  color: var(--pink);
+  }
+  
+  label i {
+  color: #FFD700; /* Default color of the icon */
+  }
 
 /* -------------------------------- Shopping bag */
 

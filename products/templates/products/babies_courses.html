@@ -86,7 +86,7 @@
             Courses run in 4 week blocks so you will get 4 classes per booking.
             Each of our age groups run every day Monday - Thursday. The times differ
             to give you choice over the most suitable time for you and your child.
-            Each class runs for 90 minutes from the start time, so there is plenty of 
+            Each class runs for 90 minutes from the start time, so there is plenty of
             time for your litte one to enjoy themselves.
           </p>
           <p>
@@ -135,8 +135,24 @@
                   <p class="mt-3"><strong>Quantity:</strong></p>
                   <div class="form-group w-50">
                     <div class="input-group">
+                      <div class="input-group-prepend">
+                        <button class="decrement-qty btn btn-black rounded-0" data-item_id="{{ course.id }}"
+                          id="decrement-qty_{{ course.id }}">
+                          <span class="icon">
+                            <i class="fas fa-minus"></i>
+                          </span>
+                        </button>
+                      </div>
                       <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99"
-                        id="id_qty_{{ course.id }}">
+                        data-item_id="{{ course.id }}" id="id_qty_{{ course.id }}">
+                      <div class="input-group-append">
+                        <button class="increment-qty btn btn-black rounded-0" data-item_id="{{ course.id }}"
+                          id="increment-qty_{{ course.id }}">
+                          <span class="icon">
+                            <i class="fas fa-plus"></i>
+                          </span>
+                        </button>
+                      </div>
                     </div>
                     <div class="input-group">
                       <input type="submit" class="book-now-button mt-3 mb-3" id="book-now-button" value="Book Now"><br>
@@ -163,31 +179,31 @@
 
 {% block postloadjs %}
 {{ block.super }}
+{% include 'products/includes/quantity_input_script.html' %}
+
 <script type="text/javascript">
-  $(document).ready(function() {
-    $('#courseForm').submit(function(event) {
-        event.preventDefault();
+  $(document).ready(function () {
+    $('#courseForm').submit(function (event) {
+      event.preventDefault();
 
-        // Get the selected course ID
-        let selectedCourse = $('input[name="course_id"]:checked').val();
+      // Get the selected course ID
+      let selectedCourse = $('input[name="course_id"]:checked').val();
 
-        if (selectedCourse) {
-            // Construct the action URL manually using jQuery
-            $(this).attr('action', "/bag/add/" + selectedCourse + "/");
+      if (selectedCourse) {
+        // Construct the action URL manually using jQuery
+        $(this).attr('action', "/bag/add/" + selectedCourse + "/");
 
-            // Submit the form with the correct action URL
-            this.submit();
-        } else {
-            alert('Please select a course before submitting.');
-        }
+        // Submit the form with the correct action URL
+        this.submit();
+      } else {
+        alert('Please select a course before submitting.');
+      }
     });
 
     // Scroll to top button functionality
     $('.btt-link').click(function (e) {
-        window.scrollTo(0, 0);
+      window.scrollTo(0, 0);
     });
-});
-
-
+  });
 </script>
 {% endblock %}

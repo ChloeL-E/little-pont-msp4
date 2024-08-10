@@ -14,7 +14,7 @@ def view_bag(request):
 def add_to_bag(request, item_id):
     """ Add a quantity of the course to the shopping bag """
 
-    course = Course.objects.get(pk=item_id)
+    course = get_object_or_404(Course, pk=item_id)
     #course = get_object_or_404(Course, pk=item_id)
 
     quantity = int(request.POST.get('quantity'))

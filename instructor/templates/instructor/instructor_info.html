@@ -13,10 +13,12 @@
 <!-- Hero and about Sections adapted from BootstrapMade.com and W3c schools-->
 <section id="hero">
     <div class="team-container">
-        <h1>{{ instructor.instructor_name }}</h1>
-        <p><strong>Bio:</strong> {{ instructor.bio_description }}</p>
-        <p><strong>Experience:</strong> {{ instructor.experience }}</p>
-        <p><strong>Speciality Age Group:</strong> {{ instructor.speciality_age_group }}</p>
+        <!-- instructor_info.html -->
+<h1>{{ instructor.instructor_name }}</h1>
+<p>ID: {{ instructor.id }}</p>
+<p>Bio: {{ instructor.bio_description }}</p>
+<p>Experience: {{ instructor.experience }}</p>
+<p>Specialty: {{ instructor.speciality_age_group }}</p>
     </div>
 </section>
 <!-- End Hero Section -->
@@ -31,7 +33,6 @@
             </div>
             <div class="team-content">
                 <div class="team-img">
-                    <!--<a href="{% url 'instructor_one' %}"></a>-->
                     <div class="img-overlay">
                         <h4>Holly</h4>
                         <h4>Toddlers and Preschool groups</h4>

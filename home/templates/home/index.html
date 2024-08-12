@@ -163,14 +163,16 @@
         <div class="section-title">
           <h2>Meet Our Team</h2>
         </div>
+        <a href="{% url 'instructor_info' id=4%}">{{ instructor.instructor_name }}</a>
         <div class="team-content">
           <div class="team-img">
             <img src="./media/team-1.webp" alt="">
             <div class="img-overlay">
-              <a href="{% url 'instructor_one' %}">
               <h4>Holly</h4>
-              <h4>Toddlers and Preschool groups</h4>
-            </a>
+              <h4>Toddlers and Preschool groups
+                <pre>{{ context }}</pre>
+              </h4>
+              </a>
             </div>
           </div>
         </div>
@@ -218,10 +220,10 @@
 {% endblock %}
 
 {% block postloadjs %}
-  {{ block.super }}
-  <script type="text/javascript">
-    $('.btt-link').click(function(e) {
-      window.scrollTo(0,0)
-    })
-  </script>
+{{ block.super }}
+<script type="text/javascript">
+  $('.btt-link').click(function (e) {
+    window.scrollTo(0, 0)
+  })
+</script>
 {% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="team-content">
+    <div class="team-img">
+      <img src="{{ instructor.image.url }}" alt="">
+      <div class="img-overlay">
+        <h4>{{ instructor.instructor_name }}</h4>
+        <h4>{{ instructor.speciality_age_group }}</h4>
+      </div>
+    </div>
+  </div>
+  {% endblock %}

@@ -10,66 +10,30 @@
 {% endblock %}
 
 {% block content %}
-<!-- Hero and about Sections adapted from BootstrapMade.com and W3c schools-->
-<section id="hero">
-    <div class="team-container">
         <!-- instructor_info.html -->
-<h1>{{ instructor.instructor_name }}</h1>
-<p>ID: {{ instructor.id }}</p>
-<p>Bio: {{ instructor.bio_description }}</p>
-<p>Experience: {{ instructor.experience }}</p>
-<p>Specialty: {{ instructor.speciality_age_group }}</p>
+        <div class="team-container">
+            <section id="meet-the-team" class="meet-the-team">
+                <div class="icon-box">
+                    <div class="section-title">
+                        <h2>Meet Our Team</h2>
+                        {% for instructor in instructors %}
+                        <div class="team-content">
+                          <div class="team-img">
+                            <img src="{{ instructor.image }}" alt="">
+                            <div class="img-overlay">
+                              <h4>{{ instructor.instructor_name }}</h4>
+                              <h4>{{ instructor.speciality_age_group }}</h4>
+                              <button class="update-link" href="">More about {{ instructor.instructor_name }}</button>
+                           </div>
+                          </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+
     </div>
 </section>
 <!-- End Hero Section -->
-
-
-<!-- Meet the team-->
-<div class="team-container">
-    <section id="meet-the-team" class="meet-the-team">
-        <div class="icon-box">
-            <div class="section-title">
-                <h2>Meet Our Team</h2>
-            </div>
-            <div class="team-content">
-                <div class="team-img">
-                    <div class="img-overlay">
-                        <h4>Holly</h4>
-                        <h4>Toddlers and Preschool groups</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="team-content">
-                <div class="team-img">
-                    <img src="./media/team-2.webp" alt="">
-                    <div class="img-overlay">
-                        <h4>Janine</h4>
-                        <h4>Team manager and teaches all ages</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="team-content">
-                <div class="team-img">
-                    <img src="./media/team-3.webp" alt="">
-                    <div class="img-overlay">
-                        <h4>Joanne</h4>
-                        <h4>Teaches Preschool and Early Years</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="team-content">
-                <div class="team-img">
-                    <img src="./media/team-4.webp" alt="">
-                    <div class="img-overlay">
-                        <h4>Katie</h4>
-                        <h4>Teaches the Babies group</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
-<!--End meet the team section-->
 
 <!-- Contact-->
 <!--End contact section-->

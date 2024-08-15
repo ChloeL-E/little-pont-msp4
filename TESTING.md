@@ -159,7 +159,7 @@ The deployed site sent to friends and young family members to review the site an
 
     * I came across a bug which took some head scratching. The remove button was not removing the item from the bag and the console gave an error 400. I'd initally thought the issue was with the view and found [Codemys](https://www.youtube.com/watch?v=unoBXAfC5aM) video helpful but on further inspection of the console, when trying to remove an item from the bag, the server gave a 403 error. Searching stack overflow and google i found (Bright)[https://brightsec.com/blog/what-is-csrf-token-mismatch-and-6-ways-to-fix-it/]blog about CSRF token mismatch which led me to look further into the ajax request within the javascript i'd written to handle the update and remove quantity within the bag. A variable to get the csrf token is there. However after further reading a (Stack Overflow)[https://stackoverflow.com/questions/22063612/adding-csrftoken-to-ajax-request] post showed me how to pass the CSRF token as a parameter to make it available in the POST request. This fixed the bug.
     
-    * 
+    * Issue with images rendering in the templates. Added image field to instructor model so that i could include image within loop to iterate through instructors and reduce unneccessary html. Images not rendering. Deleted and re-added images directly to django admin. Checked using correct template usage and id accidentally used {%instructor.instructor.image %} rather than accessing it directly using {% instructor.image %}. Images rendered correctly within the loop. 
 
     * 
 - - - 

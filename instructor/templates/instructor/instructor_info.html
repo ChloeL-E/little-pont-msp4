@@ -16,23 +16,22 @@
                 <div class="icon-box">
                     <div class="section-title">
                         <h2>Meet Our Team</h2>
+                    </div>
                         {% for instructor in instructors %}
                         <div class="team-content">
                           <div class="team-img">
-                            <img src="{{ instructor.image }}" alt="">
+                            <img class="w-100" src="{{ instructor.image.url }}" alt="{{ instructor.instructor_name }}">
                             <div class="img-overlay">
                               <h4>{{ instructor.instructor_name }}</h4>
                               <h4>{{ instructor.speciality_age_group }}</h4>
-                              <button class="update-link" href="">More about {{ instructor.instructor_name }}</button>
+                              <a class="update-link" href="{% url 'instructor_detail' instructor.id %}">More about {{ instructor.instructor_name }}</a>
                            </div>
                           </div>
                         </div>
                         {% endfor %}
-                    </div>
-
-
-    </div>
-</section>
+                </div>
+            </section>
+        </div>
 <!-- End Hero Section -->
 
 <!-- Contact-->

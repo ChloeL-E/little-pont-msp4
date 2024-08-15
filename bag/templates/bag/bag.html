@@ -88,8 +88,7 @@
           <!-- Bag totals -->
           <tr>
             <td colspan="5" class="pt-5 text-right">
-              <h6 class="title-font"><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
-              <h4 class="mt-4 title-font"><strong>Grand Total: £{{ total|floatformat:2 }}</strong></h4>
+              <h6 class="title-font"><strong>Total: £{{ total|floatformat:2 }}</strong></h6>
             </td>
           </tr>
           <tr>
@@ -101,7 +100,7 @@
                 </span>
                 <span class="title-font">Back to Home</span>
               </a>
-              <a href="" class="btn btn-black rounded-0 btn-lg">
+              <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
                 <span class="title-font">Secure Checkout</span>
                 <span class="icon">
                   <i class="fas fa-lock"></i>

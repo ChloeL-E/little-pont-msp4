@@ -243,6 +243,13 @@ span .carousel-control-next-icon {
   color: var(--font-color-main);
 }
 
+.sm-font {
+  font-family:var(--font-header);
+  color: var(--font-color-main);
+  font-size: 18px;
+  font-weight: 600;
+}
+
 /*-------------------------------- Section */
 section {
   padding: 60px 0;

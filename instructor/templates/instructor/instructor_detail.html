@@ -12,7 +12,17 @@
 {% block content %}
 <div class="team-content">
     <div class="team-img">
-      <img src="{{ instructor.image.url }}" alt="">
+      {% for instructor in instructors %}
+      <div class="row">
+          <div class="col-2 mb-1">
+                  {% if instructor.instructor.image %}
+                    <img src="{{ instructor.image.url }}" alt="image of {{ instructor.instructor_name }}">
+                  {% else %}
+                      <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ instructor.instructor_name }}">
+                  {% endif %}
+          </div>
+      </div>
+      {% endfor %}
       <div class="img-overlay">
         <h4>{{ instructor.instructor_name }}</h4>
         <h4>{{ instructor.speciality_age_group }}</h4>

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="logo-font mb-4 main-heading text-center">Thank You</h2>
+                <hr>
+                <p>Your order information is below. We have sent your order confirmation to {{ order.email }}. You will
+                    need your order number when you attend the first class</p>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Render order summary-->
+            <div class="col-12 col-lg-7"></div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-7 text-right">
+                <a href="{% url 'view_bag' %}"
+                    class="btn btn-black rounded-0 my-2">
+                    <span class="icon mr-2">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </span>
+                    <span class="text-uppercase">Plan your visit</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="loading-overlay">
+        <div class="text-light logo-font loading-spinner">
+            <span class="icon">
+                <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+            </span>
+        </div>
+    </div>
+</section>
+{% endblock %}

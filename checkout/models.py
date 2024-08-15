@@ -23,7 +23,6 @@ class Order(models.Model):
     country = models.CharField(max_length=40, null=False, blank=False)
     date = models.DateTimeField(auto_now_add=True)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
-    grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
 
     def _generate_order_number(self):
         """
@@ -33,12 +32,12 @@ class Order(models.Model):
 
     def update_total(self):
         """
-        Update grand total each time a line item is edited
+        Update total each time a line item is edited
         """
         self.order_total = self.lineitems.aggregate(
             Sum('lineitem_total')
         )['lineitem_total__sum'] or 0
-        self.grand_total = self.order_total
+        self.total = self.order_total
         self.save()
 
     def save(self, *args, **kwargs):
@@ -65,7 +64,7 @@ class OrderLineItem(models.Model):
         Override the original save method to set the lineitem total
         and update the order total.
         """
-        self.lineitem_total = self.product.price * self.quantity
+        self.lineitem_total = self.course.price * self.quantity
         super().save(*args, **kwargs)
 
     def __str__(self):

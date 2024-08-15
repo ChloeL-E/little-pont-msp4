@@ -300,6 +300,11 @@ section {
 }
 
 /*-------------------------------- About Us */
+
+.icon-box{
+  border-radius: 15px;
+}
+
 .about .icon-box,
 .meet-the-team .icon-box {
   text-align: center;
@@ -563,13 +568,13 @@ section {
   position: fixed;
   bottom: 10px;
   right: 10px;
-  background: var(--purple);
-  border: 1px solid var(--purple);
+  background: var(--pink);
+  border: 1px solid var(--pink);
 }
 
 .scroll-button:hover {
-  background: var(--yellow);
-  border: 1px solid var(--yellow);
+  background: var(--purple);
+  border: 1px solid var(--purple);
 }
 
 .btt-link,
@@ -677,7 +682,7 @@ input[type="radio"]:checked +label i  {
 
 .btt-back-to-courses,
 .update-link:hover {
-  background: var(--green);
+  background: var(--yellow);
 }
 
 .remove-item,
@@ -688,7 +693,7 @@ input[type="radio"]:checked +label i  {
 }
 
 .remove-item:hover {
-  background-color: var(--pink);
+  background-color: var(--purple);
 }
 
 #submit-button{

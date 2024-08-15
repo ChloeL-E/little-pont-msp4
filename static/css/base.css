@@ -688,7 +688,34 @@ input[type="radio"]:checked +label i  {
 }
 
 .remove-item:hover {
-  background-color: var(--purple);
+  background-color: var(--pink);
+}
+
+#submit-button{
+  font-family: var(--font-header), sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 4px 20px;
+  border-radius: 25px;
+  transition: 0.5s;
+  margin: 5px 5px 5px 0;
+  color: #000;
+  width: fit-content;
+  background: var(--green);
+}
+
+#submit-button:hover {
+  background: var(--pink);
+}
+
+.charge-message {
+  color: var(--font-color-main);
+}
+
+.icon-exclaim {
+  color: var(--pink)
 }
 
 /* -------------------------------- Bootsrap Toasts */

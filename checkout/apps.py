@@ -1,1 +1,8 @@
-default_app_config = 'checkout.apps.CheckoutConfig'
+from django.apps import AppConfig
+
+
+class CheckoutConfig(AppConfig):
+    name = 'checkout'
+
+    def ready(self):
+        import checkout.signals

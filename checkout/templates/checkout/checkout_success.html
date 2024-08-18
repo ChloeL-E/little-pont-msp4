@@ -19,9 +19,9 @@
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class="logo-font mb-4 main-heading text-center">Thank You</h2>
+                <h2 class="logo-font mb-4 main-heading ">Thank You</h2>
                 <hr>
-                <p class="title-font text-center">Your order information is below and we have sent an order confirmation to {{ order.email }}</p>
+                <p class="title-font">Your order information is below and we have sent an order confirmation to {{ order.email }}</p>
             </div>
         </div>
         <div class="row">
@@ -174,19 +174,12 @@
             <div class="col-12 col-lg-7 text-right">
                 <a href="{% url 'view_bag' %}"
                     class="btn btn-black rounded-0 my-2 pr-2">
-                    <span class="icon mr-2">
+                    <span class="icon mr-1">
                         <i class="fa-solid fa-location-dot" style="color: var(--pink);"></i>
                     </span>
                     <span class="title-font">Plan your visit</span>
                 </a>
             </div>
-        </div>
-    </div>
-    <div id="loading-overlay">
-        <div class="text-light logo-font loading-spinner">
-            <span class="icon">
-                <i class="fas fa-3x fa-sync-alt fa-spin"></i>
-            </span>
         </div>
     </div>
 </section>

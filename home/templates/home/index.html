@@ -18,7 +18,7 @@
       <div class="intro-container">
         <h2>Welcome to Little Pont</h2>
         <p>Immersive role play and STEM activities center</p>
-        <a href="#" class="book-now-button btn btn-lg rounded-4">Book Now</a>
+        <a href="{% url 'home' %}#courses-overview" class="book-now-button btn btn-lg rounded-4">Book Now</a>
       </div>
     </div>
   </div>
@@ -137,21 +137,25 @@
         <div class="col-md-6 mt-4">
           <div class="icon-box py-3 px-3">
             <span class=" d-flex flex-row align-items-center mx-3"><i class="fa-solid fa-ticket"></i>
-              <h4 class="mx-3">
-                <a href="#">Book Now</a>
+              <h4 id="courses-overview" class="mx-3">
+                Book a Course
               </h4>
             </span>
             <p>
               Come and join us! Our sessions run Monday to Thursday and are age-specific. Bookings are as a
               block of 4 weeks at one session per week. We offer sessions for Babies (0-1years), Toddlers (1-2years),
-              Preschool (3-4 years) and Early years (4-5 years). If your child has siblings, don't worry, please feel
-              free to book them a space too but keep in mind that the STEM activities will be specific to the age-group
-              of the session. Follow the link for more information about course times and to book.
+              Preschool (3-4 years) and Early years (4-5 years). 
             </p>
+            <span class="mb-5 d-flex justify-content-between">
+              <a href="{% url 'babies_courses' %}" class="btt-back-to-courses rounded-4">Babies</a>
+              <a href="{% url 'toddlers_courses' %}" class="btt-back-to-courses rounded-4">Toddlers</a>
+              <a href="{% url 'preschooler_courses' %}" class="btt-back-to-courses rounded-4">Preschool</a>
+              <a href="{% url 'early_years_courses' %}" class="btt-back-to-courses rounded-4">EarlyYears</a>
+          </span>
           </div>
         </div>
         <!-- Meet The Team -->
-        <div class="col-md-6 mt-4">
+        <div id="meet-the-team" class="col-md-6 mt-4">
           <div class="icon-box py-3 px-3">
             <span class="d-flex flex-row align-items-center mx-3">
               <i class="fa-solid fa-people-roof"></i>

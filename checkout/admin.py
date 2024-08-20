@@ -12,15 +12,17 @@ class OrderAdmin(admin.ModelAdmin):
     inlines = (OrderLineItemAdminInline,)
 
     readonly_fields = ('order_number', 'date',
-                       'order_total',)
+                       'order_total', 'total', 'original_bag', 
+                       'stripe_pid')
 
     fields = ('order_number', 'date', 'full_name',
               'email', 'phone_number', 'street_address1',
               'street_address2', 'town_or_city', 'postcode',
-              'county', 'country', 'order_total',)
+              'county', 'country', 'order_total', 'total', 
+              'original_bag', 'stripe_pid')
 
     list_display = ('order_number', 'date', 'full_name',
-                    'order_total',)
+                    'order_total', 'total')
 
     ordering = ('-date',)
 

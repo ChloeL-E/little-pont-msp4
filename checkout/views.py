@@ -42,13 +42,17 @@ def checkout(request):
             'street_address1': request.POST['street_address1'],
             'street_address2': request.POST['street_address2'],
             'town_or_city': request.POST['town_or_city'],
-            'postcode': request.POST['postcode'],
             'county': request.POST['county'],
+            'postcode': request.POST['postcode'],
             'country': request.POST['country'],
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-            order = order_form.save()
+            order = order_form.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_bag = json.dumps(bag)
+            order.save()
             for course_id, quantity in bag.items():
                 try:
                     course = Course.objects.get(id=course_id)

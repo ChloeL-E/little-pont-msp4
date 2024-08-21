@@ -10,7 +10,7 @@
         {{ message }}        
     </div>
 
-{% if total %}
+{% if total and not on_profile_page %}
             <p class="title-font bg-white p-2 mb-0">Your Bag ({{ course_count }})</p>
             <hr>
             <div class="bag-notification-wrapper bg-white px-2">

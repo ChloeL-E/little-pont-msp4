@@ -61,7 +61,6 @@ class StripeWH_Handler:
             try:
                 order = Order.objects.get(
                     full_name=billing_details.name,
-                    user_profile=profile,
                     email=billing_details.email,
                     phone_number=billing_details.phone,
                     street_address1=billing_details.address.line1,
@@ -80,7 +79,6 @@ class StripeWH_Handler:
                 time.sleep(1)
 
         if order_exists:
-            self._send_confirmation_email(order)
             return HttpResponse(
                 content=(f'Webhook received: {event["type"]} | '
                         'SUCCESS: Verified order already in database'),
@@ -91,7 +89,6 @@ class StripeWH_Handler:
             try:
                 order = Order.objects.create(
                     full_name=billing_details.name,
-                    user_profile=profile,
                     email=billing_details.email,
                     phone_number=billing_details.phone,
                     street_address1=billing_details.address.line1,
@@ -117,7 +114,6 @@ class StripeWH_Handler:
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
-        self._send_confirmation_email(order)
         return HttpResponse(
             content=(f'Webhook received: {event["type"]} | '
                     'SUCCESS: Created order in webhook'),

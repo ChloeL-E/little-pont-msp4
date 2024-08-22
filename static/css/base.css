@@ -674,6 +674,7 @@ input[type="radio"]:checked +label i  {
   letter-spacing: 1px;
   display: inline-block;
   padding: 4px 20px;
+  border: 2px solid #000;
   border-radius: 25px;
   transition: 0.5s;
   margin: 5px 5px 5px 0;
@@ -685,9 +686,14 @@ input[type="radio"]:checked +label i  {
   background-color: var(--blue);
 }
 
+#button-control a {
+  text-decoration: none;
+}
+
 .btt-back-to-courses,
 .update-link:hover {
   background: var(--yellow);
+  color: #000;
 }
 
 .remove-item,

@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from .models import Course
 
 # Register models
@@ -10,7 +11,8 @@ class CourseAdmin(admin.ModelAdmin):
         'start_date',
         'end_date',
         'start_time',
-        'price'
+        'price',
+        'instructor',
     )
 
     ordering = ('start_date',)

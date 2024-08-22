@@ -6,7 +6,7 @@ class Instructor(models.Model):
     Instructor model to manage information about the different team members.
     Used as FK within the course model
     """
-
+    primary_course = models.ForeignKey('products.Course', on_delete=models.CASCADE, related_name='primary_instructors', null=True, blank=True)
     instructor_name = models.CharField(max_length=50)
     bio_description = models.TextField()
     experience = models.TextField()

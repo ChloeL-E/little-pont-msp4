@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Course(models.Model):
     """
     Course model for managing information about the various courses.
@@ -12,6 +13,7 @@ class Course(models.Model):
         ('Early Years', 'Early Years'),
     )
 
+    instructor = models.ForeignKey('instructor.Instructor', on_delete=models.CASCADE, related_name='courses', null=True, blank=True)
     name = models.CharField(max_length=100)
     description = models.TextField()
     start_date = models.DateField(null=True, blank=True)
@@ -19,8 +21,7 @@ class Course(models.Model):
     start_time = models.TimeField(null=True, blank=True)
     price = models.DecimalField(max_digits=5, decimal_places=2)
     age_group = models.CharField(max_length=11, choices=AGE_GROUP)
-    # instructor = models.ForeignKey('Instructor', on_delete=models.CASCADE)
-    is_active = models.BooleanField(default=True)
+    
 
     def __str__(self):
         """

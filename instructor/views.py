@@ -16,6 +16,7 @@ def instructor_info(request):
 
 def instructor_detail(request, instructor_id):
     """ A view to display details of a specific instructor """
+    
     instructor = get_object_or_404(Instructor, pk=instructor_id)
     context = {
         'instructor': instructor,

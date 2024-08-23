@@ -161,7 +161,7 @@ The deployed site sent to friends and young family members to review the site an
     
     * Issue with images rendering in the templates. Added image field to instructor model so that i could include image within loop to iterate through instructors and reduce unneccessary html. Images not rendering. Deleted and re-added images directly to django admin. Checked using correct template usage and id accidentally used {%instructor.instructor.image %} rather than accessing it directly using {% instructor.image %}. Images rendered correctly within the loop. 
 
-    * 
+    * I had an issue with the instructor and course model relationships. I was trying to display the courses linked to each instructor but what i actually nneded to do was to display the age-group associated with each instructor. I had created a fk on both the course and instructor models which was unnecessary. I also didnt require the speciality_age_group on the instructor model as i could access the age_group using the fk on the course model to access age_group. I made these changes then adjusted the view to filter the course objects by age_group. Then i was able to access the age-group associated with the intructor in the template.
 - - - 
 
 

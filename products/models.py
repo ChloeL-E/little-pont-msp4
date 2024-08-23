@@ -27,4 +27,4 @@ class Course(models.Model):
         """
         Return the course name as its string representation.
         """
-        return self.name
+        return f"{self.name} ({self.age_group})"

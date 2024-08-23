@@ -1,4 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
+from django.db.models import Q
+from django.db.models.functions import Lower
 
 from instructor.models import Instructor
 from .models import Course
@@ -6,48 +9,55 @@ from .forms import ProductForm
 
 # Create your views here.
 
-def babies_courses(request):
-    """ A view to display all babies courses available """
-    babies_courses = Course.objects.filter(age_group='Babies')
-    instructor = Instructor.objects.all()
+def all_courses(request):
+    """ A view to display all the courses available """
+
+    courses = Course.objects.all()
+    sort = None
+    direction = None
+
+    if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                courses = courses.annotate(lower_name=Lower('name'))
+            if sortkey == 'age_group':
+                sortkey = 'age_group'
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            courses = courses.order_by(sortkey)
 
     context = {
-        'courses': babies_courses,
+        'courses': courses,
     }
-    return render(request, 'products/babies_courses.html', context)
+
+    return render(request, 'products/all_courses.html', context)
+    """ A view to display all the courses available """
 
 
-def toddlers_courses(request):
-    """ A view to display all toddlers courses available """
-    toddlers_courses = Course.objects.filter(age_group='Toddler')
+def courses_by_age_group(request, age_group):
+    """ A view to display courses based on the age group """
+    courses = Course.objects.filter(age_group=age_group)
     instructor = Instructor.objects.all()
 
-    context = {
-        'courses': toddlers_courses,
-    }
-    return render(request, 'products/toddlers_courses.html', context)
-
-
-def preschooler_courses(request):
-    """ A view to display all preschool courses available """
-    preschooler_courses = Course.objects.filter(age_group='Preschool')
-    instructor = Instructor.objects.all()
+    # Convert the age group to match the template filename
+    template_name = age_group.replace(' ', '_').lower()
+    # Handle specific cases
+    if template_name == "preschool":
+        template_name = "preschooler"
+    if template_name == "toddler":
+        template_name = "toddlers"
 
     context = {
-        'courses': preschooler_courses,
+        'courses': courses,
+        'age_group': age_group,
+        'instructor': instructor,
     }
-    return render(request, 'products/preschooler_courses.html', context)
-
-
-def early_years_courses(request):
-    """ A view to display all early years courses available """
-    early_years_courses = Course.objects.filter(age_group='Early Years')
-    instructor = Instructor.objects.all()
-
-    context = {
-        'courses': early_years_courses,
-    }
-    return render(request, 'products/early_years_courses.html', context)
+    return render(request, f'products/{template_name}_courses.html', context)
 
 
 def add_product(request):

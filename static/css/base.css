@@ -200,17 +200,17 @@ span .carousel-control-next-icon {
   display: inline-block;
   padding: 8px 32px;
   border-radius: 25px;
+  border: 1px solid var(--font-color-main);
   transition: 0.5s;
   margin-top: 15px;
   background: var(--green);
   color: #000;
   width: 150px;
-  border: 1px solid var(--green);
 }
   
 .book-now-button:hover {
   background: var(--pink);
-  border-color: var(--pink);
+  border-color: var(--font-color-main);
 }
 
 .text-black {
@@ -569,7 +569,7 @@ section {
   bottom: 10px;
   right: 10px;
   background: var(--pink);
-  border: 1px solid var(--pink);
+  border: 1px solid var(--font-color-main);
 }
 
 .scroll-button:hover {
@@ -674,12 +674,13 @@ input[type="radio"]:checked +label i  {
   letter-spacing: 1px;
   display: inline-block;
   padding: 4px 20px;
-  border: 2px solid #000;
+  border: 1px solid var(--font-color-main);
   border-radius: 25px;
   transition: 0.5s;
   margin: 5px 5px 5px 0;
   color: #000;
   width: fit-content;
+  text-align: center;
 }
 
 .update-link {
@@ -714,6 +715,7 @@ input[type="radio"]:checked +label i  {
   letter-spacing: 1px;
   display: inline-block;
   padding: 4px 20px;
+  border: 1px solid var(--font-color-main);
   border-radius: 25px;
   transition: 0.5s;
   margin: 5px 5px 5px 0;
@@ -801,17 +803,17 @@ input[name='q']::placeholder {
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
 /* btn */
-display: inline-block;
+  display: inline-block;
   font-weight: 400;
-  color: #fff;
+  color: #000;
   text-align: center;
   vertical-align: middle;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #000;
-  border: 1px solid #000;
+  background-color: var(--pink);
+  border: 1px solid var(--font-color-main);
   padding: .375rem .75rem;
   font-size: 1rem;
   line-height: 1.5;
@@ -823,7 +825,7 @@ display: inline-block;
 
 .allauth-form-inner-content button:hover,
 .allauth-form-inner-content input[type='submit']:hover {	
-color: #fff;
+  color: #fff;
   background-color: #222;
   border-color: #222;
 }

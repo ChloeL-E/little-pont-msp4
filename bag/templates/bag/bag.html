@@ -114,10 +114,10 @@
       <p class="lead mb-5 main-heading">Your bag is empty!</p>
       <p class="title-font">View our courses...</p>
       <span class="icon mb-5 d-flex justify-content-between">
-        <a href="{% url 'babies_courses' %}" class="btt-back-to-courses rounded-4">Babies</a>
-        <a href="{% url 'toddlers_courses' %}" class="btt-back-to-courses rounded-4">Toddlers</a>
-        <a href="{% url 'preschooler_courses' %}" class="btt-back-to-courses rounded-4">Preschool</a>
-        <a href="{% url 'early_years_courses' %}" class="btt-back-to-courses rounded-4">EarlyYears</a>
+        <a href="{% url 'courses_by_age_group' age_group='Babies' %}">Babies Courses</a>
+        <a href="{% url 'courses_by_age_group' age_group='Toddler' %}">Toddlers Courses</a>
+        <a href="{% url 'courses_by_age_group' age_group='Preschool' %}">Preschool Courses</a>
+        <a href="{% url 'courses_by_age_group' age_group='Early Years' %}">Early Years Courses</a>      
       </span>
       {% endif %}
     </div>

@@ -144,14 +144,14 @@
             <p>
               Come and join us! Our sessions run Monday to Thursday and are age-specific. Bookings are as a
               block of 4 weeks at one session per week. We offer sessions for Babies (0-1years), Toddlers (1-2years),
-              Preschool (3-4 years) and Early years (4-5 years). 
+              Preschool (3-4 years) and Early years (4-5 years).
             </p>
             <span class="mb-5 d-flex justify-content-between">
-              <a href="{% url 'babies_courses' %}" class="btt-back-to-courses rounded-4">Babies</a>
-              <a href="{% url 'toddlers_courses' %}" class="btt-back-to-courses rounded-4">Toddlers</a>
-              <a href="{% url 'preschooler_courses' %}" class="btt-back-to-courses rounded-4">Preschool</a>
-              <a href="{% url 'early_years_courses' %}" class="btt-back-to-courses rounded-4">EarlyYears</a>
-          </span>
+              <a href="{% url 'courses_by_age_group' age_group='Babies' %}" class="btt-back-to-courses rounded-4">Babies</a>
+              <a href="{% url 'courses_by_age_group' age_group='Toddler' %}" class="btt-back-to-courses rounded-4">Toddlers</a>
+              <a href="{% url 'courses_by_age_group' age_group='Preschool' %}" class="btt-back-to-courses rounded-4">Preschool</a>
+              <a href="{% url 'courses_by_age_group' age_group='Early Years' %}" class="btt-back-to-courses rounded-4">Early Years</a>
+            </span>
           </div>
         </div>
         <!-- Meet The Team -->

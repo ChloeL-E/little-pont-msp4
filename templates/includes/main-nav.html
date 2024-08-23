@@ -28,10 +28,11 @@
                     Courses
                 </a>
                 <div class="dropdown-menu border-0" id="course-dropdown" aria-labelledby="courses-link">
-                    <a href="{% url 'babies_courses' %}" class="dropdown-item">Babies</a>
-                    <a href="{% url 'toddlers_courses' %}" class="dropdown-item">Toddlers</a>
-                    <a href="{% url 'preschooler_courses' %}" class="dropdown-item">Preschool</a>
-                    <a href="{% url 'early_years_courses' %}" class="dropdown-item">Early Years</a>
+                    <a href="{% url 'all_courses' %}" class="dropdown-item">View all our courses</a>
+                    <a href="{% url 'courses_by_age_group' age_group='Babies' %}" class="dropdown-item">Babies Courses</a>
+                    <a href="{% url 'courses_by_age_group' age_group='Toddler' %}" class="dropdown-item">Toddlers Courses</a>
+                    <a href="{% url 'courses_by_age_group' age_group='preschool' %}" class="dropdown-item">Preschool Courses</a>
+                    <a href="{% url 'courses_by_age_group' age_group='Early Years' %}" class="dropdown-item">Early Years Courses</a>
                 </div>
             </li>
 

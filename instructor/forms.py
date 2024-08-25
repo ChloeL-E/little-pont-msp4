@@ -3,6 +3,7 @@ from .models import Instructor
 
 
 class InstructorForm(forms.ModelForm):
+    """ A form to add a new instructor"""
 
     class Meta:
         model = Instructor

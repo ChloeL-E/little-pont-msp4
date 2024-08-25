@@ -34,3 +34,24 @@
 </div>
 </section>
 {% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+  $(document).ready(function() {
+      // Initialize datepicker
+      $('.datepicker').datepicker({
+          format: 'yyyy-mm-dd',
+          autoclose: true,
+          todayHighlight: true
+      });
+
+      // Initialize timepicker
+      $('.timepicker').timepicker({
+          showMeridian: false,  // 24-hour format
+          defaultTime: false,   // No default time set
+          minuteStep: 1         // Step interval for minutes
+      });
+  });
+</script>
+{% endblock %}

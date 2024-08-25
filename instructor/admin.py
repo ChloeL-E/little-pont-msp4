@@ -17,4 +17,4 @@ class InstructorAdmin(admin.ModelAdmin):
 
 admin.site.register(Instructor, InstructorAdmin)
 
-# Register your models here.
+

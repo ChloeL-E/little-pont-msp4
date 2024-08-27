@@ -40,11 +40,11 @@ def add_instructor(request):
         return redirect("home")
     
     if request.method == "POST":
-        form = InstructorForm(request.POST)
+        form = InstructorForm(request.POST, request.FILES)  # if an image atached
         if form.is_valid():
             instructor = form.save()
             messages.success(request, "Successfully added a new member to our team!")
-            return redirect(reverse("instructor_info", args=[instructor.id]))
+            return redirect(reverse("instructor_info"))
         else:
             messages.error(
                 request, "Sorry! You failed to add a new instructor. \

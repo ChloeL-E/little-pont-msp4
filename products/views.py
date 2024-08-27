@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
@@ -36,7 +37,6 @@ def all_courses(request):
     }
 
     return render(request, 'products/all_courses.html', context)
-    """ A view to display all the courses available """
 
 
 def courses_by_age_group(request, age_group):
@@ -58,8 +58,13 @@ def courses_by_age_group(request, age_group):
     return render(request, f'products/{template_name}_courses.html', context)
 
 
+@login_required
 def add_course(request):
     """ Add a Course to the site """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only site administrators can do that.')
+        return redirect(reverse('home'))
+    
     if request.method == 'POST':
         form = ProductForm(request.POST)
         if form.is_valid():
@@ -79,8 +84,13 @@ def add_course(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_course(request, course_id):
     """ Edit a course """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+    
     course= get_object_or_404(Course, pk=course_id)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=course)
@@ -101,3 +111,16 @@ def edit_course(request, course_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_course(request, course_id):
+    """ Delete a course """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+    
+    course = get_object_or_404(Course, pk=course_id)
+    course.delete()
+    messages.success(request, 'course deleted!')
+    return redirect(reverse('all_courses'))

@@ -65,8 +65,14 @@
                                     Price: £{{ course.price }}<br>
                                     Instructor: {{ course.instructor }}<br>
                                 </p>
+                                {% if request.user.is_superuser %}
+                                <div class="ml-3 superuser-controls">
+                                    <a class="update-link" href="{% url 'edit_course' course.id %}">Edit</a>
+                                    <a class="remove-item" href="{% url 'delete_course' course.id %}">Delete</a>
+                                </div>
+                                {% endif %}
                             </div>
-                        </div>                   
+                        </div>
                     </div>
                 </div>
             </div>
@@ -95,12 +101,12 @@
     </div>
 </div>
 </div>
- <!-- scroll button-->
- <div class="scroll-button shadow-sm rounded">
+<!-- scroll button-->
+<div class="scroll-button shadow-sm rounded">
     <a class="btt-link d-flex h-100">
-      <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+        <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
     </a>
-  </div>
+</div>
 
 {% endblock %}
 

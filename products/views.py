@@ -60,10 +60,20 @@ def courses_by_age_group(request, age_group):
     return render(request, f'products/{template_name}_courses.html', context)
 
 
-def add_product(request):
+def add_course(request):
     """ Add a Course to the site """
-    form = ProductForm()
-    template = 'products/add_product.html'
+    if request.method == 'POST':
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Course added successfully!')
+            return redirect('course_list')  # Replace 'course_list' with your target view after submission
+        else:
+            messages.error(request, 'Failed to add course. Please ensure the form is valid.')
+    else:
+        form = ProductForm()
+
+    template = 'products/add_course.html'
     context = {
         'form': form,
     }

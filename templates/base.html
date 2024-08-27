@@ -57,14 +57,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
-    <!--Datepicker-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/daterangepicker.min.js" 
-    integrity="sha512-mh+AjlD3nxImTUGisMpHXW03gE6F4WdQyvuFRkjecwuWLwD2yCijw4tKA3NsEFpA1C3neiKhGXPSIGSfCYPMlQ==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!--Timepicker-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js" 
-    integrity="sha512-2xXe2z/uA+2SyT/sTSt9Uq4jDKsT0lV4evd3eoE/oxKih8DSAsOF6LUb+ncafMJPAimWAXdu9W+yMXGrCVOzQA==" crossorigin="anonymous" 
-    referrerpolicy="no-referrer"></script>
     <!-- Stripe -->
     <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
@@ -96,7 +88,7 @@
                             <div class="dropdown-menu border-0" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                <a href="{% url 'add_product' %}" class="dropdown-item">Course Management</a>
+                                <a href="{% url 'add_course' %}" class="dropdown-item">Course Management</a>
                                 <a href="{% url 'add_instructor' %}" class="dropdown-item">Team Management</a>
                                 {% endif %}
                                 <a href="{% url 'profile' %}"  class="dropdown-item">My Profile</a>
@@ -167,7 +159,5 @@
         $('.toast').toast('show');
     </script>
     {% endblock %}
-
-
 </body>
 </html>

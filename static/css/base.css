@@ -89,6 +89,43 @@ header {
   width: 1.5rem;
 } 
 
+.text-black {
+  color: #000 !important;
+}
+
+.text-grey {
+  color: var(--font-color-main);
+}
+
+.font-weight-bold {
+  font-weight: 800 !important;
+}
+
+.border-black {
+  border: 1px solid #000 !important;
+}
+
+.main-heading {
+  font-family: var(--font-header);
+  font-weight: 600;
+  font-size: 44px;
+  color: var(--font-color-main);
+}
+
+.title-font {
+  font-family: var(--font-header);
+  font-weight: 600;
+  font-size: 28px;
+  color: var(--font-color-main);
+}
+
+.sm-font {
+  font-family:var(--font-header);
+  color: var(--font-color-main);
+  font-size: 18px;
+  font-weight: 600;
+}
+
 /*  -------------------------------- Home page */
 /* Hero Image Carousel*/
 
@@ -213,43 +250,6 @@ span .carousel-control-next-icon {
   border-color: var(--font-color-main);
 }
 
-.text-black {
-  color: #000 !important;
-}
-
-.text-grey {
-  color: var(--font-color-main);
-}
-
-.font-weight-bold {
-  font-weight: 800 !important;
-}
-
-.border-black {
-  border: 1px solid #000 !important;
-}
-
-.main-heading {
-  font-family: var(--font-header);
-  font-weight: 600;
-  font-size: 44px;
-  color: var(--font-color-main);
-}
-
-.title-font {
-  font-family: var(--font-header);
-  font-weight: 600;
-  font-size: 24px;
-  color: var(--font-color-main);
-}
-
-.sm-font {
-  font-family:var(--font-header);
-  color: var(--font-color-main);
-  font-size: 18px;
-  font-weight: 600;
-}
-
 /*-------------------------------- Section */
 section {
   padding: 60px 0;
@@ -261,7 +261,7 @@ section {
 
 .section-title {
   text-align: center;
-  padding-bottom: 30px;
+  padding: 30px 5px;
 }
 
 .section-title h2,
@@ -404,8 +404,10 @@ section {
   color: var(--font-color-main);
 }
 
+.courses-home:hover,
 .what-we-offer .icon-box h4 a:hover {
   color: var(--pink);
+  text-decoration: none;
 }
 
 .what-we-offer .icon-box i {

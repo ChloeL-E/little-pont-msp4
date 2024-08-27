@@ -5,9 +5,9 @@ django-countries==7.2.1
 django-crispy-forms==1.14.0
 oauthlib==3.2.2
 pillow==10.4.0
-PyJWT==2.8.0
+PyJWT==2.9.0
 python3-openid==3.2.0
 pytz==2024.1
 requests-oauthlib==2.0.0
 sqlparse==0.5.1
-stripe==10.7.0
+stripe==10.8.0

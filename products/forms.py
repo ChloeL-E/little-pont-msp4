@@ -1,50 +1,38 @@
 from django import forms
 
-from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Submit, Field
-from .widgets import DateInput, TimeInput
-
+from instructor.models import Instructor
 from .models import Course
 
-class ProductForm(forms.ModelForm):
-    start_date = forms.DateField(
-        widget=DateInput(format='%Y-%m-%d'),
-        input_formats=['%Y-%m-%d'],
-        required=False
-    )
-    end_date = forms.DateField(
-        widget=DateInput(format='%Y-%m-%d'),
-        input_formats=['%Y-%m-%d'],
-        required=False
-    )
-    start_time = forms.TimeField(
-        widget=TimeInput(format='%H:%M'),
-        input_formats=['%H:%M'],
-        required=False
-    )
 
+class DateInput(forms.DateInput):
+    input_type = 'date'
+
+
+class TimeInput(forms.TimeInput):
+    input_type = 'time'
+
+
+class ProductForm(forms.ModelForm):
     class Meta:
         model = Course
         fields = '__all__'
+        widgets = {
+            'start_date': DateInput(),
+            'end_date': DateInput(),
+            'start_time': TimeInput()
+        }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        instructor_name = Instructor.objects.all() # Fetch all instructors
+        courses = Course.objects.all()  # Fetch all courses
+        course_choices = [("  ")] + [(course.id, course.age_group) for course in courses]
 
-        # Initialize Crispy Forms helper
-        self.helper = FormHelper()
-        self.helper.layout = Layout(
-            Field('name', css_class='form-control rounded-2'),
-            Field('description', css_class='form-control rounded-2'),
-            Field('start_date', css_class='form-control datepicker rounded-2'),
-            Field('end_date', css_class='form-control datepicker rounded-2'),
-            Field('start_time', css_class='form-control timepicker rounded-2'),
-            Field('price', css_class='form-control rounded-2'),
-            Field('age_group', css_class='form-control rounded-2'),
-            Field('instructor', css_class='form-control rounded-2'),
-            Submit('submit', 'Save')
-        )
-
-        # Define placeholders
+        self.fields['age_group'].choices = course_choices
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'rounded-2'
+            field.widget.attrs['style'] = 'border: 1px solid #ffe6f2; box-shadow: 0 1px 3px 0 #ffe6f2;'
+       
         placeholders = {
             'name': 'Course Name',
             'description': 'Course Description',
@@ -56,21 +44,12 @@ class ProductForm(forms.ModelForm):
             'instructor': 'Lead Instructor',
         }
 
-        # Set placeholder and other attributes for each field
+        self.fields['name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if self.fields[field].required:
                 placeholder = f'{placeholders[field]} *'
+                self.fields[field].label = False
             else:
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = ' rounded-2'
-            self.fields[field].widget.attrs['style'] = 'border: 1px solid #ffe6f2; box-shadow: 0 1px 3px 0 #ffe6f2;'
-        self.fields[field].label = False
-
-        # Set autofocus on the first field
-        self.fields['name'].widget.attrs['autofocus'] = True
-
-        # Customizing the choices for 'age_group'
-        courses = Course.objects.all()
-        course_choices = [("", "Select an Age Group")] + [(course.id, course.age_group) for course in courses]
-        self.fields['age_group'].choices = course_choices
+            

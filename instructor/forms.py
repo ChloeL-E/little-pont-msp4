@@ -29,15 +29,15 @@ class InstructorForm(forms.ModelForm):
             field.widget.attrs['class'] = 'rounded-2'
             field.widget.attrs['style'] = 'border: 1px solid #ffe6f2; box-shadow: 0 1px 3px 0 #ffe6f2;'
        
+        self.fields['instructor_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            if field != 'speciality_age_group':
-                if self.fields[field].required:
-                    placeholder = f'{placeholders[field]} *'
-                else:
-                    placeholder = placeholders[field]
-                self.fields[field].widget.attrs['placeholder'] = placeholder
-        
-        self.fields[field].label = False
+            if self.fields[field].required:
+                placeholder = f'{placeholders[field]} *'
+                self.fields[field].label = False
+            else:
+                placeholder = placeholders[field]
+            self.fields[field].widget.attrs['placeholder'] = placeholder
+                   
 
 
 

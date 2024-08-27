@@ -15,13 +15,13 @@
     <div class="row">
       <div class="col">
         <hr>
-        <h2 class="logo-font mb-4 main-heading text-center">Add a Course</h2>
+        <h1 class="logo-font mb-4 main-heading text-center">Add a Course</h1>
         <hr>
       </div>
     </div>
     <div class="row">
         <div class="col-12 col-md-6">
-            <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
+            <form method="POST" action="{% url 'add_course' %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
                 <div id="button-control" class="text-right">
@@ -33,25 +33,4 @@
     </div>
 </div>
 </section>
-{% endblock %}
-
-{% block postloadjs %}
-{{ block.super }}
-<script type="text/javascript">
-  $(document).ready(function() {
-      // Initialize datepicker
-      $('.datepicker').datepicker({
-          format: 'yyyy-mm-dd',
-          autoclose: true,
-          todayHighlight: true
-      });
-
-      // Initialize timepicker
-      $('.timepicker').timepicker({
-          showMeridian: false,  // 24-hour format
-          defaultTime: false,   // No default time set
-          minuteStep: 1         // Step interval for minutes
-      });
-  });
-</script>
 {% endblock %}

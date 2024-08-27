@@ -10,23 +10,12 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid">
+<div class="container-fluid pl-5">
     <div class="row">
-        <div class="col text-center mt-3">
-            <h2 class="logo-font">Courses</h2>
+        <header class="col text-center section-title">
+            <h3>Courses</h3>
             <form method="GET" action="{% url 'all_courses' %}">
-                <select name="age_group">
-                    <option value="">Age Groups</option>
-                    <option value="Babies" {% if selected_age_group == "Babies" %}selected{% endif %}>Babies</option>
-                    <option value="Toddlers" {% if selected_age_group == "Toddlers" %}selected{% endif %}>Toddlers
-                    </option>
-                    <option value="Preschool" {% if selected_age_group == "Preschool" %}selected{% endif %}>Preschool
-                    </option>
-                    <option value="Early_Years" {% if selected_age_group == "Early Years" %}selected{% endif %}>Early
-                        Years</option>
-                </select>
-
-                <select name="sort">
+                <select class="sm-font" name="sort">
                     <option value="name" {% if current_sorting == "name_asc" %}selected{% endif %}>Name (A-Z)</option>
                     <option value="name" {% if current_sorting == "name_desc" %}selected{% endif %}>Name (Z-A)</option>
                     <option value="age_group" {% if current_sorting == "age_group_asc" %}selected{% endif %}>Age Group
@@ -47,28 +36,29 @@
                         Start Time
                         (latest to earliest)</option>
                 </select>
-                <input type="submit" value="Filter">
+                <input class="remove-item" type="submit" value="Filter">
             </form>
             <div class="col-12 col-md-6 order-md-first">
                 <p class="text-muted mt-3 text-center text-md-left">
                     {% if current_sorting != 'None_None' %}
-                    <span class="small"><a href="{% url 'all_courses' %}">Courses Home</a> | </span>
+                    <span><a class="sm-font courses-home" href="{% url 'all_courses' %}">Courses Home</a> | </span>
                     {% endif %}
                 </p>
             </div>
-        </div>
+        </header>
         <div class="row">
             {% for course in courses %}
             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card h-100 border-0">
                     <div class="card-body pb-0">
-                        <a href="{% url 'courses_by_age_group' course.age_group %}">{{ course.name }}</a>
+                        <a class="title-font courses-home"
+                            href="{% url 'courses_by_age_group' course.age_group %}">{{ course.name }}</a>
                         <p class="mb-0"></p>
                     </div>
                     <div class="card-footer bg-white pt-0 border-0 text-left">
                         <div class="row">
                             <div class="col">
-                                <p class="lead mb-0 text-left font-weight-bold">
+                                <p class="mb-0 text-left">
                                     Start Date: {{ course.start_date }}<br>
                                     End Date: {{ course.end_date }}<br>
                                     Start Time: {{ course.start_time }}<br>
@@ -76,7 +66,7 @@
                                     Instructor: {{ course.instructor }}<br>
                                 </p>
                             </div>
-                        </div>
+                        </div>                   
                     </div>
                 </div>
             </div>
@@ -105,21 +95,17 @@
     </div>
 </div>
 </div>
-<div class="btt-button shadow-sm rounded-0 border border-black">
+ <!-- scroll button-->
+ <div class="scroll-button shadow-sm rounded">
     <a class="btt-link d-flex h-100">
-        <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+      <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
     </a>
-</div>
+  </div>
+
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
-    $('.btt-link').click(function (e) {
-        window.scrollTo(0, 0)
-    })
-</script>
-
 <script type="text/javascript">
     $('#sort-selector').change(function () {
         var selector = $(this);
@@ -140,6 +126,10 @@
 
             window.location.replace(currentUrl);
         }
+    })
+
+    $('.btt-link').click(function (e) {
+        window.scrollTo(0, 0)
     })
 </script>
 {% endblock %}

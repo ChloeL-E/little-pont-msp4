@@ -1,0 +1,1 @@
+web: gunicorn little_pont.wsgi:application

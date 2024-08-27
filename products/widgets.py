@@ -1,5 +1,6 @@
 from django import forms
 
+
 class DateInput(forms.DateInput):
     input_type = 'text'
     template_name = 'django/forms/widgets/date.html'

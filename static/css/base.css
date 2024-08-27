@@ -312,7 +312,7 @@ section {
 .about .icon-box,
 .meet-the-team .icon-box {
   text-align: center;
-  padding: 30px 20px;
+  padding: 20px;
   transition: all ease-in-out 0.3s;
   background: #fff;
 }
@@ -438,6 +438,10 @@ section {
 
 
 /* -------------------------------- Meet The Team */
+
+#meet-the-team {
+  padding: 20px 0;
+}
 
 .team-container {
   width: 100%;
@@ -802,11 +806,13 @@ input[name='q']::placeholder {
 }
 
 .allauth-form-inner-content button,
+.allauth-form-inner-content a,
 .allauth-form-inner-content input[type='submit'] {
 /* btn */
   display: inline-block;
-  font-weight: 400;
+  font-weight: 700;
   color: #000;
+  font-family: var(--font-header);
   text-align: center;
   vertical-align: middle;
   -webkit-user-select: none;
@@ -814,25 +820,35 @@ input[name='q']::placeholder {
   -ms-user-select: none;
   user-select: none;
   background-color: var(--pink);
-  border: 1px solid var(--font-color-main);
+  border: 1px solid #000;
   padding: .375rem .75rem;
   font-size: 1rem;
   line-height: 1.5;
-  border-radius: 0;
+  border-radius: 15px;
 
   /* standard bootstrap btn transitions */
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 .allauth-form-inner-content button:hover,
+.allauth-form-inner-content a:hover,
 .allauth-form-inner-content input[type='submit']:hover {	
-  color: #fff;
-  background-color: #222;
-  border-color: #222;
+  color: #000;
+  border-color: #000;
+}
+
+.allauth-form-inner-content button:hover,
+.allauth-form-inner-content input[type='submit']:hover {	
+  background-color: var(--purple);
 }
 
 .allauth-form-inner-content a {
-  color: #a9def9; /* text-info */
+  background-color: var(--blue);
+  text-decoration: none;
+}
+
+.allauth-form-inner-content a:hover {
+  background-color: var(--green);
 }
 
 /* -------------------------------- Instructor Form */

@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-g0u^e6@e5_d4#%pjt54@bp(s6=f67om0o1*vbhac-r9fxjt(wy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','8000-chloele-littlepontmsp4-jfcyz069qfa.ws.codeinstitute-ide.net', 'little-pont-role-play.heroku.com']
+ALLOWED_HOSTS = ['localhost', 'little-pont-role-play-855c26627652.herokuapp.com']
 
 
 # Application definition

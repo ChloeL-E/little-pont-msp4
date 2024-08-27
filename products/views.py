@@ -67,7 +67,7 @@ def add_course(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Course added successfully!')
-            return redirect('course_list')  # Replace 'course_list' with your target view after submission
+            return redirect('all_courses') 
         else:
             messages.error(request, 'Failed to add course. Please ensure the form is valid.')
     else:

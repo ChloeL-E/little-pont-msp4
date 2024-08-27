@@ -45,6 +45,12 @@
               </p>
               <p>{{ instructor.bio_description }}</p>
               <p>{{ instructor.experience }}</p>
+              {% if request.user.is_superuser %}
+              <div class="ml-3 superuser-controls">
+                <a class="update-link" href="{% url 'edit_instructor' instructor.id %}">Edit</a>
+                <a class="remove-item" href="{% url 'delete_instructor' instructor.id %}">Delete</a>
+              </div>
+              {% endif %}
             </div>
           </div>
         </div>

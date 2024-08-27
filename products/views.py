@@ -47,8 +47,6 @@ def courses_by_age_group(request, age_group):
     # Convert the age group to match the template filename
     template_name = age_group.replace(' ', '_').lower()
     # Handle specific cases
-    if template_name == "preschool":
-        template_name = "preschooler"
     if template_name == "toddler":
         template_name = "toddlers"
 

@@ -524,7 +524,7 @@ section {
 
 #about-groups {
   background: #fff;
-  padding: 60px 0 60px 0;
+  padding: 60px 0 0 0;
   overflow: hidden;
 }
 
@@ -731,6 +731,15 @@ input[name='q']::placeholder {
   color: #aab7c4;
 }
 
+
+/* -------------------------------- Instructor */
+
+.img-overlay a:hover,
+.superuser-controls a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
 /* -------------------------------- Bootsrap Toasts */
 
 .message-container {
@@ -771,7 +780,8 @@ input[name='q']::placeholder {
   background-color: var(--pink)!important;
 }
 
-/* Allauth form formatting */
+
+/* -------------------------------- Allauth form formatting */
 
 .allauth-form-inner-content p {
   margin-top: 1.5rem; /* mt-4 */

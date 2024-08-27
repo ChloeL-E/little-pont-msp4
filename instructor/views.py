@@ -44,7 +44,7 @@ def add_instructor(request):
         if form.is_valid():
             instructor = form.save()
             messages.success(request, "Successfully added a new member to our team!")
-            return redirect(reverse("instructor_info"))
+            return redirect(reverse('instructor_detail', args=[instructor.id]))
         else:
             messages.error(
                 request, "Sorry! You failed to add a new instructor. \
@@ -60,3 +60,34 @@ def add_instructor(request):
 
     return render(request, template, context)
 
+
+def edit_instructor(request, instructor_id):
+    """ Edit a course """
+    instructor= get_object_or_404(Instructor, pk=instructor_id)
+    if request.method == 'POST':
+        form = InstructorForm(request.POST, request.FILES, instance=instructor)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated instructor!')
+            return redirect(reverse('instructor_detail', args=[instructor.id]))
+        else:
+            messages.error(request, 'Failed to update instructor. Please ensure the form is valid.')
+    else:
+        form = InstructorForm(instance=instructor)
+        messages.info(request, f'You are editing {instructor.instructor_name}')
+
+    template = 'instructor/edit_instructor.html'
+    context = {
+        'form': form,
+        'instructor': instructor,
+    }
+
+    return render(request, template, context)
+
+
+def delete_instructor(request, instructor_id):
+    """ Delete an instructor """
+    instructor = get_object_or_404(Instructor, pk=instructor_id)
+    instructor.delete()
+    messages.success(request, 'Instructor deleted!')
+    return redirect(reverse('instructor_info'))

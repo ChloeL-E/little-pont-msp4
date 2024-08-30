@@ -20,7 +20,12 @@
             {% for instructor in instructors %}
             <div class="team-content">
                 <div class="team-img">
-                    <img class="w-100" src="{{ instructor.image.url }}" alt="{{ instructor.instructor_name }}">
+                    {% if product.image %}
+                        <img class="w-100" src="{{ instructor.image.url }}" alt="{{ instructor.instructor_name }}">
+                        {% else %}
+                        <img class="card-img-top img-fluid bg-custom" src="{{ MEDIA_URL }}no-image-icon-23499.webp"
+                                alt="{{ instructor.instructor_name }}">
+                    {% endif %}
                     <div class="img-overlay">
                         <h4>{{ instructor.instructor_name }}</h4>
                         <h4>{{ instructor.speciality_age_group }}</h4>

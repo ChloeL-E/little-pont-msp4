@@ -41,7 +41,7 @@ header {
 #top-header-image {
   position: relative; /* Ensure it is positioned relative for .top-header to overlay correctly */
   z-index: 1; /* Ensure it is below .top-header */
-  background: url('/media/sky.jpg') no-repeat center center fixed;
+  background: url('/media/msp4_media/sky.jpg') no-repeat center center fixed;
 	background-size: cover;
   top: 0;
   left: 0;
@@ -197,7 +197,7 @@ span .carousel-control-next-icon {
 }
 
 #hero .index-hero {
-  background-image: url('/media/frying-eggs.webp');
+  background-image: url('/media/msp4_media/frying-eggs.webp');
 }
   
 #hero h2 {

@@ -41,7 +41,7 @@ header {
 #top-header-image {
   position: relative; /* Ensure it is positioned relative for .top-header to overlay correctly */
   z-index: 1; /* Ensure it is below .top-header */
-  background: url('https://little-pont-role-play.s3.eu-west-2.amazonaws.com/media/msp4_media/sky.jpg') no-repeat center center fixed;
+  background: url('/media/msp4_media/sky.jpg') no-repeat center center fixed;
 	background-size: cover;
   top: 0;
   left: 0;
@@ -523,7 +523,7 @@ section {
 }
 
 #hero .early-years-hero {
-  background-image: url('media/msp4_media/little-girls-science-class.webp')
+  background-image: url('/media/msp4_media/little-girls-science-class.webp')
 }
 
 #about-groups {
@@ -898,4 +898,21 @@ input[name='q']::placeholder {
    /* .header-container {
         /*padding-top: 330px;
     }*/
+}
+
+@media only screen and (max-width: 600px) {
+  #top-header-image {
+    height: 200px;
+  }
+  #top-header-image {
+    height: 200px;
+    width: 200px;
+  }
+  .background {
+    display: flex;
+    justify-content: center;
+  }
+  .hero-info {
+    display: none;
+  }
 }

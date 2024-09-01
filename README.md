@@ -311,15 +311,35 @@ exit()
 - [Sugarloaf and a Cup of Joe](https://www.youtube.com/watch?v=UidskJk0KiE&t=611s) assisted with adding a datepicker within the crispy form by using the simple forms dateinut function and adding this within the view. It renders a datepicker calendar within the start and end date inputs within the Add a Course form. I also needed to add a time picker to make choosing a time easier for the admin. [Django Project](https://forum.djangoproject.com/t/need-help-with-date-time-picker/16988) was helpful in adding the TimeInput function to the form.
 - Content was written by Chloe Livingstone-Evans.
 - [Devon County Council](https://www.devon.gov.uk/support-schools-settings/send/educational-psychology/resources/devon-psychology-in-action/early-stages-of-cognition-and-learning-birth-to-5-years/), [Teach Early Years](https://www.teachearlyyears.com/learning-and-development/view/thinking-skills) and [Raising Children Network](https://raisingchildren.net.au/toddlers/connecting-communicating/connecting/connecting-with-your-toddler) were all useful when writing each Course paragraph content. 
+- [CodexWorld](https://www.codexworld.com/how-to/get-current-year-to-display-dynamic-year-in-copyright-using-javascript/#:~:text=Create%20a%20Date%20object%20and,and%20update%20each%20year%20automatically.) reminded me how to get the current year using javascript for the footer so that the year updates to current year. This will mean that going forward I do not need to update myself manually. 
 
 - - - - 
 
    ### Media Images
 
-- https://imageresizer.com/
-- canva https://www.canva.com/
+- [Image Resizer](https://imageresizer.com/) was used for almost all images to convert to webp format and resize to suitable dimensions.
+- [canva](https://www.canva.com/) 
 - favicon https://favicon.io/favicon-converter/
 - image cropper https://www.iloveimg.com/crop-image
+- [Freepik](https://www.freepik.com/) provided most of the sites images. As follows : 
+[Image by Freepik](https://www.freepik.com/free-vector/sky-background-video-conferencing_9470358.htm#fromView=search&page=1&position=3&uuid=f6fac559-eb3f-4439-a24e-b49bba905c4a) - Background sky image in header
+[Image by brgfx on Freepik](https://www.freepik.com/free-vector/street-side-scene-with-ice-cream-shop-coffee-shop-scene_11690442.htm#fromView=search&page=1&position=46&uuid=67fbc153-5ff9-490e-a435-f8a34fa50f09) - Part of logo design
+[Image by brgfx on Freepik](https://www.freepik.com/free-vector/cute-girl-cartoon-character-wearing-hat_52764202.htm#fromView=search&page=1&position=23&uuid=76493a98-fb5f-4966-96be-913d90ad33ec)
+[Image by brgfx on Freepik](https://www.freepik.com/free-vector/happy-boy-jumping-cartoon-character_26350172.htm#fromView=search&page=1&position=43&uuid=5c848b89-72ae-4682-ab55-57c631bfe538) - Course character
+[Image by marymarkevich on Freepik](https://www.freepik.com/free-photo/blond-pretty-woman-pink-shirt-smiling-holding-holding-notebooks_27290357.htm#from_view=detail_alsolike) - Instructor image
+[Image by wayhomestudio on Freepik](https://www.freepik.com/free-photo/happy-devoted-woman-keeps-hand-chest-looks-joyfully-away-wears-round-spectacles-formal-white-shirt-gets-positive-news-poses-against-blue-background-with-blank-copy-space-your-promotion_23178344.htm#fromView=search&page=1&position=2&uuid=de9c9535-73e8-4eb1-aa4e-c54899020362) - Instructor image
+[Image by Freepik](https://www.freepik.com/free-photo/portrait-middle-aged-businesswoman_4783027.htm#fromView=search&page=1&position=14&uuid=de9c9535-73e8-4eb1-aa4e-c54899020362) - Instructor image
+[Image by kroshka__nastya on Freepik](https://www.freepik.com/free-photo/young-woman-casual-peach-sweater-backpack-isolated-green-olive-color-wall_13884671.htm#fromView=search&page=5&position=22&uuid=de9c9535-73e8-4eb1-aa4e-c54899020362) - Instructor image
+[Image by freepic.diller on Freepik](https://www.freepik.com/free-photo/happy-child-orange-sweater-plays-with-feather-floor_1471555.htm#fromView=search&page=1&position=13&uuid=ca1fd8df-ee34-4313-a2c0-a88eb8624c1b) - Babies course hero image
+[Image by Freepik](https://www.freepik.com/free-photo/high-angle-view-kids-sitting-inside-tepee_2532376.htm#fromView=search&page=2&position=18&uuid=8eae5d42-30ba-455f-95ef-f7e9c380f526) - Toddlers course hero image
+[Image by Ahkâm on FreeIconspng](https://www.freeiconspng.com/img/23499) - 'Image coming soon' placeholder image
+[Image by freepic.diller on Freepik](https://www.freepik.com/free-vector/little-boy-playing-shapes_1250763.htm#fromView=search&page=1&position=36&uuid=874f5ba6-fd8f-4d57-a86b-0e631dd9457b) - Course character
+[Image by Hongqi Zhang (aka Michael Zhang) on Dreamstime]("https://www.dreamstime.com/stock-photos-group-children-uniforms-image18787393") - Home page about us image
+[Image by jcomp on Freepik]("https://www.freepik.com/free-photo/little-boy-playing-with-construction-equipment-white_5395704.htm#fromView=search&page=1&position=1&uuid=3f85583f-23fb-45f7-9318-9bd4d78c8d6e") - Preschool course page hero image
+[Image by freepic.diller on Freepik](I"https://www.dreamstime.com/stock-photo-little-girl-playing-toy-kitchen-chef-hat-apron-cooking-fried-eggs-wooden-toys-young-children-kids-play-cook-image73464053") - Home page hero image
+[Image by brgfx on Freepik]("https://www.freepik.com/free-vector/happy-boy-jumping-cartoon-character_26213866.htm#fromView=search&page=1&position=1&uuid=da42b981-2dc4-4f89-8a41-6b1131c0dac8") - Course character
+[Image by brgfx on Freepik](https://www.freepik.com/free-vector/cute-baby-crawling-cartoon-character_27187597.htm#fromView=search&page=1&position=5&uuid=68a1fe55-d91d-44e6-94ff-5f06659ebe42) - Course character
+[Image by freepic.diller on Freepik]()
 - - - 
 
 ## Acknowledgements

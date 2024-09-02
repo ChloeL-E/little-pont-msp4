@@ -38,13 +38,6 @@
                 </select>
                 <input class="remove-item" type="submit" value="Filter">
             </form>
-            <div class="col-12 col-md-6 order-md-first">
-                <p class="text-muted mt-3 text-center text-md-left">
-                    {% if current_sorting != 'None_None' %}
-                    <span><a class="sm-font courses-home" href="{% url 'all_courses' %}">Courses Home</a> | </span>
-                    {% endif %}
-                </p>
-            </div>
         </header>
         <div class="row">
             {% for course in courses %}
@@ -70,6 +63,12 @@
                                     <a class="update-link" href="{% url 'edit_course' course.id %}">Edit</a>
                                     <a class="remove-item" href="{% url 'delete_course' course.id %}">Delete</a>
                                 </div>
+                                {% else %}
+                                <!-- Book Now button -->
+                                <div class="input-group">
+                                    <input type="submit" class="book-now-button mt-3 mb-3" id="book-now-button" value="Book Now"><br>
+                                </div>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                 {% endif %}
                             </div>
                         </div>

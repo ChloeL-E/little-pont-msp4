@@ -902,19 +902,21 @@ footer h4 {
 
 .footer-links li a {
   font-family: var(--font-family);
-  color: black;
+  color: var(--font-color-main);
   align-items: center;
   text-decoration: none;
 }
 
-.socials a {
-  height: 30px;
-  width: 30px;
-  color: var(--pink);
-}
-
 .socials li a i {
   margin-right: 10px;
+  color: #FF69B4;
+  font-size: 24px;
+  height: 40px;
+  width: 40px
+}
+
+li::marker {
+  content: none;
 }
 
 /* -------------------------------- Media Queries */

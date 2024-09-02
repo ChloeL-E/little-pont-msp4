@@ -215,11 +215,11 @@ span .carousel-control-next-icon {
 }
   
 #hero p {
-  width: 80%;
+  /*width: 80%;*/
   margin: 0 auto 30px auto;
   color: #000;
   font-size: 35px;
-  font-weight: 600px;
+  font-weight: 600;
   font-family: var(--font-main);
 }
   
@@ -511,7 +511,7 @@ section {
 }
 
 #hero .babies-hero {
-  background-image: url('/media/msp4_media/babies-hero.webp');
+  background-image: url('media/msp4_media/happy-child-orange-sweater-plays-with-feather-floor.webp');
 }
 
 #hero .toddlers-hero {

@@ -885,7 +885,7 @@ footer {
 }
 
 footer h4 {
-  font-family: var(--font-main);
+  font-family: var(--font-header);
   font-weight: 600;
   color: var(--font-color-main);
 }
@@ -907,7 +907,7 @@ footer h4 {
   text-decoration: none;
 }
 
-.socials {
+.socials a {
   height: 30px;
   width: 30px;
   color: var(--pink);

@@ -27,7 +27,7 @@ def send_booking_enquiry(request):
                 {"contact": contact},
             )
             email_body = render_to_string(
-                "contact/contact_confirmation_emails/contact-email.txt",
+                "contact/contact_confirmation_emails/contact-confirmation-email.txt",
                 {"contact": contact,
                     "contact_email": settings.DEFAULT_FROM_EMAIL},
             )

@@ -18,6 +18,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
+    '8000-chloele-littlepontmsp4-jfcyz069qfa.ws.codeinstitute-ide.net',
     'little-pont-role-play-855c26627652.herokuapp.com',
     ]
 

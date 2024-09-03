@@ -1,0 +1,15 @@
+Hello {{ contact.full_name }}!
+
+Thank you for your Party Booking Enquiry. This is a confirmation that your party booking request has been sent. 
+We aim to respond within 2 working days.
+
+
+Your booking request is as follows:
+
+Subject: {{ contact.subject }}
+Content: {{ contact.content }}
+
+We've got your email on file as {{ }}.
+If you have any further queries please feel free to get in touch with us on 012345678910.
+
+Thank you, 

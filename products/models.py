@@ -25,6 +25,6 @@ class Course(models.Model):
 
     def __str__(self):
         """
-        Return the course name as its string representation.
+        Return the course name and age group as its string representation.
         """
         return f"{self.name} ({self.age_group})"

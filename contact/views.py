@@ -1,4 +1,5 @@
-from django.shortcuts import render
+import logging
+from django.shortcuts import render, HttpResponse
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
@@ -7,6 +8,9 @@ from django.contrib.auth.decorators import login_required
 
 from .models import BookingEnquiry
 from .forms import BookingEnquiryForm
+
+
+logger = logging.getLogger(__name__)
 
 
 @login_required
@@ -46,13 +50,13 @@ def send_booking_enquiry(request):
                     email_subject,
                     email_body,
                     settings.DEFAULT_FROM_EMAIL,
-                    [booking_enquiry.booking_email]
+                    [booking_enquiry.booking_email],
                 )
                 messages.success(request, "Thank you for sending a party booking enquiry! We aim to respond within 2 working days.")
                 return redirect('home')  # Success message and redirect to home
             except Exception as e:
+                logger.error("Error sending email: %s", e, exc_info=True)
                 messages.error(request, "Sorry, there was an error sending your enquiry. Please try again later.")
-                print(e)
                 # Log the exception or handle it as necessary
         else:
             messages.error(request, "Sorry, your booking enquiry couldn't be sent. Please ensure you have completed the form correctly and submit again. Thank you")

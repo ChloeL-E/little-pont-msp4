@@ -1,3 +1,4 @@
+from django.contrib import admin
 from django.db import models
 from profiles.models import User
 
@@ -16,6 +17,7 @@ class BookingEnquiry(models.Model):
     date_submitted = models.DateTimeField(default=timezone.now, editable=False)
     
     class Meta:
+        verbose_name_plural = 'Booking Enquiries'
         ordering = ["-date_submitted"]
     
     def __str__(self):

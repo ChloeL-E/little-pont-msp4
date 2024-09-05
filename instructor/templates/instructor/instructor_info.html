@@ -22,7 +22,7 @@
             {% for instructor in instructors %}
             <div class="team-content">
                 <div class="team-img">
-                    <!-- If no instrcutor image, display an 'image-pending' icon -->
+                    <!-- If no instructor image, display an 'image-pending' icon -->
                     {% if product.image %}
                         <img class="w-100" src="{{ instructor.image.url }}" alt="{{ instructor.instructor_name }}">
                         {% else %}

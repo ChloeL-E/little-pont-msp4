@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import BookingEnquiry
 
-# Register models
 
 class BookingEnquiryAdmin(admin.ModelAdmin):
     list_display = (

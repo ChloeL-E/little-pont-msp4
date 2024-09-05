@@ -26,7 +26,7 @@
         <div class="icon-box mt-3 p-4">
           <div class="row">
 
-            <!-- Image Column -->
+            <!-- Instructor Image -->
             <div class="col-md-4 mt-4 mb-4">
               <span class="d-flex align-items-center justify-content-center">
                 {% if instructor.image %}
@@ -38,13 +38,14 @@
               </span>
             </div>
 
-            <!-- Text Column -->
+            <!-- Instructor bio -->
             <div class="col-md-8 mt-4">
               <h4 class="title-font text-center mb-5">A bit about me</h4>
               <p>I'm {{ instructor.instructor_name }} and I teach the {{ instructor.speciality_age_group }} course.
               </p>
               <p>{{ instructor.bio_description }}</p>
               <p>{{ instructor.experience }}</p>
+              <!-- superuser edit/delete controls -->
               {% if request.user.is_superuser %}
               <div class="ml-3 superuser-controls">
                 <a class="update-link" href="{% url 'edit_instructor' instructor.id %}">Edit</a>

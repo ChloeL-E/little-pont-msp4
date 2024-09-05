@@ -26,10 +26,10 @@ class ProductForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        courses = Course.objects.all()  # Fetch all courses
+        courses = Course.objects.all()  # Get all courses
         course_choices = [("  ")] + [(course.id, course.age_group) for course in courses]
         
-        # Fetch distinct age_group values and set them as choices
+        # Get the age_group values and set them as choices
         age_group_set = set(courses.values_list('age_group', flat=True))  # Use a set to get each unique age group
         age_group_choices = [("", "Select an Age Group")] + [(age_group, dict(Course.AGE_GROUP)[age_group]) for age_group in age_group_set]
         self.fields['age_group'].choices = age_group_choices
@@ -51,7 +51,7 @@ class ProductForm(forms.ModelForm):
             'instructor': 'Lead Instructor',
         }
         
-        #autofocus to 'name' input field, adding * to required input placeholders and removing labels
+        # autofocus to 'name' input field, adding * to required input placeholders and removing labels
         self.fields['name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if self.fields[field].required:

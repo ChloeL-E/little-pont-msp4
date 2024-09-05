@@ -18,10 +18,12 @@
         <div class="row">
           <div class="col">
                 <hr>
+                <!--Page title-->
                 <h2 class="logo-font mb-4 main-heading text-center">My Profile</h2>
                 <hr>
             </div>
         </div>
+        <!-- Form to set users billing information -->
         <div class="row">
             <div class="col-12 col-lg-6">
                 <p class="text-muted  title-font">Default Billing Information</p>
@@ -31,6 +33,7 @@
                     <button class="btn btt-back-to-courses float-right">Update Information</button>
                 </form>
             </div>
+            <!-- Order history display -->
             <div class="col-12 col-lg-6">
                 <p class="text-muted title-font ">Order History</p>
                 <div class="order-history table-responsive">
@@ -44,6 +47,7 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <!-- Loop through customer orders and display each -->
                             {% for order in orders %}
                                 <tr>
                                     <td>

@@ -56,7 +56,6 @@
       </div>
     </div>
   </section>
-
   <!-- End About Us section -->
 
   <!-- What we offer-->
@@ -67,7 +66,6 @@
           What We Offer
         </h2>
       </div>
-
       <!-- Cafe link-->
       <div class="row d-flex flex-wrap">
         <div class="col-md-6">
@@ -134,6 +132,7 @@
             </p>
           </div>
         </div>
+        <!-- Book a course links -->
         <div class="col-md-6 mt-4">
           <div class="icon-box py-3 px-3">
             <span class="d-flex flex-row align-items-center mx-3"><i class="fa-solid fa-ticket"></i>
@@ -146,6 +145,7 @@
               block of 4 weeks at one session per week. We offer sessions for Babies (0 to 1 year), Toddlers (1 to 2.5 years),
               Preschool (2.5 to 4 years) and Early years (4 to 5 years).
             </p>
+            <!-- Course page links -->
             <span class="mb-1 d-flex justify-content-between">
               <a href="{% url 'courses_by_age_group' age_group='Babies' %}" class="btt-back-to-courses rounded-4">Babies</a>
               <a href="{% url 'courses_by_age_group' age_group='Toddler' %}" class="btt-back-to-courses rounded-4">Toddlers</a>
@@ -173,10 +173,6 @@
     </div>
   </section>
   <!-- End what we offer section-->
-
-  <!-- Contact-->
-  <!--End contact section-->
-
   <!-- scroll button-->
   <div class="scroll-button shadow-sm rounded">
     <a class="btt-link d-flex h-100">
@@ -190,6 +186,7 @@
 {% block postloadjs %}
 {{ block.super }}
 <script type="text/javascript">
+  /* scroll to top button */
   $('.btt-link').click(function (e) {
     window.scrollTo(0, 0)
   })

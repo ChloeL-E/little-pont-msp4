@@ -1,12 +1,13 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <div class="d-flex justify-content-centre">
         <ul class="navbar-nav w-auto mx-auto">
+            <!-- Home Link -->
             <li class="nav-item">
                 <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">
                     Home
                 </a>
             </li>
-
+            <!-- About dropdown -->
             <li class="nav-item d-block dropdown">
                 <a class="logo-font font-weight-bold nav-link text-black mr-5" role="button" href="#" id="about-link"
                     data-toggle="dropdown" data-target="#about-dropdown" aria-haspopup="true" aria-expanded="false"
@@ -20,7 +21,7 @@
                     <a href="{% url 'home' %}#cafe-info" class="dropdown-item">Cafe</a>
                 </div>
             </li>
-
+            <!-- Courses dropdown -->
             <li class="nav-item d-block dropdown">
                 <a class="logo-font font-weight-bold nav-link text-black mr-5" role="button" href="#" id="courses-link"
                     data-toggle="dropdown" data-toggle="dropdown" data-target="#course-dropdown" aria-haspopup="true"
@@ -35,7 +36,7 @@
                     <a href="{% url 'courses_by_age_group' age_group='Early Years' %}" class="dropdown-item">Early Years Courses</a>
                 </div>
             </li>
-
+            <!-- Contact link -->
             <li class="nav-item">
                 <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'send_booking_enquiry' %}"
                  aria-haspopup="true" aria-expanded="false">

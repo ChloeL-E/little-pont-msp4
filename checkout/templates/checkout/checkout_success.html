@@ -19,6 +19,7 @@
         <div class="row">
             <div class="col">
                 <hr>
+                <!--Page title-->
                 <h2 class="logo-font mb-4 main-heading ">Thank You</h2>
                 <hr>
                 <p class="title-font">Your order information is below and we have sent an order confirmation to
@@ -26,7 +27,7 @@
             </div>
         </div>
         <div class="row">
-            <!-- Render order summary-->
+            <!-- Display order summary-->
             <div class="col-12 col-lg-7">
                 <div class="order-confirmation-wrapper p-2 border">
                     <div class="row">
@@ -58,8 +59,7 @@
                             <small class="title-font">Order Details:</small>
                         </div>
                     </div>
-
-
+                    <!-- Display each order item -->
                     {% for item in order.lineitems.all %}
                     <div class="row">
                         <div class="col-12 col-md-4">
@@ -74,6 +74,7 @@
                     </div>
                     {% endfor %}
                     <hr>
+                    <!-- Display user info -->
                     <div class="row">
                         <div class="col">
                             <small class="title-font">Billing info:</small>
@@ -97,7 +98,6 @@
                             <p class="small mb-0">{{ order.street_address1 }}</p>
                         </div>
                     </div>
-
                     {% if order.street_address2 %}
                     <div class="row">
                         <div class="col-12 col-md-4">
@@ -108,7 +108,6 @@
                         </div>
                     </div>
                     {% endif %}
-
                     {% if order.county %}
                     <div class="row">
                         <div class="col-12 col-md-4">
@@ -119,7 +118,6 @@
                         </div>
                     </div>
                     {% endif %}
-
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <p class="small mb-0">Town or City</p>
@@ -128,7 +126,6 @@
                             <p class="small mb-0">{{ order.town_or_city }}</p>
                         </div>
                     </div>
-
                     {% if order.postcode %}
                     <div class="row">
                         <div class="col-12 col-md-4">
@@ -139,7 +136,6 @@
                         </div>
                     </div>
                     {% endif %}
-
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <p class="small mb-0">Country</p>
@@ -148,7 +144,6 @@
                             <p class="small mb-0">{{ order.country }}</p>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <p class="small mb-0">Phone Number</p>
@@ -158,6 +153,7 @@
                         </div>
                     </div>
                     <hr>
+                    <!-- Order total -->
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <p class="mb-0 title-font">Order Total:</p>
@@ -170,6 +166,7 @@
                 </div>
             </div>
         </div>
+        <!-- Button controls -->
         <div class="row">
             <div class="col-12 col-lg-7 text-right">
                 {% if from_profile %}

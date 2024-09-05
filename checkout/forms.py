@@ -27,8 +27,8 @@ class OrderForm(forms.ModelForm):
             'postcode': 'Postal Code',
         }
 
-        self.fields['full_name'].widget.attrs['autofocus'] = True
-        for field in self.fields:
+        self.fields['full_name'].widget.attrs['autofocus'] = True  # set form autofocus
+        for field in self.fields:  # handle placeholders and remove labels
             if field != 'country':
                 if self.fields[field].required:
                     placeholder = f'{placeholders[field]} *'

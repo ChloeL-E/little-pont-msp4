@@ -14,32 +14,24 @@
     <div class="row">
         <header class="col text-center section-title">
             <h3>Courses</h3>
-            <form method="GET" action="{% url 'all_courses' %}">
-                <select class="sm-font" name="sort">
-                    <option value="name" {% if current_sorting == "name_asc" %}selected{% endif %}>Name (A-Z)</option>
-                    <option value="name" {% if current_sorting == "name_desc" %}selected{% endif %}>Name (Z-A)</option>
-                    <option value="age_group" {% if current_sorting == "age_group_asc" %}selected{% endif %}>Age Group
-                        (A-Z)</option>
-                    <option value="age_group" {% if current_sorting == "age_group_desc" %}selected{% endif %}>Age Group
-                        (Z-A)</option>
-                    <option value="start_date" {% if current_sorting == 'start_date_asc' %}selected{% endif %}>
-                        Start Date
-                        (earliest to latest)</option>
-                    <option value="start_date" {% if current_sorting == 'start_date_desc' %}selected{% endif %}>
-                        Start Date
-                        (late to earliest)</option>
-                    <option value="start_time" {% if current_sorting == 'start_time_asc' %}selected{% endif %}>
-                        Start Time
-                        (earliest
-                        to latest)</option>
-                    <option value="start_time" {% if current_sorting == 'start_time_desc' %}selected{% endif %}>
-                        Start Time
-                        (latest to earliest)</option>
-                </select>
-                <input class="remove-item" type="submit" value="Filter">
-            </form>
+            <!-- Sorting courses -->
+                <form method="GET" action="{% url 'all_courses' %}">
+                    <select class="sm-font" name="sort"> <!--sort by name -->
+                        <option value="name" {% if request.GET.sort == "name" %}selected{% endif %}>Name</option>
+                        <option value="age_group" {% if request.GET.sort == "age_group" %}selected{% endif %}>Age Group</option>
+                        <option value="start_date" {% if request.GET.sort == "start_date" %}selected{% endif %}>Start Date</option>
+                        <option value="start_time" {% if request.GET.sort == "start_time" %}selected{% endif %}>Start Time</option>
+                    </select>
+                    <select class="sm-font" name="direction"> <!--sort by direction -->
+                        <option value="asc" {% if request.GET.direction == "asc" %}selected{% endif %}>Ascending</option>
+                        <option value="desc" {% if request.GET.direction == "desc" %}selected{% endif %}>Descending</option>
+                    </select>
+                    <!-- Filter button -->
+                    <input class="remove-item" type="submit" value="Filter">
+                </form>
         </header>
         <div class="row">
+            <!-- Display all available courses -->
             {% for course in courses %}
             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card h-100 border-0">
@@ -58,23 +50,19 @@
                                     Price: £{{ course.price }}<br>
                                     Instructor: {{ course.instructor }}<br>
                                 </p>
+                                <!-- Superuser controls -->
                                 {% if request.user.is_superuser %}
                                 <div class="ml-3 superuser-controls">
                                     <a class="update-link" href="{% url 'edit_course' course.id %}">Edit</a>
                                     <a class="remove-item" href="{% url 'delete_course' course.id %}">Delete</a>
                                 </div>
-                                {% else %}
-                                <!-- Book Now button -->
-                                <div class="input-group">
-                                    <input type="submit" class="book-now-button mt-3 mb-3" id="book-now-button" value="Book Now"><br>
-                                </div>
-                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                 {% endif %}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Setting the layout -->
             {% if forloop.counter|divisibleby:1 %}
             <div class="col-12 d-sm-none mb-5">
                 <hr>
@@ -112,6 +100,7 @@
 {% block postloadjs %}
 {{ block.super }}
 <script type="text/javascript">
+    /* sorting filter */
     $('#sort-selector').change(function () {
         var selector = $(this);
         var currentUrl = new URL(window.location);
@@ -132,7 +121,7 @@
             window.location.replace(currentUrl);
         }
     })
-
+    /* scroll to top button */
     $('.btt-link').click(function (e) {
         window.scrollTo(0, 0)
     })

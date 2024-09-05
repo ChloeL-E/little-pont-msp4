@@ -937,10 +937,6 @@ li::marker {
         left: 0;
         z-index: 1030;
     }
-
-   /* .header-container {
-        /*padding-top: 330px;
-    }*/
 }
 
 @media only screen and (max-width: 600px) {
@@ -957,5 +953,8 @@ li::marker {
   }
   .hero-info {
     display: none;
+  }
+  #course-details h4 {
+    text-align: center;
   }
 }

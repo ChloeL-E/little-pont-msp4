@@ -8,7 +8,6 @@ from instructor.models import Instructor
 from .models import Course
 from .forms import ProductForm
 
-# Create your views here.
 
 def all_courses(request):
     """ A view to display all the courses available """
@@ -16,7 +15,7 @@ def all_courses(request):
     courses = Course.objects.all()
     sort = None
     direction = None
-
+    # sorting courses by name and direction
     if request.GET:
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
@@ -41,12 +40,13 @@ def all_courses(request):
 
 def courses_by_age_group(request, age_group):
     """ A view to display courses based on the age group """
+    # get the courses and instructors
     courses = Course.objects.filter(age_group=age_group)
     instructor = Instructor.objects.all()
 
     # Convert the age group to match the template filename
     template_name = age_group.replace(' ', '_').lower()
-    # Handle specific cases
+    # Additional handle of toddler name
     if template_name == "toddler":
         template_name = "toddlers"
 
@@ -61,10 +61,11 @@ def courses_by_age_group(request, age_group):
 @login_required
 def add_course(request):
     """ Add a Course to the site """
+    # only site admin can add course
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only site administrators can do that.')
         return redirect(reverse('home'))
-    
+    # form submission to add course
     if request.method == 'POST':
         form = ProductForm(request.POST)
         if form.is_valid():
@@ -87,16 +88,17 @@ def add_course(request):
 @login_required
 def edit_course(request, course_id):
     """ Edit a course """
+    # Only site admin can edit a course
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
+        messages.error(request, 'Sorry, only Little Pont administrators can do that.')
         return redirect(reverse('home'))
-    
+    # get the course using its id, handle form submission to edit/update
     course= get_object_or_404(Course, pk=course_id)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=course)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Successfully updated course!')
+            messages.success(request, 'Successfully edited course!')
             return redirect(reverse('all_courses'))
         else:
             messages.error(request, 'Failed to update course. Please ensure the form is valid.')
@@ -116,11 +118,12 @@ def edit_course(request, course_id):
 @login_required
 def delete_course(request, course_id):
     """ Delete a course """
+    # only site administrators can delete a course
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
+        messages.error(request, 'Sorry, only Little Pont administrators can do that.')
         return redirect(reverse('home'))
-    
+    # get the course by id and delete
     course = get_object_or_404(Course, pk=course_id)
     course.delete()
-    messages.success(request, 'course deleted!')
+    messages.success(request, 'The Course has been deleted!')
     return redirect(reverse('all_courses'))

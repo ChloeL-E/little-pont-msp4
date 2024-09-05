@@ -107,6 +107,7 @@
         <br>
         <span class="title-font">Not the right course? Check out our other courses...</span><br>
         <br>
+        <!-- Course links -->
         <a href="{% url 'courses_by_age_group' age_group='Babies' %}" class="btt-back-to-courses rounded-4 mt-3">Babies Courses</a>
         <a href="{% url 'courses_by_age_group' age_group='Preschool' %}" class="btt-back-to-courses rounded-4 mt-3">Preschool Courses</a>
         <a href="{% url 'courses_by_age_group' age_group='Early Years' %}" class="btt-back-to-courses rounded-4 mt-3">Early Years Courses</a>        
@@ -117,6 +118,7 @@
       <div class="col-lg-6">
         <div class="pt-5 pt-lg-0">
           <h4 class="title-font">Course Booking</h4>
+          <!--Form which loops through the course dates -->
           <form id="courseForm" class="form" method="POST">
             {% csrf_token %}
             <div class="form-row">
@@ -159,6 +161,7 @@
                         </button>
                       </div>
                     </div>
+                    <!-- Book now button -->
                     <div class="input-group">
                       <input type="submit" class="book-now-button mt-3 mb-3" id="book-now-button" value="Book Now"><br>
                     </div>

@@ -1,5 +1,5 @@
 import logging
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.template.loader import render_to_string

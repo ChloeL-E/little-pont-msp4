@@ -340,7 +340,7 @@ exit()
 [Image by freepic.diller on Freepik](I"https://www.dreamstime.com/stock-photo-little-girl-playing-toy-kitchen-chef-hat-apron-cooking-fried-eggs-wooden-toys-young-children-kids-play-cook-image73464053") - Home page hero image
 [Image by brgfx on Freepik]("https://www.freepik.com/free-vector/happy-boy-jumping-cartoon-character_26213866.htm#fromView=search&page=1&position=1&uuid=da42b981-2dc4-4f89-8a41-6b1131c0dac8") - Course character
 [Image by brgfx on Freepik](https://www.freepik.com/free-vector/cute-baby-crawling-cartoon-character_27187597.htm#fromView=search&page=1&position=5&uuid=68a1fe55-d91d-44e6-94ff-5f06659ebe42) - Course character
-[Image by freepic.diller on Freepik]()
+[Image by chevanon on Freepik](https://www.freepik.com/free-photo/cup-coffee-with-heart-drawn-foam_999656.htm#fromView=search&page=1&position=16&uuid=6afa55f8-c544-4225-9529-82ee359b6e61) - Cafe Page image
 - - - 
 
 ## Acknowledgements

@@ -16,6 +16,8 @@ logger = logging.getLogger(__name__)
 @login_required
 def send_booking_enquiry(request):
     """Allow the user to send a party booking enquiry to the site manager"""
+    form = BookingEnquiryForm()
+    
     if request.method == 'POST':
         form = BookingEnquiryForm(request.POST)
         if form.is_valid():
@@ -59,9 +61,7 @@ def send_booking_enquiry(request):
                 #messages.error(request, "Sorry, there was an error sending your enquiry. Please try again later.")
                 # Log the exception or handle it as necessary
             except:
-                messages.error(request, "Sorry, your booking enquiry couldn't be sent. Please ensure you have completed the form correctly and submit again. Thank you")
-        else:
-            form = BookingEnquiryForm()
+                messages.error(request, "Sorry, your booking enquiry couldn't be sent. Please ensure you have completed the form correctly and submit again. Thank you")            
 
     context = {
         'form': form,

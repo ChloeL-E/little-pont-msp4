@@ -832,7 +832,10 @@ input[name='q']::placeholder {
 
 .allauth-form-inner-content button:hover,
 .allauth-form-inner-content a:hover,
-.allauth-form-inner-content input[type='submit']:hover {	
+.allauth-form-inner-content input[type='submit']:hover,
+.allauth-form-inner-content button:active,
+.allauth-form-inner-content a:active,
+.allauth-form-inner-content input[type='submit']:active {	
   color: #000;
   border-color: #000;
 }
@@ -910,7 +913,7 @@ footer h4 {
 .socials li a i {
   margin-right: 10px;
   color: #FF69B4;
-  font-size: 24px;
+  font-size: 34px;
   height: 40px;
   width: 40px
 }

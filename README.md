@@ -312,6 +312,7 @@ exit()
 - Content was written by Chloe Livingstone-Evans.
 - [Devon County Council](https://www.devon.gov.uk/support-schools-settings/send/educational-psychology/resources/devon-psychology-in-action/early-stages-of-cognition-and-learning-birth-to-5-years/), [Teach Early Years](https://www.teachearlyyears.com/learning-and-development/view/thinking-skills) and [Raising Children Network](https://raisingchildren.net.au/toddlers/connecting-communicating/connecting/connecting-with-your-toddler) were all useful when writing each Course paragraph content. 
 - [CodexWorld](https://www.codexworld.com/how-to/get-current-year-to-display-dynamic-year-in-copyright-using-javascript/#:~:text=Create%20a%20Date%20object%20and,and%20update%20each%20year%20automatically.) reminded me how to get the current year using javascript for the footer so that the year updates to current year. This will mean that going forward I do not need to update myself manually. 
+- [Stack Overflow](https://stackoverflow.com/questions/9729095/onclick-button-border-color-change) for changing the all-auth styling .active on border-color.
 
 - - - - 
 

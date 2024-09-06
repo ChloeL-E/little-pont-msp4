@@ -2,193 +2,176 @@
 {% load static %}
 
 {% block page_header %}
-<div class="container header-container">
-  <div class="row">
-    <div class="col"></div>
-  </div>
-</div>
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
 {% endblock %}
 
 {% block content %}
-<!-- Hero and about Sections adapted from BootstrapMade.com and W3c schools-->
-<section id="hero">
-  <div class="hero-container container-fluid">
-    <div class="hero-item index-hero active">
-      <!-- Intro content -->
-      <div class="intro-container">
-        <h2>Welcome to Little Pont</h2>
-        <p>Immersive role play and STEM activities center</p>
-        <a href="{% url 'all_courses' %}" class="book-now-button btn btn-lg rounded-4">Book Now</a>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End Hero Section -->
+    <!-- Hero and About Sections adapted from BootstrapMade.com and W3c schools -->
+    <section id="hero">
+        <div class="hero-container container-fluid">
+            <div
+                class="hero-item index-hero active">
+                <!-- Intro Content -->
+                <div class="intro-container">
+                    <h2>Welcome to Little Pont</h2>
+                    <p>Immersive role play and STEM activities center</p>
+                    <a href="{% url 'all_courses' %}" class="book-now-button btn btn-lg rounded-4">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Hero Section -->
 
-<!-- About Us Section-->
-<main>
-  <section id="about" class="about">
-    <div class="container">
-      <div class="icon-box">
-        <div class="row">
-          <div class="col-6">
-            <img src="{{ MEDIA_URL }}msp4_media/children_in_fancy_dress.webp" class="img-fluid" alt="children in fancy dress">
-          </div>
-          <div class="section-title col-lg-6 pt-4 pt-lg-0">
-            <h2>
-              About Us
-            </h2>
-            <p>
-              Little Pont is the first interactive role play center to open in the local area, run by dedicated
-              instructors.
-              A child-sized town modelled upon the actual village
-              of Ponteland means that the businesses and buildings are familiar to the children.
-              Here, children can learn about the different business in their communities,
-              and how the various services and businesses help to keep the our town vibrant!
-              Role play environments promote hands-on experiential
-              learning for children to learn how people live and work together.
-              Children will have the opportunity to role play different
-              occupations and practice everyday life skills in a little town
-              that they recognise!
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End About Us section -->
+    <!-- About Us Section-->
+    <main>
+        <section id="about" class="about">
+            <div class="container">
+                <div class="icon-box">
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="{{ MEDIA_URL }}msp4_media/children_in_fancy_dress.webp" class="img-fluid" alt="children in fancy dress"></div>
+                            <div class="section-title col-lg-6 pt-4 pt-lg-0">
+                                <h2>
+                                    About Us
+                                </h2>
+                                <p>
+                                    Little Pont is the first interactive role play center to open in the local area, run by dedicated
+                                    instructors. A child-sized town modelled upon the actual village of Ponteland means that the 
+                                    businesses and buildings are familiar to the children.
+                                    Here, children can learn about the different business in their communities,
+                                    and how the various services and businesses help to keep the our town vibrant!
+                                    Role play environments promote hands-on experiential
+                                    learning for children to learn how people live and work together.
+                                    Children will have the opportunity to role play different
+                                    occupations and practice everyday life skills in a little town
+                                    that they recognise!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End About Us Section -->
 
-  <!-- What we offer-->
-  <section id="what-we-offer" class="what-we-offer section-bg">
-    <div class="container">
-      <div class="section-title">
-        <h2>
-          What We Offer
-        </h2>
-      </div>
-      <!-- Cafe link-->
-      <div class="row d-flex flex-wrap">
-        <div class="col-md-6">
-          <div class="icon-box py-3 px-3">
-            <span class="d-flex flex-row align-items-center mx-3">
-              <i class="fa-solid fa-mug-hot">
-              </i>
-              <h4 class="mx-3">
-                <a id="cafe-info" href="#">Cafe</a>
-              </h4>
-            </span>
-            <p>
-              Sit back and relax in our integrated cafe. Designed so that you can
-              enjoy a hot drink whilst you watch your child play
-            </p>
-          </div>
-        </div>
-        <!-- Role Play info-->
-        <div class="col-md-6 mt-4 mt-lg-0">
-          <div class="icon-box py-3 px-3">
-            <span class="d-flex flex-row align-items-center mx-3">
-              <i class="fa-solid fa-children">
-              </i>
-              <h4 class="mx-3">
-                Role Play
-              </h4>
-            </span>
-            <p>
-              Our little town includes a shop, post office, garage,
-              beauty salon, cafe, barber shop and so much more... Follow the link above to Book Now
-            </p>
-          </div>
-        </div>
-        <!-- Stem learning-->
-        <div class="col-md-6 mt-4">
-          <div class="icon-box py-3 px-3">
-            <span class="d-flex flex-row align-items-center mx-3">
-              <i class="fa-solid fa-flask"></i>
-              <h4 class="mx-3">
-                STEM learning
-              </h4>
-            </span>
-            <p>
-              We have a passion for teaching children so we have integrated inspiring and interactive STEM workshops
-              into each session. Each session is age-specific and so we are able to keep children engaged by creating
-              age-appropriate workshops. And most importantly, it's so much fun!
-            </p>
-          </div>
-        </div>
-        <!-- Contact form link-->
-        <div class="col-md-6 mt-4">
-          <div class="icon-box py-3 px-3">
-            <span class="d-flex flex-row align-items-center mx-3">
-              <i class="fa-solid fa-gift"></i>
-              <h4 class="mx-3">
-                <a href="#">Party Bookings</a>
-              </h4>
-            </span>
-            <p>
-              Our Party Bookings are available to book on Saturdays. They run for 2 hours and include fun STEM
-              activities, as well as full access to the role play area. Party packages can be taylored to you and your
-              childs wishes.
-              Get in touch to book a fantastic party for your little one and their friends!
-            </p>
-          </div>
-        </div>
-        <!-- Book a course links -->
-        <div class="col-md-6 mt-4">
-          <div class="icon-box py-3 px-3">
-            <span class="d-flex flex-row align-items-center mx-3"><i class="fa-solid fa-ticket"></i>
-              <h4 id="courses-overview" class="mx-3">
-                Book a Course
-              </h4>
-            </span>
-            <p>
-              Come and join us! Our sessions run Monday to Thursday and are age-specific. Bookings are as a
-              block of 4 weeks at one session per week. We offer sessions for Babies (0 to 1 year), Toddlers (1 to 2.5 years),
-              Preschool (2.5 to 4 years) and Early years (4 to 5 years).
-            </p>
-            <!-- Course page links -->
-            <span class="mb-1 d-flex justify-content-between">
-              <a href="{% url 'courses_by_age_group' age_group='Babies' %}" class="btt-back-to-courses rounded-4">Babies</a>
-              <a href="{% url 'courses_by_age_group' age_group='Toddler' %}" class="btt-back-to-courses rounded-4">Toddlers</a>
-              <a href="{% url 'courses_by_age_group' age_group='Preschool' %}" class="btt-back-to-courses rounded-4">Preschool</a>
-              <a href="{% url 'courses_by_age_group' age_group='Early Years' %}" class="btt-back-to-courses rounded-4">Early Years</a>
-            </span>
-          </div>
-        </div>
-        <!-- Meet The Team -->
-        <div id="meet-the-team" class="col-md-6 mt-4">
-          <div class="icon-box py-3 px-3">
-            <span class="d-flex flex-row align-items-center mx-3">
-              <i class="fa-solid fa-people-roof"></i>
-              <h4 class="mx-3">
-                <a href="{% url 'instructor_info' %}">Meet Our Team</a>
-              </h4>
-            </span>
-            <p>Little Pont has been created and developed by our team for our wonderful community and we want it to be
-              a friendly hub where families can get together in a fun, educational and safe environment. This wouldnt
-              be possible without our fantastic team. Check out our brilliant team of instructors and get to know them
-              before you visit. We can't wait to meet you.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End what we offer section-->
-  <!-- scroll button-->
-  <div class="scroll-button shadow-sm rounded">
-    <a class="btt-link d-flex h-100">
-      <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-    </a>
-  </div>
-</main>
+            <!-- What We Offer-->
+            <section id="what-we-offer" class="what-we-offer section-bg">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>
+                            What We Offer
+                        </h2>
+                    </div>
+                    <!-- Cafe Link -->
+                    <div class="row d-flex flex-wrap">
+                        <div class="col-md-6">
+                            <div class="icon-box py-3 px-3">
+                                <span class="d-flex flex-row align-items-center mx-3">
+                                    <i class="fa-solid fa-mug-hot"></i>
+                                    <h4 class="mx-3">
+                                        <a id="cafe-info" href="{% url 'cafe' %}">Cafe</a>
+                                    </h4>
+                                </span>
+                                <p>
+                                    Sit back and relax in our integrated cafe. Designed so that you can
+                                                  enjoy a hot drink whilst you watch your child play
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Role Play Info -->
+                        <div class="col-md-6 mt-4 mt-lg-0">
+                            <div class="icon-box py-3 px-3">
+                                <span class="d-flex flex-row align-items-center mx-3">
+                                    <i class="fa-solid fa-children"></i>
+                                    <h4 class="mx-3">
+                                        Role Play
+                                    </h4>
+                                </span>
+                                <p>
+                                    Our little town includes a shop, post office, garage,
+                                    beauty salon, cafe, barber shop and so much more...
+                                    Follow the link above to Book Now
+                                </p>
+                            </div>
+                        </div>
+                        <!-- STEM Learning -->
+                        <div class="col-md-6 mt-4">
+                            <div class="icon-box py-3 px-3">
+                                <span class="d-flex flex-row align-items-center mx-3">
+                                    <i class="fa-solid fa-flask"></i>
+                                    <h4 class="mx-3">
+                                        STEM learning
+                                    </h4>
+                                </span>
+                                <p>
+                                    We have a passion for teaching children so we have integrated inspiring and interactive STEM workshops
+                                    into each session. Each session is age-specific and so we are able to keep children engaged by creating
+                                    age-appropriate workshops. And most importantly, it's so much fun!
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Contact Form Link -->
+                        <div class="col-md-6 mt-4">
+                            <div class="icon-box py-3 px-3">
+                                <span class="d-flex flex-row align-items-center mx-3">
+                                    <i class="fa-solid fa-gift"></i>
+                                    <h4 class="mx-3">
+                                        <a href="{% url 'send_booking_enquiry' %}">Party Bookings</a>
+                                    </h4>
+                                </span>
+                                <p>
+                                    Our Party Bookings are available to book on Saturdays. They run for 2 hours and include fun STEM
+                                    activities, as well as full access to the role play area. Party packages can be taylored to you and your
+                                    childs wishes.
+                                    Get in touch to book a fantastic party for your little one and their friends!
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Book a Course Links -->
+                        <div class="col-md-6 mt-4">
+                            <div class="icon-box py-3 px-3">
+                                <span class="d-flex flex-row align-items-center mx-3">
+                                    <i class="fa-solid fa-ticket"></i>
+                                    <h4 id="courses-overview" class="mx-3">
+                                        Book a Course
+                                    </h4>
+                                </span>
+                                <p>
+                                    Come and join us! Our sessions run Monday to Thursday and are age-specific. Bookings are as a
+                                    block of 4 weeks at one session per week. We offer sessions for Babies (0 to 1 year), Toddlers (1 to 2.5 years),
+                                    Preschool (2.5 to 4 years) and Early years (4 to 5 years).
+                                </p>
+                                <!-- Course Page Links -->
+                                <span class="mb-1 d-flex justify-content-between">
+                                    <a href="{% url 'courses_by_age_group' age_group='Babies' %}" class="btt-back-to-courses rounded-4">Babies</a>
+                                    <a href="{% url 'courses_by_age_group' age_group='Toddler' %}" class="btt-back-to-courses rounded-4">Toddlers</a>
+                                    <a href="{% url 'courses_by_age_group' age_group='Preschool' %}" class="btt-back-to-courses rounded-4">Preschool</a>
+                                    <a href="{% url 'courses_by_age_group' age_group='Early Years' %}" class="btt-back-to-courses rounded-4">Early Years</a>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Meet The Team -->
+                        <div id="meet-the-team" class="col-md-6 mt-4">
+                            <div class="icon-box py-3 px-3">
+                                <span class="d-flex flex-row align-items-center mx-3">
+                                    <i class="fa-solid fa-people-roof"></i>
+                                    <h4 class="mx-3">
+                                        <a href="{% url 'instructor_info' %}">Meet Our Team</a>
+                                    </h4>
+                                </span>
+                                <p>Little Pont has been created and developed by our team for our wonderful community and we want it to be
+                                  a friendly hub where families can get together in a fun, educational and safe environment. This wouldnt
+                                  be possible without our fantastic team. Check out our brilliant team of instructors and get to know them
+                                  before you visit. We can't wait to meet you.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End What We Offer Section -->
+        </main>
 
-{% endblock %}
-
-{% block postloadjs %}
-{{ block.super }}
-<script type="text/javascript">
-  /* scroll to top button */
-  $('.btt-link').click(function (e) {
-    window.scrollTo(0, 0)
-  })
-</script>
-{% endblock %}
+    {% endblock %}

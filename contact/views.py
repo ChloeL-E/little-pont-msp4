@@ -60,8 +60,9 @@ def send_booking_enquiry(request):
                 #logger.error("Error sending email: %s", e, exc_info=True)
                 #messages.error(request, "Sorry, there was an error sending your enquiry. Please try again later.")
                 # Log the exception or handle it as necessary
-            except:
-                messages.error(request, "Sorry, your booking enquiry couldn't be sent. Please ensure you have completed the form correctly and submit again. Thank you")            
+            except Exception as e:
+                messages.error(request, "Sorry, your booking enquiry couldn't be sent due to: {e}. Please ensure you have completed the form correctly and submit again. Thank you") 
+                return redirect('send_booking_enquiry')          
 
     context = {
         'form': form,

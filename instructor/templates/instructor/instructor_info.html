@@ -23,7 +23,7 @@
             <div class="team-content">
                 <div class="team-img">
                     <!-- If no instructor image, display an 'image-pending' icon -->
-                    {% if product.image %}
+                    {% if instructor.image %}
                         <img class="w-100" src="{{ instructor.image.url }}" alt="{{ instructor.instructor_name }}">
                         {% else %}
                         <img class="card-img-top img-fluid bg-custom" src="{{ MEDIA_URL }}msp4_media/no-image-icon-23499.webp"

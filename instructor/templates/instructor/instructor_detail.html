@@ -29,8 +29,8 @@
             <!-- Instructor Image -->
             <div class="col-md-4 mt-4 mb-4">
               <span class="d-flex align-items-center justify-content-center">
-                {% if instructor.image %}
-                <img src="{{ instructor.image.url }}" alt="Image of {{ instructor.instructor_name }}" class="img-fluid">
+                {% if instructor.image_url %}
+                <img src="{{ instructor.image_url }}" alt="Image of {{ instructor.instructor_name }}" class="img-fluid">
                 {% else %}
                 <img src="{{ MEDIA_URL }}msp4_media/noimage.png" alt="No image available for {{ instructor.instructor_name }}"
                   class="img-fluid">

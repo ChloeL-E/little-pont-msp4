@@ -21,7 +21,6 @@
                         class="sm-font" name="sort">
                         <!-- Sort By Name -->
                         <option value="name" {% if request.GET.sort == "name" %} selected {% endif %}>Name</option>
-                        <option value="age_group" {% if request.GET.sort == "age_group" %} selected {% endif %}>Age Group</option>
                         <option value="start_date" {% if request.GET.sort == "start_date" %} selected {% endif %}>Start Date</option>
                         <option value="start_time" {% if request.GET.sort == "start_time" %} selected {% endif %}>Start Time</option>
                     </select>

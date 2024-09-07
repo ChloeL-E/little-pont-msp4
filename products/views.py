@@ -41,7 +41,7 @@ def all_courses(request):
 def courses_by_age_group(request, age_group):
     """ A view to display courses based on the age group """
     # get the courses and instructors
-    courses = Course.objects.filter(age_group=age_group)
+    courses = Course.objects.filter(age_group__iexact=age_group)
     instructor = Instructor.objects.all()
 
     # Convert the age group to match the template filename

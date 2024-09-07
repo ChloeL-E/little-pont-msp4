@@ -17,13 +17,12 @@
             <div class="section-title">
                 <!--Page title-->
                 <h2>Meet Our Team</h2>
+                <p>{{ instructor.image.url }}</p>
             </div>
             <!-- Loop through instructors to display each -->
             {% for instructor in instructors %}
             <div class="team-content">
                 <div class="team-img">
-                    {{ instructor.image.url }}
-
                     <!-- If no instructor image, display an 'image-pending' icon -->
                     {% if instructor.image %}
                         <img class="w-100" src="{{ instructor.image.url }}" alt="{{ instructor.instructor_name }}">

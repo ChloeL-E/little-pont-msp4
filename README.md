@@ -21,7 +21,7 @@ The Little Pont team are looking to launch their business with the aid of a bran
 
 This website has been built using HTML, CSS, Javascript and Python.
 
-[View the live project here.]()
+[View the live project here.](https://little-pont-role-play-855c26627652.herokuapp.com/)
 
 ## Contents
 
@@ -103,7 +103,7 @@ This website has been built using HTML, CSS, Javascript and Python.
 
 -   ### Colour Scheme
 
-    * 
+    * [Coolors]() was used to find a colour palette. The site design needed to be bright, colourful and eye-catching without clashing. 
 
 -   ### Typography
 
@@ -114,65 +114,59 @@ This website has been built using HTML, CSS, Javascript and Python.
 
 -   ### Wireframes
 
-    * [Home page]() (desktop)
+    * [Home page](documentation/readme/images/about_us_wf.png) (desktop)
     * [Home page]() (tablet device)
     * [Home page]() (mobile device)
-    * [Login page](testing/images/login_wf.png) (desktop)
-    * [Register dropdown](testing/images/register_login_dropdown_wf.png) (desktop)
-    * [Register page](testing/images/register_page_wf.png) (desktop)
-    * [Logout page](testing/images/logout_wf.png) (desktop)
-    * [Shopping Bag page](testing/images/shopping_bag_wf.png) (desktop)
+    * [Login page](documentation/readme/images/login_wf.png) (desktop)
+    * [Register dropdown](documentation/readme/images/register_login_dropdown_wf.png) (desktop)
+    * [Register page](documentation/readme/images/register_page_wf.png) (desktop)
+    * [Register Success](documentation/readme/images/register_success_wf.png) (desktop)
+    * [Logout page](documentation/readme/images/logout_wf.png) (desktop)
+    * [Shopping Bag page](documentation/readme/images/shopping_bag_wf.png) (desktop)
     * [Shopping Bag page]() (tablet device)
     * [Shopping Bag page]() (mobile device)
     * [All Courses page]() (desktop)
+    * [Courses dropdown menu](documentation/readme/images/courses_dropdown_wf.png)
     * [All Courses page]() (tablet device)
     * [All Courses page]() (mobile device)
-    * [Babies Course page](testing/images/babies_coure_wf.png) (desktop)
+    * [Babies Course page](documentation/readme/images/babies_course_wf.png) (desktop)
     * [Babies Course page]() (tablet device)
     * [Babies Course page]() (mobile device)
-    * [Toddler Course page](testing/images/toddler_course_wf.png) (desktop)
+    * [Toddler Course page](documentation/readme/images/toddler_course_wf.png) (desktop)
     * [Toddler Course page]() (tablet device)
     * [Toddler Course page]() (mobile device)
-    * [Preschool Course page](testing/images/preschool_course_wf.png) (desktop)
+    * [Preschool Course page](documentation/readme/images/preschool_course_wf.png) (desktop)
     * [Preschool Course page]() (tablet device)
     * [Preschool Course page]() (mobile device)
-    * [Early Years Course page]() (desktop)
+    * [Early Years Course page](documentation/readme/images/early_years_course_page.png) (desktop)
     * [Early Years Course page]() (tablet device)
     * [Early Years Course page]() (mobile device)
-    * [Add course page]() (desktop)
-    * [Add course page]() (tablet device)
-    * [Add course page]() (mobile device)
-    * [Edit course page]() (desktop)
-    * [Edit course page]() (tablet device)
-    * [Edit course page]() (mobile device)
-    * [My Profile page page](testing/images/my_profile_wf.png) (desktop)
+    * [Course Management page](documentation/readme/images/course_management_wf.png) (desktop)
+    * [Course Management page]() (tablet device)
+    * [Course Management page]() (mobile device)
+    * [My Profile page page](documentation/readme/images/my_profile_wf.png) (desktop)
     * [My Profile page page]() (tablet device)
     * [My Profile page page]() (mobile device)
-    * [Instructor Info page](testing/images/instructor_info_wf.png) (desktop)
+    * [Instructor Info page](documentation/readme/images/instructor_info_wf.png) (desktop)
     * [Instructor Info page]() (tablet device)
     * [Instructor Info page]() (mobile device)
-    * [Instructor Detail page](testing/images/instructor_detail_wf.png) (desktop)
+    * [Instructor Detail page](documentation/readme/images/instructor_detail_wf.png) (desktop)
     * [Instructor Detail page]() (tablet device)
     * [Instructor Detail page]() (mobile device)
-    * [Add Instructor page]() (desktop)
-    * [Add Instructor page]() (tablet device)
-    * [Add Instructor page]() (mobile device)
-    * [Edit Instructor page]() (desktop)
-    * [Edit Instructor page]() (tablet device)
-    * [Edit Instructor page]() (mobile device)
-    * [Cafe page](testing/images/cafe_wf.png) (desktop)
+    * [Team Management page](documentation/readme/images/team_management_wf.png) (desktop)
+    * [Team Management page]() (tablet device)
+    * [Team Management page]() (mobile device)
+    * [Cafe page](documentation/readme/images/cafe_wf.png) (desktop)
     * [Cafe page]() (tablet device)
     * [Cafe page]() (mobile device)
-    * [Checkout page]() (desktop)
+    * [Checkout page](documentation/readme/images/checkout_wf.png) (desktop)
     * [Checkout page]() (tablet device)
     * [Checkout page]() (mobile device)
-    * [Checkout Success page]() (desktop)
-    * [Checkout Success page]() (tablet device)
-    * [Checkout Success page]() (mobile device)
     * [Booking Enquiry page]() (desktop)
     * [Booking Enquiry page]() (tablet device)
     * [Booking Enquiry page]() (mobile device)
-    * [Verify Email](testing/images/verify_email_wf.png) (desktop)
+    * [Verify Email](documentation/readme/images/verify_email_wf.png) (desktop)
+    * [Toast example](documentation/readme/images/success_message_wf.png)
 
 -   ### Database Schema
     * The database was designed using Lucid Chart(see credits). 
@@ -187,7 +181,7 @@ There are 7 main apps within Little Pont: home, profiles, products, bag, checkou
 
 -   ### Features 
 
-    * Responsive on device sizes with media screen size >280px
+    * Responsive on device sizes with media screen size >280px so user can easily view site on mobile, tablet, laptop and desktop without any compromise.
 
 -   ### Features used in every page:
 
@@ -195,7 +189,7 @@ There are 7 main apps within Little Pont: home, profiles, products, bag, checkou
 
     -   #### Navigation Bar
 
-       [Navigation Bar - desktop]()
+       [Navigation Bar - desktop](documentation/readme/images/nav_bar_desktop.png)
 
        * The responsive navbar features a hamburger menu on medium sized devices and smaller. This displays the Home, About, Courses and Contact dropdown/links. A bright and colourful site logo and header is included with each page. This is to catch the eye of the user and their children and entice them to use the business. The Account and Shopping Bag icons remain the same on all devices so they are easily accessible to the user.
 
@@ -206,12 +200,13 @@ There are 7 main apps within Little Pont: home, profiles, products, bag, checkou
     -   #### Scroll Button
     
     -   #### Footer
+
         * Features the site Title, links to the Register/Login pages and social links.
 
-        [Footer]()
+        [Footer](documentation/readme/images/footer.png)
         [Footer - mobile device]()
 
--   ### Features in main site pages:
+-   ### Features in main content:
 
     -   #### Hero Images
 
@@ -220,7 +215,7 @@ There are 7 main apps within Little Pont: home, profiles, products, bag, checkou
     Main Content
 
     -   #### Home page
-        * App: Home
+        * App: home
         * This page has a large colourful hero image of a happy girl dressed uo as a chef. This will hopefully give the site user intstant information about the role play element of Little Pont and some idea of what to expect when visiting the business. The Home page comprises of header/navbar, hero image, footer and then two main information sections: About Us and What We Offer.
         
         [Home page]()
@@ -228,19 +223,81 @@ There are 7 main apps within Little Pont: home, profiles, products, bag, checkou
         [Home page- What We Offer]()
 
     -   #### My Profile page
-        * 
+        * App: profiles
+
     -   #### Courses page
+        * App: products
+        * Filters list of courses according to name, strat date or start time and user can select if they want list in ascending or descending order.
+        * Displays all of the available courses, specifically: Course name, Start Date, End Date, Start Time, Price and Instructor.
+        * The title is a link to the age specific course page.
+        * Edit and Delete buttons are available to site administrators to allow for course management. 
+        * Delte button deletes the chosen course and the Courses page is reloaded with a success message to infor superuser that the course has been successfully deleted.
+
     -   #### Courses detail pages
+        * App: products
+        * Each age group has its own specific page: Babies, Toddlers, Preschool and Early Years
+        * There is information about the benefits of each course for the child
+        * Displays a list of the age specific courses available. User can select a course which changes the colour of the star icon. A quantity of the course selected can be updated before user clicks Book Now button.
+        * A success toast is shown when the user has successfully added a course to their shopping basket- it displays an order summary of the product added. 
+
     -   #### Course Management page
+        * App: products
+        * Allows site administrators to add a new course
+        * A form prompts the user to complete the relevent details. Option to Cancel or Add Course.
+        * Success toast displayed when a Course is successfully added. User is redirected to Courses page to view all courses.
+
     -   #### Instructor Info page
+        * App: instructor
+        * Displays each instructor as their image and an image overlay with their name and sopeciality age group
+        * The button on each overlay take the user to the instructor detail page for more detail about the chosen instructor
+
     -   #### Instructor Detail page
+        * App: instructor
+        * Displays specific information about the chosen instructor.
+        * An Edit and Delete button is displayed for site administrators. Delete button will delete the Instructor and take the superuser back to the Instructor infor page.
+
     -   #### Team Management page
+        * App: instructor
+        * A form to allow a site administrator to add a new instructor
+
+    -   #### Edit Instructor 
+        * App: instructor
+        * Once superuser clicks Edit button on Instructor detail page they are taken to the Edit instructor page.
+        * Here there is a prepopulated form where they are able to edit the details.
+        * Cancel or Save the edit
+
     -   #### Shopping Bag page
+        * App: bag
+        * Displays a list of the users' shopping bag contents, specifically the Course Name, Start Time, Price, Quantity and Subtotal. 
+        * The User has the ability to update the quanitty of each shopping bag item from this page or to remove an item.
+        * The subtotal and total are updated following any adjustments to the shopping bag contents.
+        * Option to go to the Courses page to view all courses or to continue onto checkout by clicking Secure Checkout button.
+
     -   #### Checkout page
+        * App: checkout
+        * Comprises a form for the user to complete with their billing and card details and the order summary
+        * Option for registered and logged in users to save their details to their profile
+        * Option to go back to the shopping bag page to adjust the bag contents or to click Secure Checkout button
+
     -   #### Checkout Success page
+        * App: checkout
+        * A loading overlay appears on form submission to give the user some feedback that their order is being processed
+        * A successful checkout takes the user to the checkout success page which displays their order summary details
+        * A success toast is shown with details of the order that has been successfully processed and to inform that an email has been sent to their registered email address. 
+
     -   #### Enquiry Form page
+        * App: contact
+        * User is directed to complete the booking enquiry form
+        * Option to Cancel or Send booking enquiry
+        * A successful booking enquiry will redirect user back to home page with a success message. An error toast will show if there are any issues with form submission.
+
     -   #### Register page
+        * User is prompted to complete the registration form
+        * Link to login page if user already registered.
+        * Success toast when successfully submitted form, user taken to Verify Email page with instructions on how to verify email
+
     -   #### Login page
+        * 
     -   #### Logout page
     -   #### Forms
 
@@ -255,45 +312,45 @@ There are 7 main apps within Little Pont: home, profiles, products, bag, checkou
 
 -   ### Frameworks, Libraries & Programs Used
 
-    
-    * [Google Fonts](https://fonts.google.com/) were used to import the 'Bebas Neue' and 'Noto Serif' font into the style.css file which is used on all pages throughout the project. 
-    * [Bootstrap v5.3.2]() was used on all pages throughout the website to add icons for aesthetic and UX purposes
-    * [Gitpod](https://www.gitpod.io/) was the IDE used to build the project. Git was used for version control.
-    * [GitHub](https://github.com/) is used to store the projects code after being pushed from Git.
-    * [Balsamiq](https://balsamiq.com/) was used to create the wireframes to support in the design process.
+    * [Google Fonts](https://fonts.google.com/) were used to import the '' font into the style.css file which is used on all pages throughout the project. 
+    * [Bootstrap v5.3.2](https://getbootstrap.com/docs/versions/) was used on all pages throughout the website to add icons for aesthetic and UX purposes
+    * [Gitpod](https://www.gitpod.io/) - the IDE used to build the project. Git was used for version control.
+    * [GitHub](https://github.com/) - used to store the projects code after being pushed from Git.
+    * [Balsamiq](https://balsamiq.com/) - used to create the wireframes to support in the design process.
     * [Django](https://www.djangoproject.com/) - a Python web framework that facilitates development
     * [Jinja](https://jinja.palletsprojects.com/en/3.1.x/) - templating engine
+    * [Amazon Web Services(AWS)](https://aws.amazon.com/free/?gclid=CjwKCAjwufq2BhAmEiwAnZqw8ho-9BEQWuP1mG3bVw8b8QfPKNQPmmMgMUKtBKP6w2Io6FsdeIuW7hoC4RUQAvD_BwE&trk=d5254134-67ca-4a35-91cc-77868c97eedd&sc_channel=ps&ef_id=CjwKCAjwufq2BhAmEiwAnZqw8ho-9BEQWuP1mG3bVw8b8QfPKNQPmmMgMUKtBKP6w2Io6FsdeIuW7hoC4RUQAvD_BwE:G:s&s_kwcid=AL!4422!3!433803620861!e!!g!!amazon%20web%20services!1680401428!67152600204&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all) - for storage of media and static files
+    * [Stripe](https://stripe.com/gb?utm_campaign=EMEA_UK_en_Google_Search_Brand_Stripe_EXA-2032860449&utm_medium=cpc&utm_source=google&ad_content=604272871169&utm_term=stripe&utm_matchtype=e&utm_adposition=&utm_device=c&gad_source=1&gclid=CjwKCAjwufq2BhAmEiwAnZqw8riFsJTT2orxv4FliKPuXltLnE4nJ0wXBeXdVGAuXj2y6-UyKyoughoCi78QAvD_BwE) APIs to manage site payments
     * [Pip](https://pypi.org/project/pip/) - tool for installing python packages
     * [Lucid Chart](https://lucid.app/lucidchart/c05f73cc-9dcc-4449-bd72-3098abe54692/edit?invitationId=inv_1c31fd92-4378-45d3-93c0-a252029cd87d&page=0_0#) was used to design the EDR model when planning the database
-    * [Heroku](https://www.heroku.com) for site deployment. 
-    * [PostgreSQL] the database used alongside this was Code Institutes [Database Maker CI](https://dbs.ci-dbs.net/)
-    * [Shields.io](https://shields.io/badges) was used for the shields used within the Readme
-    * [Favicon.io](https://favicon.io/) was used to design the favicon for the site
-    * [Chrome Developer Tools](https://developer.chrome.com/docs/devtools) was used throughout, to troubleshoot, solve bugs, test site features and responsiveness
-    * [amiresponsive](https://ui.dev/amiresponsive) was used to create the responsive screen imagery for the site
+    * [Heroku](https://www.heroku.com) - for site deployment. 
+    * [Database Maker CI](https://dbs.ci-dbs.net/)- used to create a database
+    * [Shields.io](https://shields.io/badges) - used for the shields used within the Readme
+    * [Favicon.io](https://favicon.io/) - used to design the favicon for the site
+    * [Chrome Developer Tools](https://developer.chrome.com/docs/devtools) - used throughout, to troubleshoot, solve bugs, test site features and responsiveness
+    * [amiresponsive](https://ui.dev/amiresponsive) - used to create the responsive screen imagery for the site
 
-    **Requirements.txt**
-    - `asgiref==3.8.1`        
-    - `boto3==1.35.7`
-    - `botocore==1.35.7`
-    - `dj-database-url==0.5.0`
-    - `Django==3.2.25`
-    - `django-allauth==0.54.0`
-    - `django-countries==7.2.1`
-    - `django-crispy-forms==1.14.0`
-    - `django-storages==1.14.4`
-    - `gunicorn==23.0.0`
-    - `jmespath==1.0.1`
-    - `oauthlib==3.2.2`
-    - `pillow==10.4.0`
-    - `psycopg2==2.9.9`
-    - `PyJWT==2.9.0`
-    - `python3-openid==3.2.0`
-    - `pytz==2024.1`
-    - `requests-oauthlib==2.0.0`
-    - `s3transfer==0.10.2`
-    - `sqlparse==0.5.1`
-    - `stripe==10.8.0`
+    **Within the Requirements.txt file**
+    - `asgiref==3.8.1` - provide an interface between async-capable web servers, frameworks, and applications
+    - `boto3==1.35.7` - AWS Software Development Kit for Python
+    - `botocore==1.35.7` - interface to a growing number of Amazon Web Services
+    - `dj-database-url==0.5.0` - simple Django utility allows for using database URLS
+    - `Django==3.2.25` - Python Framework
+    - `django-allauth==0.54.0` - reusable Python library for implementing OAuth1 and OAuth2 providers
+    - `django-countries==7.2.1` - application that provides country choices for use with user profile forms in this application
+    - `django-crispy-forms==1.14.0` - Python package that styles the Django forms with the help of built-in template packs
+    - `django-storages==1.14.4` - collection of custom storage backends for Django
+    - `gunicorn==23.0.0` - WSGI compliant web server for Python Applications in production
+    - `jmespath==1.0.1` - allows specifification on how to extract elements from a JSON document.
+    - `oauthlib==3.2.2` - framework which implements the logic of OAuth1 or OAuth2
+    - `pillow==10.4.0` - Python library that provides methods for opening, manipulating, and saving image file formats
+    - `psycopg2==2.9.9` - PostgreSQL database adapter
+    - `PyJWT==2.9.0` - Python library which allows you to encode and decode JSON Web Tokens
+    - `python3-openid==3.2.0` - standardizes the process for authenticating and authorizing users when they sign in to the site
+    - `pytz==2024.1` - timezone calculations
+    - `requests-oauthlib==2.0.0` - OAuth library support for Requests
+    - `sqlparse==0.5.1` - support for parsing, splitting and formatting SQL statements
+    - `stripe==10.8.0` - library for Stripe's API. To handle payment functionality
 
 - - - 
 
@@ -379,24 +436,25 @@ exit()
 - favicon https://favicon.io/favicon-converter/
 - image cropper https://www.iloveimg.com/crop-image
 - [Freepik](https://www.freepik.com/) provided most of the sites images. As follows : 
-[Image by Freepik](https://www.freepik.com/free-vector/sky-background-video-conferencing_9470358.htm#fromView=search&page=1&position=3&uuid=f6fac559-eb3f-4439-a24e-b49bba905c4a) - Background sky image in header
-[Image by brgfx on Freepik](https://www.freepik.com/free-vector/street-side-scene-with-ice-cream-shop-coffee-shop-scene_11690442.htm#fromView=search&page=1&position=46&uuid=67fbc153-5ff9-490e-a435-f8a34fa50f09) - Part of logo design
-[Image by brgfx on Freepik](https://www.freepik.com/free-vector/cute-girl-cartoon-character-wearing-hat_52764202.htm#fromView=search&page=1&position=23&uuid=76493a98-fb5f-4966-96be-913d90ad33ec)
-[Image by brgfx on Freepik](https://www.freepik.com/free-vector/happy-boy-jumping-cartoon-character_26350172.htm#fromView=search&page=1&position=43&uuid=5c848b89-72ae-4682-ab55-57c631bfe538) - Course character
-[Image by marymarkevich on Freepik](https://www.freepik.com/free-photo/blond-pretty-woman-pink-shirt-smiling-holding-holding-notebooks_27290357.htm#from_view=detail_alsolike) - Instructor image
-[Image by wayhomestudio on Freepik](https://www.freepik.com/free-photo/happy-devoted-woman-keeps-hand-chest-looks-joyfully-away-wears-round-spectacles-formal-white-shirt-gets-positive-news-poses-against-blue-background-with-blank-copy-space-your-promotion_23178344.htm#fromView=search&page=1&position=2&uuid=de9c9535-73e8-4eb1-aa4e-c54899020362) - Instructor image
-[Image by Freepik](https://www.freepik.com/free-photo/portrait-middle-aged-businesswoman_4783027.htm#fromView=search&page=1&position=14&uuid=de9c9535-73e8-4eb1-aa4e-c54899020362) - Instructor image
-[Image by kroshka__nastya on Freepik](https://www.freepik.com/free-photo/young-woman-casual-peach-sweater-backpack-isolated-green-olive-color-wall_13884671.htm#fromView=search&page=5&position=22&uuid=de9c9535-73e8-4eb1-aa4e-c54899020362) - Instructor image
-[Image by freepic.diller on Freepik](https://www.freepik.com/free-photo/happy-child-orange-sweater-plays-with-feather-floor_1471555.htm#fromView=search&page=1&position=13&uuid=ca1fd8df-ee34-4313-a2c0-a88eb8624c1b) - Babies course hero image
-[Image by Freepik](https://www.freepik.com/free-photo/high-angle-view-kids-sitting-inside-tepee_2532376.htm#fromView=search&page=2&position=18&uuid=8eae5d42-30ba-455f-95ef-f7e9c380f526) - Toddlers course hero image
-[Image by Ahkâm on FreeIconspng](https://www.freeiconspng.com/img/23499) - 'Image coming soon' placeholder image
-[Image by freepic.diller on Freepik](https://www.freepik.com/free-vector/little-boy-playing-shapes_1250763.htm#fromView=search&page=1&position=36&uuid=874f5ba6-fd8f-4d57-a86b-0e631dd9457b) - Course character
-[Image by Hongqi Zhang (aka Michael Zhang) on Dreamstime]("https://www.dreamstime.com/stock-photos-group-children-uniforms-image18787393") - Home page about us image
-[Image by jcomp on Freepik]("https://www.freepik.com/free-photo/little-boy-playing-with-construction-equipment-white_5395704.htm#fromView=search&page=1&position=1&uuid=3f85583f-23fb-45f7-9318-9bd4d78c8d6e") - Preschool course page hero image
-[Image by freepic.diller on Freepik](I"https://www.dreamstime.com/stock-photo-little-girl-playing-toy-kitchen-chef-hat-apron-cooking-fried-eggs-wooden-toys-young-children-kids-play-cook-image73464053") - Home page hero image
-[Image by brgfx on Freepik]("https://www.freepik.com/free-vector/happy-boy-jumping-cartoon-character_26213866.htm#fromView=search&page=1&position=1&uuid=da42b981-2dc4-4f89-8a41-6b1131c0dac8") - Course character
-[Image by brgfx on Freepik](https://www.freepik.com/free-vector/cute-baby-crawling-cartoon-character_27187597.htm#fromView=search&page=1&position=5&uuid=68a1fe55-d91d-44e6-94ff-5f06659ebe42) - Course character
-[Image by chevanon on Freepik](https://www.freepik.com/free-photo/cup-coffee-with-heart-drawn-foam_999656.htm#fromView=search&page=1&position=16&uuid=6afa55f8-c544-4225-9529-82ee359b6e61) - Cafe Page image
+- [Image by Freepik](https://www.freepik.com/free-vector/sky-background-video-conferencing_9470358.htm#fromView=search&page=1&position=3&uuid=f6fac559-eb3f-4439-a24e-b49bba905c4a) - Background sky image in header
+- [Image by brgfx on Freepik](https://www.freepik.com/free-vector/street-side-scene-with-ice-cream-shop-coffee-shop-scene_11690442.htm#fromView=search&page=1&position=46&uuid=67fbc153-5ff9-490e-a435-f8a34fa50f09) - Part of logo design
+- [Image by brgfx on Freepik](https://www.freepik.com/free-vector/cute-girl-cartoon-character-wearing-hat_52764202.htm#fromView=search&page=1&position=23&uuid=76493a98-fb5f-4966-96be-913d90ad33ec)
+- [Image by brgfx on Freepik](https://www.freepik.com/free-vector/happy-boy-jumping-cartoon-character_26350172.htm#fromView=search&page=1&position=43&uuid=5c848b89-72ae-4682-ab55-57c631bfe538) - Course character
+- [Image by marymarkevich on Freepik](https://www.freepik.com/free-photo/blond-pretty-woman-pink-shirt-smiling-holding-holding-notebooks_27290357.htm#from_view=detail_alsolike) - Instructor image
+- [Image by wayhomestudio on Freepik](https://www.freepik.com/free-photo/happy-devoted-woman-keeps-hand-chest-looks-joyfully-away-wears-round-spectacles-formal-white-shirt-gets-positive-news-poses-against-blue-background-with-blank-copy-space-your-promotion_23178344.htm#fromView=search&page=1&position=2&uuid=de9c9535-73e8-4eb1-aa4e-c54899020362) - Instructor image
+- [Image by Freepik](https://www.freepik.com/free-photo/portrait-middle-aged-businesswoman_4783027.htm#fromView=search&page=1&position=14&uuid=de9c9535-73e8-4eb1-aa4e-c54899020362) - Instructor image
+- [Image by kroshka__nastya on Freepik](https://www.freepik.com/free-photo/young-woman-casual-peach-sweater-backpack-isolated-green-olive-color-wall_13884671.htm#fromView=search&page=5&position=22&uuid=de9c9535-73e8-4eb1-aa4e-c54899020362) - Instructor image
+- [Image by freepic.diller on Freepik](https://www.freepik.com/free-photo/happy-child-orange-sweater-plays-with-feather-floor_1471555.htm#fromView=search&page=1&position=13&uuid=ca1fd8df-ee34-4313-a2c0-a88eb8624c1b) - Babies course hero image
+- [Image by Freepik](https://www.freepik.com/free-photo/high-angle-view-kids-sitting-inside-tepee_2532376.htm#fromView=search&page=2&position=18&uuid=8eae5d42-30ba-455f-95ef-f7e9c380f526) - Toddlers course hero image
+- [Image by Ahkâm on FreeIconspng](https://www.freeiconspng.com/img/23499) - 'Image coming soon' placeholder image
+- [Image by freepic.diller on Freepik](https://www.freepik.com/free-vector/little-boy-playing-shapes_1250763.htm#fromView=search&page=1&position=36&uuid=874f5ba6-fd8f-4d57-a86b-0e631dd9457b) - Course character
+- [Image by Hongqi Zhang (aka Michael Zhang) on Dreamstime]("https://www.dreamstime.com/stock-photos-group-children-uniforms-image18787393") - Home page about us image
+- [Image by jcomp on Freepik]("https://www.freepik.com/free-photo/little-boy-playing-with-construction-equipment-white_5395704.htm#fromView=search&page=1&position=1&uuid=3f85583f-23fb-45f7-9318-9bd4d78c8d6e") - Preschool course page hero image
+- [Image by freepic.diller on Freepik](I"https://www.dreamstime.com/stock-photo-little-girl-playing-toy-kitchen-chef-hat-apron-cooking-fried-eggs-wooden-toys-young-children-kids-play-cook-image73464053") - Home page hero image
+- [Image by brgfx on Freepik]("https://www.freepik.com/free-vector/happy-boy-jumping-cartoon-character_26213866.htm#fromView=search&page=1&position=1&uuid=da42b981-2dc4-4f89-8a41-6b1131c0dac8") - Course character
+- [Image by brgfx on Freepik](https://www.freepik.com/free-vector/cute-baby-crawling-cartoon-character_27187597.htm#fromView=search&page=1&position=5&uuid=68a1fe55-d91d-44e6-94ff-5f06659ebe42) - Course character
+- [Image by chevanon on Freepik](https://www.freepik.com/free-photo/cup-coffee-with-heart-drawn-foam_999656.htm#fromView=search&page=1&position=16&uuid=6afa55f8-c544-4225-9529-82ee359b6e61) - Cafe Page image
+
 - - - 
 
 ## Acknowledgements

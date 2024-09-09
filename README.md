@@ -115,46 +115,64 @@ This website has been built using HTML, CSS, Javascript and Python.
 -   ### Wireframes
 
     * [Home page]() (desktop)
+    * [Home page]() (tablet device)
+    * [Home page]() (mobile device)
     * [Login page](testing/images/login_wf.png) (desktop)
     * [Register dropdown](testing/images/register_login_dropdown_wf.png) (desktop)
     * [Register page](testing/images/register_page_wf.png) (desktop)
     * [Logout page](testing/images/logout_wf.png) (desktop)
     * [Shopping Bag page](testing/images/shopping_bag_wf.png) (desktop)
+    * [Shopping Bag page]() (tablet device)
+    * [Shopping Bag page]() (mobile device)
     * [All Courses page]() (desktop)
+    * [All Courses page]() (tablet device)
+    * [All Courses page]() (mobile device)
     * [Babies Course page](testing/images/babies_coure_wf.png) (desktop)
+    * [Babies Course page]() (tablet device)
+    * [Babies Course page]() (mobile device)
     * [Toddler Course page](testing/images/toddler_course_wf.png) (desktop)
+    * [Toddler Course page]() (tablet device)
+    * [Toddler Course page]() (mobile device)
     * [Preschool Course page](testing/images/preschool_course_wf.png) (desktop)
+    * [Preschool Course page]() (tablet device)
+    * [Preschool Course page]() (mobile device)
     * [Early Years Course page]() (desktop)
+    * [Early Years Course page]() (tablet device)
+    * [Early Years Course page]() (mobile device)
     * [Add course page]() (desktop)
+    * [Add course page]() (tablet device)
+    * [Add course page]() (mobile device)
     * [Edit course page]() (desktop)
+    * [Edit course page]() (tablet device)
+    * [Edit course page]() (mobile device)
     * [My Profile page page](testing/images/my_profile_wf.png) (desktop)
+    * [My Profile page page]() (tablet device)
+    * [My Profile page page]() (mobile device)
     * [Instructor Info page](testing/images/instructor_info_wf.png) (desktop)
+    * [Instructor Info page]() (tablet device)
+    * [Instructor Info page]() (mobile device)
     * [Instructor Detail page](testing/images/instructor_detail_wf.png) (desktop)
+    * [Instructor Detail page]() (tablet device)
+    * [Instructor Detail page]() (mobile device)
     * [Add Instructor page]() (desktop)
+    * [Add Instructor page]() (tablet device)
+    * [Add Instructor page]() (mobile device)
     * [Edit Instructor page]() (desktop)
+    * [Edit Instructor page]() (tablet device)
+    * [Edit Instructor page]() (mobile device)
     * [Cafe page](testing/images/cafe_wf.png) (desktop)
+    * [Cafe page]() (tablet device)
+    * [Cafe page]() (mobile device)
     * [Checkout page]() (desktop)
+    * [Checkout page]() (tablet device)
+    * [Checkout page]() (mobile device)
     * [Checkout Success page]() (desktop)
+    * [Checkout Success page]() (tablet device)
+    * [Checkout Success page]() (mobile device)
     * [Booking Enquiry page]() (desktop)
+    * [Booking Enquiry page]() (tablet device)
+    * [Booking Enquiry page]() (mobile device)
     * [Verify Email](testing/images/verify_email_wf.png) (desktop)
-    * []() (tablet device) 
-    * []() (mobile device) 
-    * []() (desktop)
-    * []() (tablet device) 
-    * []() (mobile device)
-    * []() (desktop)
-    * []() (tablet device) 
-    * []() (mobile device)
-    * []() (desktop)
-    * []() (tablet device) 
-    * []() (mobile device) 
-    * []() (desktop)
-    * []() (tablet device) 
-    * []() (mobile device)
-    * []() (desktop)
-    * []() (tablet device) 
-    * []() (mobile device)
-
 
 -   ### Database Schema
     * The database was designed using Lucid Chart(see credits). 
@@ -165,71 +183,71 @@ This website has been built using HTML, CSS, Javascript and Python.
 
 ## Structure
 
-There are ... pages which make up the full site and are extended from a base template:
-* 
-* 404 error page (404.html)
-* 500 error page (500.html)
+There are 7 main apps within Little Pont: home, profiles, products, bag, checkout, instructor and contact which make up the full site. All templates within these apps are extended from a base template. The base template comprises of the navigation bar and footer. Below is a breakdown of the main site deatures.
 
--   ### Features
+-   ### Features 
+
     * Responsive on device sizes with media screen size >280px
+
+-   ### Features used in every page:
+
+    -   #### Favicon
 
     -   #### Navigation Bar
 
-        * 
-
        [Navigation Bar - desktop]()
 
-       * The responsive navbar features a hamburger menu on medium sized devices and smaller
+       * The responsive navbar features a hamburger menu on medium sized devices and smaller. This displays the Home, About, Courses and Contact dropdown/links. A bright and colourful site logo and header is included with each page. This is to catch the eye of the user and their children and entice them to use the business. The Account and Shopping Bag icons remain the same on all devices so they are easily accessible to the user.
 
        [Navigation Bar- mobile device ]()
 
        [Navigation Bar- mobile device- hamburger menu open]()
+    
+    -   #### Scroll Button
+    
+    -   #### Footer
+        * Features the site Title, links to the Register/Login pages and social links.
 
-    -   #### Background Image
+        [Footer]()
+        [Footer - mobile device]()
 
-        * 
-        
-        [Background image]()
+-   ### Features in main site pages:
+
+    -   #### Hero Images
+
+        * Each of the main site pages have a large hero image which gives the user a bit of information about what the page purpose is. Its purpose is also to add colour and interest to these pages to maintain interest.
+    
+    Main Content
 
     -   #### Home page
-
-        * 
+        * App: Home
+        * This page has a large colourful hero image of a happy girl dressed uo as a chef. This will hopefully give the site user intstant information about the role play element of Little Pont and some idea of what to expect when visiting the business. The Home page comprises of header/navbar, hero image, footer and then two main information sections: About Us and What We Offer.
         
         [Home page]()
-        [Home page - mobile device]()
+        [Home page- About Us]()
+        [Home page- What We Offer]()
 
-    -   #### Register
-
+    -   #### My Profile page
         * 
-
-        [Register]()
-        [Register-mobile]()
-
-    -   #### Login
-
-        * 
-      
-        [Login]()
-        [Login-mobile]()
-
-
-    -   #### Footer
-         * Responsive. Features the site Title, links to the main pages and social links.
-
-         [Footer]()
-         [Footer - mobile device]()
-
-    -   #### 404 Error Page
-          * A 404 error page was created to ensure that if, for any reason, the webpage is unavailable, the user is taken to a message page which helps to redirect them back to the website.
-
-         [404 error page]()
-
-    -   #### 500 Error Page
-         * A 500 error page was created to ensure that if, for any reason, there is an internal server error, the user is taken to a message page which helps to redirect them back to the website.
+    -   #### Courses page
+    -   #### Courses detail pages
+    -   #### Course Management page
+    -   #### Instructor Info page
+    -   #### Instructor Detail page
+    -   #### Team Management page
+    -   #### Shopping Bag page
+    -   #### Checkout page
+    -   #### Checkout Success page
+    -   #### Enquiry Form page
+    -   #### Register page
+    -   #### Login page
+    -   #### Logout page
+    -   #### Forms
 
 
 -   ### Features For Future Implementation
-    *  
+    *  I had planned on adding a Frequently Asked Questions(FAQs) section to add more information to the site in a user friendly and succinct way. This would be different to how the rest of the site information is presented. I feel that this would have increased user satisfaction. 
+    * In the future I would like to add Booking/Contact/Enquiry Form links directly from their social media accounts as i think a lot of the site users/parents would find out about our business via their socials.
     
 - - - 
 
@@ -237,20 +255,45 @@ There are ... pages which make up the full site and are extended from a base tem
 
 -   ### Frameworks, Libraries & Programs Used
 
+    
     * [Google Fonts](https://fonts.google.com/) were used to import the 'Bebas Neue' and 'Noto Serif' font into the style.css file which is used on all pages throughout the project. 
     * [Bootstrap v5.3.2]() was used on all pages throughout the website to add icons for aesthetic and UX purposes
     * [Gitpod](https://www.gitpod.io/) was the IDE used to build the project. Git was used for version control.
     * [GitHub](https://github.com/) is used to store the projects code after being pushed from Git.
     * [Balsamiq](https://balsamiq.com/) was used to create the wireframes to support in the design process.
-    * [Django]()
+    * [Django](https://www.djangoproject.com/) - a Python web framework that facilitates development
     * [Jinja](https://jinja.palletsprojects.com/en/3.1.x/) - templating engine
     * [Pip](https://pypi.org/project/pip/) - tool for installing python packages
     * [Lucid Chart](https://lucid.app/lucidchart/c05f73cc-9dcc-4449-bd72-3098abe54692/edit?invitationId=inv_1c31fd92-4378-45d3-93c0-a252029cd87d&page=0_0#) was used to design the EDR model when planning the database
-    * The site was deployed using [Heroku](https://www.heroku.com) and the database used alongside this was PostgreSQL fro Code Institute
+    * [Heroku](https://www.heroku.com) for site deployment. 
+    * [PostgreSQL] the database used alongside this was Code Institutes [Database Maker CI](https://dbs.ci-dbs.net/)
     * [Shields.io](https://shields.io/badges) was used for the shields used within the Readme
     * [Favicon.io](https://favicon.io/) was used to design the favicon for the site
     * [Chrome Developer Tools](https://developer.chrome.com/docs/devtools) was used throughout, to troubleshoot, solve bugs, test site features and responsiveness
     * [amiresponsive](https://ui.dev/amiresponsive) was used to create the responsive screen imagery for the site
+
+    **Requirements.txt**
+    - `asgiref==3.8.1`        
+    - `boto3==1.35.7`
+    - `botocore==1.35.7`
+    - `dj-database-url==0.5.0`
+    - `Django==3.2.25`
+    - `django-allauth==0.54.0`
+    - `django-countries==7.2.1`
+    - `django-crispy-forms==1.14.0`
+    - `django-storages==1.14.4`
+    - `gunicorn==23.0.0`
+    - `jmespath==1.0.1`
+    - `oauthlib==3.2.2`
+    - `pillow==10.4.0`
+    - `psycopg2==2.9.9`
+    - `PyJWT==2.9.0`
+    - `python3-openid==3.2.0`
+    - `pytz==2024.1`
+    - `requests-oauthlib==2.0.0`
+    - `s3transfer==0.10.2`
+    - `sqlparse==0.5.1`
+    - `stripe==10.8.0`
 
 - - - 
 

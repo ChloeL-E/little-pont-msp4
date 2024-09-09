@@ -944,7 +944,7 @@ li::marker {
 
 @media only screen and (max-width: 600px) {
   #top-header-image {
-    height: 198px;
+    height: 208px;
   }
   #top-header-image img{
     height: 198px;

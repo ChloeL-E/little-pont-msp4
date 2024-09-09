@@ -114,16 +114,29 @@ This website has been built using HTML, CSS, Javascript and Python.
 
 -   ### Wireframes
 
-    * []() (desktop)
-    * []() (tablet device) 
-    * []() (mobile device)
-    * [Register]() (desktop)
-    * [Register]() (tablet device) 
-    * [Register]() (mobile device) 
-    * [Login]() (desktop)
-    * [Login]() (tablet device) 
-    * [Login]() (mobile device)
-    * []() (desktop)
+    * [Home page]() (desktop)
+    * [Login page](testing/images/login_wf.png) (desktop)
+    * [Register dropdown](testing/images/register_login_dropdown_wf.png) (desktop)
+    * [Register page](testing/images/register_page_wf.png) (desktop)
+    * [Logout page](testing/images/logout_wf.png) (desktop)
+    * [Shopping Bag page](testing/images/shopping_bag_wf.png) (desktop)
+    * [All Courses page]() (desktop)
+    * [Babies Course page](testing/images/babies_coure_wf.png) (desktop)
+    * [Toddler Course page](testing/images/toddler_course_wf.png) (desktop)
+    * [Preschool Course page](testing/images/preschool_course_wf.png) (desktop)
+    * [Early Years Course page]() (desktop)
+    * [Add course page]() (desktop)
+    * [Edit course page]() (desktop)
+    * [My Profile page page](testing/images/my_profile_wf.png) (desktop)
+    * [Instructor Info page](testing/images/instructor_info_wf.png) (desktop)
+    * [Instructor Detail page](testing/images/instructor_detail_wf.png) (desktop)
+    * [Add Instructor page]() (desktop)
+    * [Edit Instructor page]() (desktop)
+    * [Cafe page](testing/images/cafe_wf.png) (desktop)
+    * [Checkout page]() (desktop)
+    * [Checkout Success page]() (desktop)
+    * [Booking Enquiry page]() (desktop)
+    * [Verify Email](testing/images/verify_email_wf.png) (desktop)
     * []() (tablet device) 
     * []() (mobile device) 
     * []() (desktop)
@@ -145,8 +158,8 @@ This website has been built using HTML, CSS, Javascript and Python.
 
 -   ### Database Schema
     * The database was designed using Lucid Chart(see credits). 
-    * [EDR diagram]()
-    * There are 3 tables within this relational database:  
+    * [EDR diagram](testing/images/ERD.png)
+    * There are 7 tables within this relational database:  User, User Profile, Order, Order Line Item, Course, Instructor and Enquiry. Instructor has a one-to-many relationship with the Cuurse model. User Profile has a one-to-many relatiomship with Enquiry. 
     
 - - - 
 

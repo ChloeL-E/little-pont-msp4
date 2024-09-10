@@ -1,121 +1,119 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
+<div class="container header-container">
+   <div class="row">
+      <div class="col"></div>
+   </div>
+</div>
 {% endblock %}
-
 {% block content %}
-    <div class="container-fluid pl-5">
-        <div class="row">
-            <header class="col text-center section-title">
-                <h3>Courses</h3>
-                <p>Click on a course below to find out more about them</p>
-                <!-- Sorting Courses -->
-                <form method="GET" action="{% url 'all_courses' %}">
-                    <select
-                        class="sm-font" name="sort">
-                        <!-- Sort By Name -->
-                        <option value="name" {% if request.GET.sort == "name" %} selected {% endif %}>Name</option>
-                        <option value="start_date" {% if request.GET.sort == "start_date" %} selected {% endif %}>Start Date</option>
-                        <option value="start_time" {% if request.GET.sort == "start_time" %} selected {% endif %}>Start Time</option>
-                    </select>
-                    <select
-                        class="sm-font" name="direction">
-                        <!-- Sort By Direction -->
-                        <option value="asc" {% if request.GET.direction == "asc" %} selected {% endif %}>Ascending</option>
-                        <option value="desc" {% if request.GET.direction == "desc" %} selected {% endif %}>Descending</option>
-                    </select>
-                    <!-- Filter Button -->
-                    <input class="remove-item" type="submit" value="Filter"></form>
-                </header>
-                <div
-                    class="row">
-                    <!-- Display All Available Courses -->
-                    {% for course in courses %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card h-100 border-0">
-                                <div class="card-body pb-0">
-                                    <a class="title-font courses-home" href="{% url 'courses_by_age_group' course.age_group %}">{{ course.name }}</a>
-                                    <p class="mb-0"></p>
-                                </div>
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="mb-0 text-left">
-                                                Start Date:
-                                                {{ course.start_date }}<br>
-                                                    End Date:
-                                                    {{ course.end_date }}<br>
-                                                        Start Time:
-                                                        {{ course.start_time }}<br>
-                                                            Price: £{{ course.price }}<br>
-                                                                Instructor:
-                                                                {{ course.instructor }}<br></p>
-                                                                <!-- Superuser Controls -->
-                                                                {% if request.user.is_superuser %}
-                                                                    <div class="ml-3 superuser-controls">
-                                                                        <a class="update-link" href="{% url 'edit_course' course.id %}">Edit</a>
-                                                                        <a class="remove-item" href="{% url 'delete_course' course.id %}">Delete</a>
-                                                                    </div>
-                                                                {% endif %}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Setting the layout -->
-                                            {% if forloop.counter|divisibleby:1 %}
-                                                <div class="col-12 d-sm-none mb-5">
-                                                    <hr></div>
-                                                {% endif %}
-                                                {% if forloop.counter|divisibleby:2 %}
-                                                    <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                                                        <hr></div>
-                                                    {% endif %}
-                                                    {% if forloop.counter|divisibleby:3 %}
-                                                        <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                                                            <hr></div>
-                                                        {% endif %}
-                                                        {% if forloop.counter|divisibleby:4 %}
-                                                            <div class="col-12 d-none d-xl-block mb-5">
-                                                                <hr></div>
-                                                            {% endif %}
-                                                        {% endfor %}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+<div class="container-fluid pl-5">
+   <div class="row">
+      <header class="col text-center section-title">
+         <h1>Courses</h1>
+         <p>Click on a course below to find out more about them</p>
+         <!-- Sorting Courses -->
+         <form method="GET" action="{% url 'all_courses' %}">
+            <label for="sort" class="sr-only">Sort by:</label>
+            <select class="sm-font" name="sort" id="sort">
+               <!-- Sort By Name -->
+               <option value="name" {% if request.GET.sort == "name" %} selected {% endif %}>Name</option>
+               <option value="start_date" {% if request.GET.sort == "start_date" %} selected {% endif %}>Start Date</option>
+               <option value="start_time" {% if request.GET.sort == "start_time" %} selected {% endif %}>Start Time</option>
+            </select>
+            <label for="direction" class="sr-only">Sort by:</label>
+            <select
+               class="sm-font" name="direction">
+               <!-- Sort By Direction -->
+               <option value="asc" {% if request.GET.direction == "asc" %} selected {% endif %}>Ascending</option>
+               <option value="desc" {% if request.GET.direction == "desc" %} selected {% endif %}>Descending</option>
+            </select>
+            <!-- Filter Button -->
+            <input class="remove-item" type="submit" value="Filter">
+         </form>
+      </header>
+      <div class="row mb-3">
+         <!-- Display All Available Courses -->
+         {% for course in courses %}
+         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="card h-100 border-0">
+               <div class="card-body pb-0">
+                  <a class="title-font courses-home" href="{% url 'courses_by_age_group' course.age_group %}">{{ course.name }}</a>
+                  <p class="mb-0"></p>
+               </div>
+               <div class="card-footer bg-white pt-0 border-0 text-left">
+                  <div class="row">
+                     <div class="col">
+                        <p class="mb-0 text-left">
+                           Start Date:
+                           {{ course.start_date }}<br>
+                           End Date:
+                           {{ course.end_date }}<br>
+                           Start Time:
+                           {{ course.start_time }}<br>
+                           Price: £{{ course.price }}<br>
+                           Instructor:
+                           {{ course.instructor }}<br>
+                        </p>
+                        <!-- Superuser Controls -->
+                        {% if request.user.is_superuser %}
+                        <div class="ml-3 superuser-controls">
+                           <a class="update-link" href="{% url 'edit_course' course.id %}">Edit</a>
+                           <a class="remove-item" href="{% url 'delete_course' course.id %}">Delete</a>
+                        </div>
+                        {% endif %}
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Setting the layout -->
+         {% if forloop.counter|divisibleby:1 %}
+         <div class="col-12 d-sm-none mb-5">
+         </div>
+         {% endif %}
+         {% if forloop.counter|divisibleby:2 %}
+         <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+         </div>
+         {% endif %}
+         {% if forloop.counter|divisibleby:3 %}
+         <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+         </div>
+         {% endif %}
+         {% if forloop.counter|divisibleby:4 %}
+         <div class="col-12 d-none d-xl-block mb-5">
+         </div>
+         {% endif %}
+         {% endfor %}
+      </div>
+   </div>
+</div>
+</div>
+{% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+<script type = "text/javascript" >
+   /* sorting filter */
+   $('#sort-selector').change(function () {
+      var selector = $(this);
+      var currentUrl = new URL(window.location);
 
-                                    {% endblock %}
+      var selectedVal = selector.val();
+      if (selectedVal != "reset") {
+         var sort = selectedVal.split("_")[0];
+         var direction = selectedVal.split("_")[1];
 
-                                    {% block postloadjs %}
-                                        {{ block.super }}
-                                        <script type="text/javascript">
-                                            /* sorting filter */
-                                            $('#sort-selector').change(function () {
-                                                var selector = $(this);
-                                                var currentUrl = new URL(window.location);
+         currentUrl.searchParams.set("sort", sort);
+         currentUrl.searchParams.set("direction", direction);
 
-                                                var selectedVal = selector.val();
-                                                if (selectedVal != "reset") {
-                                                    var sort = selectedVal.split("_")[0];
-                                                    var direction = selectedVal.split("_")[1];
+         window.location.replace(currentUrl);
+      } else {
+         currentUrl.searchParams.delete("sort");
+         currentUrl.searchParams.delete("direction");
 
-                                                    currentUrl.searchParams.set("sort", sort);
-                                                    currentUrl.searchParams.set("direction", direction);
-
-                                                    window.location.replace(currentUrl);
-                                                } else {
-                                                    currentUrl.searchParams.delete("sort");
-                                                    currentUrl.searchParams.delete("direction");
-
-                                                    window.location.replace(currentUrl);
-                                                }
-                                            })
-                                        </script>
-                                    {% endblock %}
+         window.location.replace(currentUrl);
+      }
+   }) 
+</script>
+{% endblock %}

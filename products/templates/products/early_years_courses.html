@@ -7,9 +7,9 @@
       <div class="hero-item early-years-hero active">
          <div class="row">
             <div class="col-12 col-md-6 my-auto intro-container">
-               <h2 class="display-4 logo-font text-black">
+               <h1 class="display-4 logo-font text-black">
                   Early Years Group
-               </h2>
+               </h1>
                <div class="hero-info my-5">
                   <p>A course designed specifically for children aged 4 to 5 years</p>
                </div>
@@ -23,7 +23,7 @@
 <section id="about-groups">
    <div class="container">
       <header class="section-header text-center section-title">
-         <h3 class="main-heading">Early Years</h3>
+         <h2 class="main-heading">Early Years</h2>
          <p>
             Our Early Years course is suitable for children aged 4 to 5 years and 
             each of our sessions are fun and educational. 
@@ -40,7 +40,7 @@
             <div class="icon-box">
                <div class="icon"><i class="fa-regular fa-star mr-3"></i></div>
                <div class="text-content">
-                  <h4 class="title-font">Connection</h4>
+                  <h3 class="title-font">Connection</h3>
                   <p class="description">
                   </p>
                </div>
@@ -48,7 +48,7 @@
             <div class="icon-box">
                <div class="icon"><i class="fa-regular fa-star mr-3"></i></div>
                <div class="text-content">
-                  <h4 class="title-font">Cognition</h4>
+                  <h3 class="title-font">Cognition</h3>
                   <p class="description">
                      Play is one of the most fascinating aspects of child development. 
                      Through play a child can practice problem solving, language, social skills, and motor skills!
@@ -58,7 +58,7 @@
             <div class="icon-box">
                <div class="icon"><i class="fa-regular fa-star mr-3"></i></div>
                <div class="text-content">
-                  <h4 class="title-font">Development</h4>
+                  <h3 class="title-font">Development</h3>
                   <p class="description">
                      In their cognitive development they will begin playing with the concept of 
                      symbolism, realising that one thing can represent something else in a game.
@@ -72,6 +72,7 @@
    </div>
 </section>
 <!-- End About groups section -->
+ 
 <!--Course Booking Section -->
 <!-- Course Details section and Course Booking Section Side by Side -->
 <section id="course-details">
@@ -142,7 +143,7 @@
                            <div class="input-group">
                               <div class="input-group-prepend">
                                  <button class="decrement-qty btn btn-black rounded-0" data-item_id="{{ course.id }}"
-                                    aria-label="decrease quantity" id="decrement-qty_{{ course.id }}">
+                                    aria-label="decrease quantity" id="decrement-qty_{{ course.id }}" aria-label="decrease quantity">
                                  <span class="icon">
                                  <i class="fas fa-minus"></i>
                                  </span>
@@ -152,7 +153,7 @@
                                  data-item_id="{{ course.id }}" aria-label="increase quantity" id="id_qty_{{ course.id }}">
                               <div class="input-group-append">
                                  <button class="increment-qty btn btn-black rounded-0" data-item_id="{{ course.id }}"
-                                    id="increment-qty_{{ course.id }}">
+                                    id="increment-qty_{{ course.id }}" aria-label="increase quantity">
                                  <span class="icon">
                                  <i class="fas fa-plus"></i>
                                  </span>

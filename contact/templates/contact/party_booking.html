@@ -27,7 +27,8 @@
          <div class="mb-3">
             <!-- Booking enquiry form -->
             <h2 class="title-font mb-4">Party Booking Form</h2>
-      <form method="POST" action="{% url 'send_booking_enquiry' %}" class="form mb-2" enctype="multipart/form-data">
+      <form method="POST" action="{% url 'send_booking_enquiry' %}" id="bookingForm" class="form mb-2" enctype="multipart/form-data" aria-labelledby="bookingFormLabel">
+         <label id="bookingFormLabel" class="sr-only">Party Booking Form</label>
       {% csrf_token %}
       {{ form | crispy }}
       <!-- cancel/submit buttons -->

@@ -1,4 +1,4 @@
-/*------- ROOT VARIABLES -------*/
+/* Root Variables */
 :root {
   --font-header: "Amatic SC";
   --font-main: "Roboto";
@@ -9,6 +9,8 @@
   --yellow: #fcf6bd;
   --purple: #e4c1f9;
 }
+
+/* -------------------------------- Base template */
 
 html {
   height: 100%;
@@ -23,6 +25,21 @@ body {
 
 main {
   background-color: #fbfbfc;
+}
+
+.scroll-button {
+  height: 42px;
+  width: 42px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: var(--pink);
+  border: 1px solid var(--font-color-main);
+}
+
+.scroll-button:hover {
+  background: var(--purple);
+  border: 1px solid var(--purple);
 }
 
 /* Header */
@@ -131,27 +148,6 @@ header {
 }
 
 /*  -------------------------------- Home page */
-/* Hero Image Carousel*/
-
-#myCarousel, .carousel-inner, .carousel-item {
-  height: 100%;
-}
-  
-.carousel-inner {
-  display: flex;
-  align-items: center;
-}
-  
-.carousel-item img {
-  width: 100%;
-  height: auto; /* Maintain aspect ratio */
-}
-span .carousel-control-prev-icon,
-span .carousel-control-next-icon {
-  color: var(--pink); 
-  font-size: 40px; 
-  font-style: bold;
-}
 
 #hero,
 #babies-hero {
@@ -159,13 +155,6 @@ span .carousel-control-next-icon {
   height: 80vh;
   overflow: hidden;
   position: relative;
-}
-
-@media (max-height: 500px) {
-  #hero,
-  #babies-hero {
-    height: 150vh;
-  }
 }
   
 #hero .hero,
@@ -204,7 +193,8 @@ span .carousel-control-next-icon {
   background-image: url('/media/msp4_media/frying-eggs.webp');
 }
   
-#hero h2 {
+#hero h2,
+#hero h1 {
   color:#000;
   margin-bottom: 30px;
   font-size: 60px;
@@ -212,14 +202,7 @@ span .carousel-control-next-icon {
   font-family: var(--font-header);
 }
   
-@media (max-width: 768px) {
-  #hero h2 {
-    font-size: 38px;
-  }
-}
-  
 #hero p {
-  /*width: 80%;*/
   margin: 0 auto 30px auto;
   color: #000;
   font-size: 35px;
@@ -254,7 +237,8 @@ span .carousel-control-next-icon {
   border-color: var(--font-color-main);
 }
 
-/*-------------------------------- Section */
+/* About Us / Sections */
+
 section {
   padding: 60px 0;
 }
@@ -305,8 +289,6 @@ section {
   margin-bottom: 0;
 }
 
-/*-------------------------------- About Us */
-
 .icon-box{
   border-radius: 15px;
 }
@@ -354,7 +336,7 @@ section {
   color: var(--blue);
 }
 
-/*--------------------------------  What we offer */
+/* What we offer */
 
 .what-we-offer {
   padding: 10px 0;
@@ -529,6 +511,10 @@ section {
   background-image: url('/media/msp4_media/little-girls-science-class.webp')
 }
 
+.card {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 #about-groups {
   background: #fff;
   padding: 60px 0 0 0;
@@ -538,13 +524,6 @@ section {
 #about-groups .levels-img {
   text-align: center;
   padding-top: 20px;
-}
-
-@media (min-width: 769px) {
-  #about-groups .groups-img {
-    padding-top: 120px;
-    margin-top: -200px;
-  }
 }
 
 #about-groups .groups-img img {
@@ -558,21 +537,6 @@ section {
 
 #about-groups .icon {
   margin-bottom: 10px;
-}
-
-.scroll-button {
-  height: 42px;
-  width: 42px;
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  background: var(--pink);
-  border: 1px solid var(--font-color-main);
-}
-
-.scroll-button:hover {
-  background: var(--purple);
-  border: 1px solid var(--purple);
 }
 
 .btt-link,
@@ -741,6 +705,29 @@ input[name='q']::placeholder {
 
 /* -------------------------------- Instructor */
 
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom-checkbox .custom-control-label::before {
+  border-radius: 0;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+  border-radius: 0;
+}
+
 .img-overlay a:hover,
 .superuser-controls a:hover {
   text-decoration: none;
@@ -786,7 +773,6 @@ input[name='q']::placeholder {
 .bg-warning {
   background-color: var(--pink)!important;
 }
-
 
 /* -------------------------------- Allauth form formatting */
 
@@ -857,32 +843,7 @@ input[name='q']::placeholder {
   background-color: var(--green);
 }
 
-/* -------------------------------- Instructor Form */
-
-.btn-file {
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-file input[type="file"] {
-  position: absolute;
-  top: 0;
-  right: 0;
-  min-width: 100%;
-  min-height: 100%;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.custom-checkbox .custom-control-label::before {
-  border-radius: 0;
-}
-
-.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-  border-radius: 0;
-}
-
-/* -------------------------------- FOOTER */
+/* -------------------------------- Footer */
 
 footer {
   background-color: rgba(255, 255, 255);
@@ -945,6 +906,20 @@ li::marker {
     }
 }
 
+@media (max-width: 768px) {
+  #hero h2,
+  #hero h1 {
+    font-size: 38px;
+  }
+}
+
+@media (min-width: 769px) {
+  #about-groups .groups-img {
+    padding-top: 120px;
+    margin-top: -200px;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   #top-header-image {
     height: 208px;
@@ -962,5 +937,12 @@ li::marker {
   }
   #course-details h4 {
     text-align: center;
+  }
+}
+
+@media (max-height: 500px) {
+  #hero,
+  #babies-hero {
+    height: 150vh;
   }
 }

@@ -13,14 +13,15 @@
       <div class="row">
          <div class="col-12 section-title">
             <!--Page title-->
-            <h2 class="logo-font mb-4 main-heading text-center">Team Management</h2>
+            <h1 class="logo-font mb-4 main-heading text-center">Team Management</h1>
          </div>
       </div>
       <div class="row">
          <div class="col-12 col-md-6">
             <h2 class="title-font mb-4">Edit an Instructor</h2>
             <!-- Form to edit/update an instructor -->
-            <form method="POST" action="{% url 'edit_instructor' instructor.id %}" class="form mb-2" enctype="multipart/form-data">
+            <form method="POST" action="{% url 'edit_instructor' instructor.id %}" class="form mb-2" id="editInstructorForm" enctype="multipart/form-data" aria-labelledby="editInstructorLabel">
+               <label id="editInstructorLabel" class="sr-only">Edit Instructor Form</label>
                {% csrf_token %}
                <!-- Organising form fields -->
                {% for field in form %}

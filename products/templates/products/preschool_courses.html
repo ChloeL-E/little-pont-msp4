@@ -8,9 +8,9 @@
     <div class="hero-item preschoolers-hero active">
       <div class="row">
         <div class="col-12 col-md-6 my-auto pt-5">
-          <h2 class="display-4 logo-font text-black mt-5">
+          <h1 class="display-4 logo-font text-black mt-5">
             Preschooler Group
-          </h2>
+          </h1>
           <div class="hero-info my-5">
             <p>A course designed specifically for children aged 3 to 4 years</p>
           </div>
@@ -24,7 +24,7 @@
 <section id="about-groups">
   <div class="container">
     <header class="section-header text-center section-title">
-      <h3 class="main-heading pt-3">Preschool Class</h3>
+      <h2 class="main-heading pt-3">Preschool Class</h2>
       <p>
         Our Preschool course is suitable for children aged 3 to 4 years. 
       </p>
@@ -40,7 +40,7 @@
         <div class="icon-box">
           <div class="icon"><i class="fa-regular fa-star mr-3"></i></div>
           <div class="text-content">
-            <h4 class="title-font">Connection</h4>
+            <h3 class="title-font">Connection</h3>
             <p class="description">
               Your child developes conversation skills by role-modelling, prompting, guiding and practising. 
               These skills help childrens' development and relationships. Little Pont is set up to encourage 
@@ -53,7 +53,7 @@
         <div class="icon-box">
           <div class="icon"><i class="fa-regular fa-star mr-3"></i></div>
           <div class="text-content">
-            <h4 class="title-font">Creativity</h4>
+            <h3 class="title-font">Creativity</h3>
             <p class="description">
               Preschoolers learn and develop through creative activities like drama and role play. Experiencing, 
               discovering and experimenting are the most important parts of preschooler creative activities. 
@@ -65,7 +65,7 @@
         <div class="icon-box">
           <div class="icon"><i class="fa-regular fa-star mr-3"></i></div>
           <div class="text-content">
-            <h4 class="title-font">Development</h4>
+            <h3 class="title-font">Development</h3>
             <p class="description">
               At Little Pont we understand that play is key to cognitive, motor skills, 
               emotional and language development. Our aim is to facilitate the 
@@ -127,7 +127,8 @@
         <div class="pt-5 pt-lg-0">
           <h4 class="title-font ml-5">Course Booking</h4>
           <!--Form which loops through the course dates -->
-          <form id="courseForm" class="form" method="POST">
+          <form id="courseForm" class="form" method="POST" aria-labelledby="courseFormLabel">
+            <label id="courseFormLabel" class="sr-only">Course Booking Form</label>
             {% csrf_token %}
             <div class="form-row">
               <div class="col-12">
@@ -156,7 +157,7 @@
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <button class="decrement-qty btn btn-black rounded-2" data-item_id="{{ course.id }}"
-                          id="decrement-qty_{{ course.id }}">
+                          id="decrement-qty_{{ course.id }}" aria-label="decrease quantity">
                           <span class="icon">
                             <i class="fas fa-minus"></i>
                           </span>
@@ -166,7 +167,7 @@
                         data-item_id="{{ course.id }}" id="id_qty_{{ course.id }}">
                       <div class="input-group-append">
                         <button class="increment-qty btn btn-black rounded-0" data-item_id="{{ course.id }}"
-                          id="increment-qty_{{ course.id }}">
+                          id="increment-qty_{{ course.id }}" aria-label="increase quantity">
                           <span class="icon">
                             <i class="fas fa-plus"></i>
                           </span>

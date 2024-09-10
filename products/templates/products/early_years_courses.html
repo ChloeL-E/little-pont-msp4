@@ -119,6 +119,7 @@
           <h4 class="title-font">Course Booking</h4>
           <!--Form which loops through the course dates -->
           <form id="courseForm" class="form" method="POST" aria-labelledby="courseFormLabel">
+            <label id="courseFormLabel" class="sr-only">Course Booking Form</label>
             {% csrf_token %}
             <div class="form-row">
               <div class="col-12">

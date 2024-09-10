@@ -118,7 +118,7 @@
         <div class="pt-5 pt-lg-0">
           <h4 class="title-font">Course Booking</h4>
           <!--Form which loops through the course dates -->
-          <form id="courseForm" class="form" method="POST">
+          <form id="courseForm" class="form" method="POST" aria-labelledby="courseFormLabel">
             {% csrf_token %}
             <div class="form-row">
               <div class="col-12">
@@ -145,14 +145,14 @@
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <button class="decrement-qty btn btn-black rounded-0" data-item_id="{{ course.id }}"
-                          id="decrement-qty_{{ course.id }}">
+                        aria-label="decrease quantity" id="decrement-qty_{{ course.id }}">
                           <span class="icon">
                             <i class="fas fa-minus"></i>
                           </span>
                         </button>
                       </div>
                       <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="10"
-                        data-item_id="{{ course.id }}" id="id_qty_{{ course.id }}">
+                        data-item_id="{{ course.id }}" aria-label="increase quantity" id="id_qty_{{ course.id }}">
                       <div class="input-group-append">
                         <button class="increment-qty btn btn-black rounded-0" data-item_id="{{ course.id }}"
                           id="increment-qty_{{ course.id }}">

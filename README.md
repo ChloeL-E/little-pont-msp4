@@ -422,11 +422,11 @@ exit()
 
 - [JavaTPoint](https://www.javatpoint.com/time-datatype-in-sql#:~:text=To%20store%20the%20time%20in%20your%20SQL%20tables%2C%20your%20first,%3AMM%3ASS%22%20format) for Time datatype.
 - [Sugarloaf and a Cup of Joe](https://www.youtube.com/watch?v=UidskJk0KiE&t=611s) assisted with adding a datepicker within the crispy form by using the simple forms dateinut function and adding this within the view. It renders a datepicker calendar within the start and end date inputs within the Add a Course form. I also needed to add a time picker to make choosing a time easier for the admin. [Django Project](https://forum.djangoproject.com/t/need-help-with-date-time-picker/16988) was helpful in adding the TimeInput function to the form.
-- Content was written by Chloe Livingstone-Evans.
 - [Devon County Council](https://www.devon.gov.uk/support-schools-settings/send/educational-psychology/resources/devon-psychology-in-action/early-stages-of-cognition-and-learning-birth-to-5-years/), [Teach Early Years](https://www.teachearlyyears.com/learning-and-development/view/thinking-skills) and [Raising Children Network](https://raisingchildren.net.au/toddlers/connecting-communicating/connecting/connecting-with-your-toddler) were all useful when writing each Course paragraph content. 
 - [CodexWorld](https://www.codexworld.com/how-to/get-current-year-to-display-dynamic-year-in-copyright-using-javascript/#:~:text=Create%20a%20Date%20object%20and,and%20update%20each%20year%20automatically.) reminded me how to get the current year using javascript for the footer so that the year updates to current year. This will mean that going forward I do not need to update myself manually. 
 - [Stack Overflow](https://stackoverflow.com/questions/9729095/onclick-button-border-color-change) for changing the all-auth styling .active on border-color.
-
+- [FreeFormatter](https://www.freeformatter.com/html-formatter.html) - for tidy html formatting
+- Content was written by Chloe Livingstone-Evans.
 - - - - 
 
    ### Media Images

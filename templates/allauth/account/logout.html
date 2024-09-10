@@ -1,23 +1,25 @@
 {% extends "account/base.html" %}
-
 {% load i18n %}
-
 {% block head_title %}{% trans "Logout" %}{% endblock %}
-
 {% block inner_content %}
-<hr>
-<h2 class="logo-font mb-4 text-center">{% trans "Log Off" %}</h2>
-<hr>
-<p>{% trans 'Are you sure you want to logout?' %}</p>
-
-<form method="post" action="{% url 'account_logout' %}">
-  {% csrf_token %}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-  {% endif %}
-  <a href="{% url 'home' %}">Cancel</a>
-  <button type="submit">{% trans 'Logout' %}</button>
-</form>
-
-
+<div class="container">
+   <div class="icon-box">
+      <div class="row d-flex justify-content-center">
+         <div class="col-4">
+            <div class="section-title">
+              <h2 class="logo-font mb-1">{% trans "Log Off" %}</h2>
+            </div>
+            <p>{% trans 'Are you sure you want to logout?' %}</p>
+            <form class="mb-5" method="post" action="{% url 'account_logout' %}">
+               {% csrf_token %}
+               {% if redirect_field_value %}
+               <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+               {% endif %}
+               <a href="{% url 'home' %}">Cancel</a>
+               <button type="submit">{% trans 'Logout' %}</button>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
 {% endblock %}

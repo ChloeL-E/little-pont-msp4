@@ -156,7 +156,7 @@ The deployed site sent to friends and young family members to review the site an
 ## Automated Testing 
          
 -   ### HTML Validation 
-    [W3C](https://validator.w3.org/) Markup Validator was used to validate this project to ensure that there were no syntax errors in the project. 
+    **[W3C]**(https://validator.w3.org/) Markup Validator was used to validate this project to ensure that there were no syntax errors in the project. 
     * [Home page]()
     * [Login page]()
     * [Register page]()
@@ -238,12 +238,24 @@ The deployed site sent to friends and young family members to review the site an
     * [Home page]()
     * [Login page]()
     * [Register page]()
-    * [ page]()
-    * [ page]()
-    * [ page]()
-    * [page]()
-    * [ page]()
-    * [ page]()
+    * [Logout page]()
+    * [Shopping Bag page]()
+    * [All Courses page]()
+    * [Babies Course page]()
+    * [Toddler Course page]()
+    * [Preschool Course page]()
+    * [Early Years Course page]()
+    * [Add course page]()
+    * [Edit course page]()
+    * [My Profile page page]()
+    * [Instructor Info page]()
+    * [Instructor Detail page]()
+    * [Add Instructor page]()
+    * [Edit Instructor page]()
+    * [Cafe page]()
+    * [Checkout page]()
+    * [Checkout Success page]()
+    * [Booking Enquiry page]()
 
   - - -
 
@@ -264,7 +276,7 @@ The deployed site sent to friends and young family members to review the site an
     * When sending real emails with Django i came across a bug in my deployed site. There were no errors in the console and no error codes but i noticed when registering a new user, they were automatically signed into the site rather than having to verify their email. Django admin showed the user and their email has been created but not verified. I checked settings.py and the config variables in Heroku. I found that i still had email_verification set to 'none'. I changed it to 'mandatory'. Progress made as I was now getting a 500 server error when trying to register a new user. 
     I changed debug to `DEBUG = True` in settings.py to see if I could gain any further info about the error. The new error message showed `SMTP.strattls() got an unexpected keyword 'keyfile'`. A search of slack led me to a super helpful post which helped to solve the issue. I upgraded django all-auth with `pip install --upgrade django-allauth==0.54` then `touch runtime.txt && echo "python-3.11.9" > runtime.txt`. This fixed the bug and django all auth now working as expected.
 
-    * When submitting the Booking Enquiry form, the user correctly recieves an email fromthe site confirming that the enquiry has been recieved. The database is also correctly populated with the Booking enquiry info and this can be view within DJango admin. However the user recieves both the error and success messages. When trying to figure out why this could be i checked the Booking Enquiry view again. I wasn't sure what the issue could be. I searched and found a helpful [StackOverflow](https://stackoverflow.com/questions/1508467/log-exception-with-traceback-in-python) thread which helped me to troubleshoot the bug. I added `except Exeption as e` in replacement of the else block to try to catch the error and log it in the string of the error message. Once this change was made the bug was fixed.
+    * When submitting the Booking Enquiry form, the user correctly recieves an email from the site confirming that the enquiry has been recieved. The database is also correctly populated with the Booking enquiry info and this can be view within DJango admin. However the user recieves both the error and success messages. When trying to figure out why this could be i checked the Booking Enquiry view again. I wasn't sure what the issue could be. I searched and found a helpful [StackOverflow](https://stackoverflow.com/questions/1508467/log-exception-with-traceback-in-python) thread which helped me to troubleshoot the bug. I added `except Exeption as e` in replacement of the else block to try to catch the error and log it in the string of the error message. Once this change was made the bug was fixed.
 
     * Instructor images were not rendering after depployment and hosting them within AWS. I added each instructor image via Django admin using the AWS S3 bucket url. They didnt render. I tried a number of things to try to get them to render correctly- cleared the cache, checked the permissions within AWS, checked the image URL was correct by loading the image in a new tab which it did, tried rendering the image in a paragraph outside of the instructor loop which didnt render the image. Checked the DB model to see if I had a mistake in the way the image was being stored. After a quick search of google i found a [Stack Overflow](https://stackoverflow.com/questions/8850535/how-to-get-an-imagefield-url-within-a-template) post which helped me to realise that i was trying to access the empty 'image' field rather than 'image_url', the field i was using to store the image in the database. Once accessing the image_url using `instructors.image_url` the images rendered correctly.
 

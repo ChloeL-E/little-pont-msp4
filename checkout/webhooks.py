@@ -31,7 +31,8 @@ def webhook(request):
         # Invalid signature
         return HttpResponse(status=400)
     except Exception as e:
-        return HttpResponse(content=e, status=400)
+        # Other errors
+        return HttpResponse(content=str(e), status=400)
 
     # Set up a webhook handler
     handler = StripeWH_Handler(request)

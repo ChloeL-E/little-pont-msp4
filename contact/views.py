@@ -56,12 +56,9 @@ def send_booking_enquiry(request):
                 )
                 messages.success(request, "Thank you for sending a party booking enquiry! We aim to respond within 2 working days.")
                 return redirect('home')  # Success message and redirect to home
-            #except Exception as e:
-                #logger.error("Error sending email: %s", e, exc_info=True)
-                #messages.error(request, "Sorry, there was an error sending your enquiry. Please try again later.")
-                # Log the exception or handle it as necessary
+            # Log the exception or handle it as necessary
             except Exception as e:
-                messages.error(request, "Sorry, your booking enquiry couldn't be sent due to: {e}. Please ensure you have completed the form correctly and submit again. Thank you") 
+                messages.error(request, f"Sorry, your booking enquiry couldn't be sent due to: {e}. Please ensure you have completed the form correctly and submit again. Thank you") 
                 return redirect('send_booking_enquiry')          
 
     context = {

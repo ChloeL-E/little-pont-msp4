@@ -10,6 +10,9 @@ from profiles.models import UserProfile
 import json
 import time
 import stripe
+import logging
+
+logger = logging.getLogger(__name__)
 
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
@@ -33,19 +36,25 @@ class StripeWH_Handler:
             settings.DEFAULT_FROM_EMAIL,
             [cust_email]
         )        
-
+    
     def handle_event(self, event):
-        """
-        Handle a generic/unknown/unexpected webhook event
-        """
-        return HttpResponse(
-            content=(f'Unhandled webhook received: {event["type"]}'),
-            status=200)
+        logger.info(f'Unhandled webhook received: {event["type"]}')
+        return HttpResponse(status=200)
+    
+    #def handle_event(self, event):
+        #"""
+        #Handle a generic/unknown/unexpected webhook event
+        #"""
+        #return HttpResponse(
+            #ontent=(f'Unhandled webhook received: {event["type"]}'),
+            #status=200)
 
     def handle_payment_intent_succeeded(self, event):
         """
         Handle the payment_intent.succeeded webhook from Stripe
         """
+        logger.info(f'Handling payment_intent.succeeded event')
+        
         intent = event.data.object
         pid = intent.id
         bag = intent.metadata.bag

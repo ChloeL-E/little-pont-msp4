@@ -426,6 +426,7 @@ exit()
 - [CodexWorld](https://www.codexworld.com/how-to/get-current-year-to-display-dynamic-year-in-copyright-using-javascript/#:~:text=Create%20a%20Date%20object%20and,and%20update%20each%20year%20automatically.) reminded me how to get the current year using javascript for the footer so that the year updates to current year. This will mean that going forward I do not need to update myself manually. 
 - [Stack Overflow](https://stackoverflow.com/questions/9729095/onclick-button-border-color-change) for changing the all-auth styling .active on border-color.
 - [FreeFormatter](https://www.freeformatter.com/html-formatter.html) - for tidy html formatting
+- [HomeBrew]() to install Heroku CLI
 - Content was written by Chloe Livingstone-Evans.
 - - - - 
 

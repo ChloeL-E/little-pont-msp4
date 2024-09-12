@@ -53,9 +53,7 @@ def send_booking_enquiry(request):
             # Log the exception or handle it as necessary
             except Exception as e:
                 messages.error(request, f"Sorry, your booking enquiry couldn't be sent due to: {e}. Please ensure you have completed the form correctly and submit again. Thank you") 
-                return redirect('send_booking_enquiry')          
-    else:
-        form = BookingEnquiryForm()
+                return redirect('send_booking_enquiry') 
         
     context = {
         'form': form,

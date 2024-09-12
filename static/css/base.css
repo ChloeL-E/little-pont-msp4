@@ -955,6 +955,9 @@ li::marker {
   #course-details p {
     text-align: center;
   }
+  footer .row {
+    margin: 0;
+  }
 }
 
 @media (max-height: 500px) {

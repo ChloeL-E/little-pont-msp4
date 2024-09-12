@@ -103,14 +103,16 @@ This website has been built using HTML, CSS, Javascript and Python.
 
 -   ### Colour Scheme
 
-    * [Coolors]() was used to find a colour palette. The site design needed to be bright, colourful and eye-catching without clashing. 
+    * [Coolors](see [Credits](#credits) for attribution) was used to find a colour palette. The site design needed to be welcoming, colourful and whimsical without being too harsh visually. For this reason a pastel colour palette was chosen as the colours compliment each other whilst having a gentle softness. As the site has elements throughout its pages where the pastels are used, alongside images to create interest, it was decided that in order to maintain a light and bright feel and not overpower the user, to have the background colour of the site as a white or off white. This maintains a professional clean feel to the site overall.
 
 -   ### Typography
 
-    * 
+    * The font family used for the title fonts is 'Amatic SC' chosen for its playful appearance. It has a simple hand-drawn effect, yet it is very clear and legible. The site is designed to be fun and this suits this design perfectly. The rest of the sites font is 'Roboto', chosen as it is also a simple, clear and open font but without the sharp edges of other font types. The curves on the font fit in with the curves created by the borders on the site and feels warmer, friendlier and less strict.
 
 -   ### Imagery
-    * 
+
+    * Images were predominently taken from Freepix (see [Credits](#credits) for attribution). A mixture of photos and cartoons were used as it was felt this would be appealing to the site purpose and immediately support the sites purpose.
+    * The main site header uses a fun and colourful 'sky and cloud' background to compliment the site logo. The site logo was designed using Canva(see [Credits](#credits) for attribution). Little Pont is a role play town and the logo reflect this. It consists of a colourful cartoon town against a circular white background which displays the site title.
 
 -   ### Wireframes
 
@@ -177,7 +179,7 @@ This website has been built using HTML, CSS, Javascript and Python.
 
 ## Structure
 
-There are 7 main apps within Little Pont: home, profiles, products, bag, checkout, instructor and contact which make up the full site. All templates within these apps are extended from a base template. The base template comprises of the navigation bar and footer. Below is a breakdown of the main site deatures.
+There are 7 main apps within Little Pont: home, profiles, products, bag, checkout, instructor and contact which make up the full site. All templates within these apps are extended from a base template. The base template comprises of the navigation bar and footer. Below is a breakdown of the main site features.
 
 -   ### Features 
 
@@ -423,7 +425,8 @@ exit()
 - [JavaTPoint](https://www.javatpoint.com/time-datatype-in-sql#:~:text=To%20store%20the%20time%20in%20your%20SQL%20tables%2C%20your%20first,%3AMM%3ASS%22%20format) for Time datatype.
 - [Sugarloaf and a Cup of Joe](https://www.youtube.com/watch?v=UidskJk0KiE&t=611s) assisted with adding a datepicker within the crispy form by using the simple forms dateinut function and adding this within the view. It renders a datepicker calendar within the start and end date inputs within the Add a Course form. I also needed to add a time picker to make choosing a time easier for the admin. [Django Project](https://forum.djangoproject.com/t/need-help-with-date-time-picker/16988) was helpful in adding the TimeInput function to the form.
 - [Devon County Council](https://www.devon.gov.uk/support-schools-settings/send/educational-psychology/resources/devon-psychology-in-action/early-stages-of-cognition-and-learning-birth-to-5-years/), [Teach Early Years](https://www.teachearlyyears.com/learning-and-development/view/thinking-skills) and [Raising Children Network](https://raisingchildren.net.au/toddlers/connecting-communicating/connecting/connecting-with-your-toddler) were all useful when writing each Course paragraph content. 
-- [CodexWorld](https://www.codexworld.com/how-to/get-current-year-to-display-dynamic-year-in-copyright-using-javascript/#:~:text=Create%20a%20Date%20object%20and,and%20update%20each%20year%20automatically.) reminded me how to get the current year using javascript for the footer so that the year updates to current year. This will mean that going forward I do not need to update myself manually. 
+- [CodexWorld](https://www.codexworld.com/how-to/get-current-year-to-display-dynamic-year-in-copyright-using-javascript/#:~:text=Create%20a%20Date%20object%20and,and%20update%20each%20year%20automatically.) reminded me how to get the current year using javascript for the footer so that the year updates to current year. This will mean that going forward I do not need to update myself manually.
+- [Stack Overflow](https://stackoverflow.com/questions/16966383/jquery-change-url-of-form-submit) although an old post, gave me the guidance required to write the jquery for the course booking logic as i eeded some help understanding how to go about constructing the specific URL. On Course Booking form submission, the function gets the course_id of the 'checked' radio button. It then constrcuts the URL correctly, inserting the course_id value. 
 - [Stack Overflow](https://stackoverflow.com/questions/9729095/onclick-button-border-color-change) for changing the all-auth styling .active on border-color.
 - [FreeFormatter](https://www.freeformatter.com/html-formatter.html) - for tidy html formatting
 - [HomeBrew]() to install Heroku CLI
@@ -433,7 +436,7 @@ exit()
    ### Media Images
 
 - [Image Resizer](https://imageresizer.com/) was used for almost all images to convert to webp format and resize to suitable dimensions.
-- [canva](https://www.canva.com/) 
+- [Canva](https://www.canva.com/) for site logo design
 - favicon https://favicon.io/favicon-converter/
 - image cropper https://www.iloveimg.com/crop-image
 - [Freepik](https://www.freepik.com/) provided most of the sites images. As follows : 

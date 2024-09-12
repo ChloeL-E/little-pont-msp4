@@ -11,9 +11,7 @@ from .forms import BookingEnquiryForm
 
 @login_required
 def send_booking_enquiry(request):
-    """Allow the user to send a party booking enquiry to the site manager"""
-    form = BookingEnquiryForm()
-    
+    """Allow the user to send a party booking enquiry to the site manager"""   
     if request.method == 'POST':
         form = BookingEnquiryForm(request.POST)
         if form.is_valid():
@@ -56,7 +54,9 @@ def send_booking_enquiry(request):
             except Exception as e:
                 messages.error(request, f"Sorry, your booking enquiry couldn't be sent due to: {e}. Please ensure you have completed the form correctly and submit again. Thank you") 
                 return redirect('send_booking_enquiry')          
-
+    else:
+        form = BookingEnquiryForm()
+        
     context = {
         'form': form,
     }

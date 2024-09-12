@@ -27,6 +27,10 @@ main {
   background-color: #fbfbfc;
 }
 
+.row {
+  scrollbar-gutter: auto;
+}
+
 .scroll-button {
   height: 42px;
   width: 42px;
@@ -511,6 +515,11 @@ section {
   background-image: url('/media/msp4_media/little-girls-science-class.webp')
 }
 
+.cartoon-image {
+  display: flex;
+  justify-content: center;
+}
+
 .card {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -911,6 +920,13 @@ li::marker {
   #hero h1 {
     font-size: 38px;
   }
+  .section {
+    padding: 0;
+  }
+  .cartoon-image {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
 }
 
 @media (min-width: 769px) {
@@ -935,7 +951,8 @@ li::marker {
   .hero-info {
     display: none;
   }
-  #course-details h4 {
+  #course-details h4,
+  #course-details p {
     text-align: center;
   }
 }

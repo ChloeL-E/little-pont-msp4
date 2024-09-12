@@ -35,8 +35,10 @@
       </header>
       <div class="row mt-5 mb-5">
          <div class="col-lg-6 col-12 order-lg-1 order-2">
+            <div class="cartoon-image">
                <img class="img-fluid" style="height:400px; width: 450px;"
                   src="{{ MEDIA_URL }}msp4_media/cute-baby-crawling-cartoon-character.webp" alt="happy boy jumping cartoon character">
+            </div>
          </div>
          <div class="col-lg-6 col-12 content order-lg-2 order-1">
             <div class="icon-box">
@@ -197,9 +199,8 @@
       let selectedCourse = $('input[name="course_id"]:checked').val();
 
       if (selectedCourse) {
-        // Construct the action URL manually using jQuery
+        // Construct the action URL manually
         $(this).attr('action', "/bag/add/" + selectedCourse + "/");
-
         // Submit the form with the correct action URL
         this.submit();
       } else {

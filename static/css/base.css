@@ -935,7 +935,6 @@ li::marker {
   }
 }
 
-
 @media (max-width: 768px) {
   #hero h2,
   #hero h1 {
@@ -955,6 +954,9 @@ li::marker {
   .cartoon-image {
     margin-top: 20px;
     margin-bottom: 0;
+  }
+  .socials {
+    padding-left: 5px;
   }
 }
 
@@ -987,8 +989,43 @@ li::marker {
   #course-details p {
     text-align: center;
   }
-  footer .row {
-    margin: 0;
+  .sm-screens {
+    flex: 1 1 45%;
+    max-width: 100%;
+  }
+  .about .icon-box img {
+    width: 400px;
+    height: 200px;
+  }
+  footer h4 {
+    font-size: medium;
+    line-height: 1;
+  }
+  .footer-links li {
+    line-height: 0.75;
+  }
+  .footer-links li,
+  .socials li {
+    padding-left: 0;
+    margin-left: 0;
+    list-style: none;
+    margin-bottom: 0.5rem;
+  }
+  .socials li {
+    margin-right: 10px;
+  }
+  .footer-links li a,
+  footer p {
+    font-size: small;
+  }
+  .socials {
+    padding: 0;
+  }
+  .socials li a i{
+    height: 25px;
+    width: 25px;
+    margin-right: 5px;
+    padding: 2px;
   }
 }
 

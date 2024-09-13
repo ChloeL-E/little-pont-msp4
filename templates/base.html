@@ -214,9 +214,7 @@
     {% block postloadjs %}
     <script type="text/javascript">
         $('.toast').toast('show');
-        /**
-        *  Dynamic year display-CodexWorld: Gets the element by id and inserts the current year
-        */
+        /* Dynamic year display-CodexWorld: Gets the element by id and inserts the current year */
         const year = document.querySelector('#get-year').innerHTML = new Date().getFullYear();
         
         /* Scroll-to-top Button */

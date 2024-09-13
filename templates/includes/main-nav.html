@@ -1,34 +1,34 @@
 <div class="collapse navbar-collapse" id="main-nav">
-    <div class="d-flex justify-content-centre">
-        <ul class="navbar-nav w-auto mx-auto">
+    <div class="d-flex justify-content-center w-100">
+        <ul class="navbar-nav mx-auto">
             <!-- Home Link -->
             <li class="nav-item">
                 <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">
                     Home
                 </a>
             </li>
+
             <!-- About dropdown -->
-            <li class="nav-item d-block dropdown">
-                <a class="logo-font font-weight-bold nav-link text-black mr-5" role="button" href="#" id="about-link"
-                    data-toggle="dropdown" data-target="#about-dropdown" aria-haspopup="true" aria-expanded="false"
-                    style="cursor:pointer">
+            <li class="nav-item dropdown">
+                <a class="logo-font font-weight-bold nav-link text-black mr-5 dropdown-toggle" role="button" href="{% url 'home' %}#about" 
+                    id="about-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     About
                 </a>
-                <div class="dropdown-menu border-0" id="about-dropdown" aria-labelledby="about-link">
+                <div class="dropdown-menu border-0" aria-labelledby="about-link">
                     <a href="{% url 'home' %}#about" class="dropdown-item">About Us</a>
                     <a href="{% url 'home' %}#what-we-offer" class="dropdown-item">What We Offer</a>
                     <a href="{% url 'instructor_info' %}" class="dropdown-item">Meet The Team</a>
                     <a href="{% url 'home' %}#cafe-info" class="dropdown-item">Cafe</a>
                 </div>
             </li>
+
             <!-- Courses dropdown -->
-            <li class="nav-item d-block dropdown">
-                <a class="logo-font font-weight-bold nav-link text-black mr-5" role="button" href="#" id="courses-link"
-                    data-toggle="dropdown" data-toggle="dropdown" data-target="#course-dropdown" aria-haspopup="true"
-                    aria-expanded="false" style="cursor:pointer">
+            <li class="nav-item dropdown">
+                <a class="logo-font font-weight-bold nav-link text-black mr-5 dropdown-toggle" role="button" href="{% url 'home' %}#courses-overview" 
+                    id="courses-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Courses
                 </a>
-                <div class="dropdown-menu border-0" id="course-dropdown" aria-labelledby="courses-link">
+                <div class="dropdown-menu border-0" aria-labelledby="courses-link">
                     <a href="{% url 'all_courses' %}" class="dropdown-item">View all our courses</a>
                     <a href="{% url 'courses_by_age_group' age_group='Babies' %}" class="dropdown-item">Babies Courses</a>
                     <a href="{% url 'courses_by_age_group' age_group='Toddler' %}" class="dropdown-item">Toddlers Courses</a>
@@ -36,10 +36,10 @@
                     <a href="{% url 'courses_by_age_group' age_group='Early Years' %}" class="dropdown-item">Early Years Courses</a>
                 </div>
             </li>
+
             <!-- Contact link -->
             <li class="nav-item">
-                <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'send_booking_enquiry' %}"
-                 aria-haspopup="true" aria-expanded="false">
+                <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'send_booking_enquiry' %}">
                     Contact
                 </a>
             </li>

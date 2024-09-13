@@ -105,9 +105,13 @@ This website has been built using HTML, CSS, Javascript and Python.
 
     * [Coolors](see [Credits](#credits) for attribution) was used to find a colour palette. The site design needed to be welcoming, colourful and whimsical without being too harsh visually. For this reason a pastel colour palette was chosen as the colours compliment each other whilst having a gentle softness. As the site has elements throughout its pages where the pastels are used, alongside images to create interest, it was decided that in order to maintain a light and bright feel and not overpower the user, to have the background colour of the site as a white or off white. This maintains a professional clean feel to the site overall.
 
+    [Colour Palette](documentation/readme/images/colour_palette.png)
+
 -   ### Typography
 
-    * The font family used for the title fonts is 'Amatic SC' chosen for its playful appearance. It has a simple hand-drawn effect, yet it is very clear and legible. The site is designed to be fun and this suits this design perfectly. The rest of the sites font is 'Roboto', chosen as it is also a simple, clear and open font but without the sharp edges of other font types. The curves on the font fit in with the curves created by the borders on the site and feels warmer, friendlier and less strict.
+    * From Google Fonts, 'Amatic SC' was chosen for the sites titles. A simple hand-drawn effect, is is playful yet it is very clear and legible. The site is designed to be fun and this suits this design perfectly. The rest of the sites font is 'Roboto', chosen as it is also a simple, clear and open font but without the sharp edges of other font types. The curves on the font fit in with the curves created by the borders on the site and feels warmer, friendlier and less strict.
+
+    [Font](documentation/readme/images/colour_palette.png)
 
 -   ### Imagery
 

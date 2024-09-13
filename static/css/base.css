@@ -938,11 +938,11 @@ li::marker {
 
 @media only screen and (max-width: 600px) {
   #top-header-image {
-    height: 208px;
+    height: 228px;
   }
   #top-header-image img{
-    height: 198px;
-    width: 198px;
+    height: 218px;
+    width: 218px;
   }
   .background {
     display: flex;

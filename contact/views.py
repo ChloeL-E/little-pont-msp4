@@ -12,15 +12,16 @@ from .forms import BookingEnquiryForm
 @login_required
 def send_booking_enquiry(request):
     """Allow the user to send a party booking enquiry to the site manager"""   
+
     if request.method == 'POST':
         form = BookingEnquiryForm(request.POST)
         if form.is_valid():
-            # Get the form data
+            # Get the form data from the post 
             full_name = form.cleaned_data['booking_full_name']
             email = form.cleaned_data['booking_email']
             subject = form.cleaned_data['subject']
             content = form.cleaned_data['content']
-            # get the logged in users' username using fk link to UserProfile
+            # get the logged-in users' username using fk link to UserProfile
             user_profile = request.user.userprofile
             
             # Create and save the BookingEnquiry to the database
@@ -54,9 +55,14 @@ def send_booking_enquiry(request):
             except Exception as e:
                 messages.error(request, f"Sorry, your booking enquiry couldn't be sent due to: {e}. Please ensure you have completed the form correctly and submit again. Thank you") 
                 return redirect('send_booking_enquiry') 
-        
+    else:
+        # For GET requests, instantiate a blank form
+        form = BookingEnquiryForm()
+
+    # pass 'form' to the template
     context = {
         'form': form,
     }
 
     return render(request, 'contact/party_booking.html', context)
+

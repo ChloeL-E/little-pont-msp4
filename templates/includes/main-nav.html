@@ -3,14 +3,14 @@
         <ul class="navbar-nav mx-auto">
             <!-- Home Link -->
             <li class="nav-item">
-                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">
+                <a class="logo-font font-weight-bold nav-link mr-5" href="{% url 'home' %}" id="home-link">
                     Home
                 </a>
             </li>
 
             <!-- About dropdown -->
             <li class="nav-item dropdown">
-                <a class="logo-font font-weight-bold nav-link text-black mr-5 dropdown-toggle" role="button" href="{% url 'home' %}#about" 
+                <a class="logo-font font-weight-bold nav-link mr-5 dropdown-toggle" role="button" href="{% url 'home' %}#about" 
                     id="about-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     About
                 </a>
@@ -24,7 +24,7 @@
 
             <!-- Courses dropdown -->
             <li class="nav-item dropdown">
-                <a class="logo-font font-weight-bold nav-link text-black mr-5 dropdown-toggle" role="button" href="{% url 'home' %}#courses-overview" 
+                <a class="logo-font font-weight-bold nav-link mr-5 dropdown-toggle" role="button" href="{% url 'home' %}#courses-overview" 
                     id="courses-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Courses
                 </a>
@@ -39,7 +39,7 @@
 
             <!-- Contact link -->
             <li class="nav-item">
-                <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'send_booking_enquiry' %}">
+                <a id="contact-link" class="logo-font font-weight-bold nav-link" href="{% url 'send_booking_enquiry' %}">
                     Contact
                 </a>
             </li>

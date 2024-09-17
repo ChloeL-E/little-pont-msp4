@@ -192,22 +192,28 @@ There are 7 main apps within Little Pont: home, profiles, products, bag, checkou
 -   ### Features used in every page:
 
     -   #### Favicon
+        * The site favicon was designed using favicon.io (see credits). It was designed to include the site logo to make the website identifiable from the tab.
 
     -   #### Navigation Bar
 
        [Navigation Bar - desktop](documentation/readme/images/nav_bar_desktop.png)
+       [Navigation bar - dropdown example](documentation/readme/images/courses_dropdown_wf.png)
 
        * The responsive navbar features a hamburger menu on medium sized devices and smaller. This displays the Home, About, Courses and Contact dropdown/links. A bright and colourful site logo and header is included with each page. This is to catch the eye of the user and their children and entice them to use the business. The Account and Shopping Bag icons remain the same on all devices so they are easily accessible to the user.
 
        [Navigation Bar- mobile device ]()
-
        [Navigation Bar- mobile device- hamburger menu open]()
-    
+
     -   #### Scroll Button
+        * Javascript was used to create the functionality for this feature. 
+        * The scroll to top button is shown on each page to improve user experience. The user is able to quickly and smoothly navigate back to the top of the page by clicking the button. 
+        * The button changes colour on mouse-hover.
     
     -   #### Footer
 
+        * Responsive design, shown on each page
         * Features the site Title, links to the Register/Login pages and social links.
+        * Each link is clickable and increases ease of navigation around site.
 
         [Footer](documentation/readme/images/footer.png)
         [Footer - mobile device]()
@@ -224,12 +230,15 @@ There are 7 main apps within Little Pont: home, profiles, products, bag, checkou
         * App: home
         * This page has a large colourful hero image of a happy girl dressed uo as a chef. This will hopefully give the site user intstant information about the role play element of Little Pont and some idea of what to expect when visiting the business. The Home page comprises of header/navbar, hero image, footer and then two main information sections: About Us and What We Offer.
         
-        [Home page]()
-        [Home page- About Us]()
-        [Home page- What We Offer]()
+        [Home page](documentation/readme/images/home.png)
+        [Home page- About Us](documentation/readme/images/about_us.png)
+        [Home page- What We Offer](documentation/readme/images/what_we_offer.png)
 
     -   #### My Profile page
         * App: profiles
+        * Shows the users saved details and any order history
+        
+        [Profile page]()
 
     -   #### Courses page
         * App: products
@@ -239,6 +248,9 @@ There are 7 main apps within Little Pont: home, profiles, products, bag, checkou
         * Edit and Delete buttons are available to site administrators to allow for course management. 
         * Delte button deletes the chosen course and the Courses page is reloaded with a success message to infor superuser that the course has been successfully deleted.
 
+        [All Courses page including header](documentation/readme/images/all_courses.png)
+        [All courses page](documentation/readme/images/all_courses_two.png)
+
     -   #### Courses detail pages
         * App: products
         * Each age group has its own specific page: Babies, Toddlers, Preschool and Early Years
@@ -246,31 +258,45 @@ There are 7 main apps within Little Pont: home, profiles, products, bag, checkou
         * Displays a list of the age specific courses available. User can select a course which changes the colour of the star icon. A quantity of the course selected can be updated before user clicks Book Now button.
         * A success toast is shown when the user has successfully added a course to their shopping basket- it displays an order summary of the product added. 
 
+        [Course Detail page]()
+
     -   #### Course Management page
         * App: products
         * Allows site administrators to add a new course
         * A form prompts the user to complete the relevent details. Option to Cancel or Add Course.
         * Success toast displayed when a Course is successfully added. User is redirected to Courses page to view all courses.
 
+        [Course Management page](documentation/readme/images/course_management.png)
+        [Course Managemnt page- end of form and buttons](documentation/readme/images/course_management_two.png)
+
     -   #### Instructor Info page
         * App: instructor
         * Displays each instructor as their image and an image overlay with their name and sopeciality age group
         * The button on each overlay take the user to the instructor detail page for more detail about the chosen instructor
+
+        [Instructor info page]()
 
     -   #### Instructor Detail page
         * App: instructor
         * Displays specific information about the chosen instructor.
         * An Edit and Delete button is displayed for site administrators. Delete button will delete the Instructor and take the superuser back to the Instructor infor page.
 
+        [Instructor Detail page]()
+
     -   #### Team Management page
         * App: instructor
         * A form to allow a site administrator to add a new instructor
+
+        [Team management page](documentation/readme/images/team_management.png)
+        [Team Management - lower form and buttons](documentation/readme/images/team_management2_two.png)
 
     -   #### Edit Instructor 
         * App: instructor
         * Once superuser clicks Edit button on Instructor detail page they are taken to the Edit instructor page.
         * Here there is a prepopulated form where they are able to edit the details.
         * Cancel or Save the edit
+
+        [Edit instructor page]()
 
     -   #### Shopping Bag page
         * App: bag
@@ -279,11 +305,15 @@ There are 7 main apps within Little Pont: home, profiles, products, bag, checkou
         * The subtotal and total are updated following any adjustments to the shopping bag contents.
         * Option to go to the Courses page to view all courses or to continue onto checkout by clicking Secure Checkout button.
 
+        [Shopping Bag page]()
+
     -   #### Checkout page
         * App: checkout
         * Comprises a form for the user to complete with their billing and card details and the order summary
         * Option for registered and logged in users to save their details to their profile
         * Option to go back to the shopping bag page to adjust the bag contents or to click Secure Checkout button
+
+        [Checkout page]()
 
     -   #### Checkout Success page
         * App: checkout
@@ -291,26 +321,47 @@ There are 7 main apps within Little Pont: home, profiles, products, bag, checkou
         * A successful checkout takes the user to the checkout success page which displays their order summary details
         * A success toast is shown with details of the order that has been successfully processed and to inform that an email has been sent to their registered email address. 
 
-    -   #### Enquiry Form page
+        [Chckout Success page]()
+
+    -   #### Enquiry Form
         * App: contact
         * User is directed to complete the booking enquiry form
         * Option to Cancel or Send booking enquiry
         * A successful booking enquiry will redirect user back to home page with a success message. An error toast will show if there are any issues with form submission.
+
+        [Contact page]()
+
+    -   #### Cafe page
+        * A simple informational page with a list of drinks and foods on offer in Little Pont
+        * Added for site authenticity
+        * Scope to add more functionality in the future e.g. pre-order food etc
+
+        [Cafe page]()
 
     -   #### Register page
         * User is prompted to complete the registration form
         * Link to login page if user already registered.
         * Success toast when successfully submitted form, user taken to Verify Email page with instructions on how to verify email
 
+        [Register page]()
+
     -   #### Login page
-        * 
+        * A form for user to complete their login details and login to enter full site.
+        * Success toast shown when user successfully logs in
+
+        [Login page]()
+
     -   #### Logout page
-    -   #### Forms
+        * Asks user if they are sure they wish to logout and allows user to either navigate back to site or continue to log out
+
+        [Logout page]()
+
 
 
 -   ### Features For Future Implementation
     *  I had planned on adding a Frequently Asked Questions(FAQs) section to add more information to the site in a user friendly and succinct way. This would be different to how the rest of the site information is presented. I feel that this would have increased user satisfaction. 
     * In the future I would like to add Booking/Contact/Enquiry Form links directly from their social media accounts as i think a lot of the site users/parents would find out about our business via their socials.
+    * A potential future feature would be to create a new app to incorporate the cafe aspect of the business, and to allow pre-ordering of food. This would help support the business as Little Pont would be able to prepare stock and reduce wastage.
     
 - - - 
 
@@ -370,7 +421,72 @@ Extensive testing was carried out on this project. Please review [Testing.md](TE
 
 -   ### Version Control
 
-To deploy Take A Hike to Heroku, take the following steps:
+This website was created using the CI full template (https://github.com/Code-Institute-Org/ci-full-template)
+
+#### Database creation
+
+To create the database:
+1. Navigate to the CI Database Maker(https://dbs.ci-dbs.net/) which creates a new PostgreSQL database.
+2. Type in your email address into the input field as directed and click submit
+3. You will recieve an email with the new Postgres URL and secret key. Keep these details safe, they will be used shortly.
+
+Set up settings.py
+1. Ensure the following setup wihtin the settings.py file:
+```
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+if 'USE_AWS' in os.environ:
+     # Cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+    
+    # Bucket Config
+    AWS_STORAGE_BUCKET_NAME = 'little-pont-role-play'
+    AWS_S3_REGION_NAME = 'eu-west-2'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+    # Static and media files
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Stripe
+STRIPE_CURRENCY = 'gbp'
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+
+
+if 'DEVELOPMENT' in os.environ:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'littepont@example.com'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+```
+
+#### Heroku
+To deploy Little Pont to Heroku, take the following steps:
 1. Create a requirements.txt file using the terminal command `pip freeze > requirements.txt`
 2. Create a Procfile with the terminal command `echo web: python app.py > Procfile`. Ensure you use a capital 'P' for this file.
 3. `git add` and `git commit` these changes and `git push` to GitHub repository
@@ -381,38 +497,80 @@ To deploy Take A Hike to Heroku, take the following steps:
 8. In the heroku dashboard for the application. click on the "settings" > "Reveal Config Vars"
 9. Set the following Config Vars:
 
-|   | Key            | Value          |   |
-|---|----------------|----------------|---|
-|   | DB_URL         |     |   |
-|   | IP             |       |   |
-|   | PORT           |            |   |
-|   | SECRET_KEY     |    |   |
+| Key                   | Value             |
+|-----------------------|-------------------|
+| AWS_ACCESS_KEY_ID     | 'AWS_ID'          |
+| AWS_SECRET_ACCESS_KEY | 'AWS_SECRET'      |
+| DATABASE_URL          | 'DB_URL'          |
+| EMAIL_HOST_PASSWORD   | 'EMAIL_HOST_PASS' |
+| EMAIL_HOST_USER       | 'EMAIL_HOST_USER' |
+| SECRET_KEY            | 'SECRET_KEY'      |
+| STRIPE_PUBLIC_KEY     | 'STRIPE_PUBLIC'   |
+| STRIPE_SECRET_KEY     | 'STRIPE_SECRET'   |
+| STRIPE_WH_SECRET      | 'WH_SECRET'       |
+| USE_AWS               | True              |
 
 (this is an example, actual env variable not disclosed to maintain security. To get the db url follow [CI PosgreSQL]())
 
 10. In the Heroku dashboard, click "Deploy"
 11. In the "Manual Deployment" section, ensure the master branch is selected then click "Deploy Branch"
 11. The site is now deployed
-12. To connect to the database click the more button on the Heroku dashboard and select run console.
-13. Type python3 and once the interpreter opens, run the following:
-```bash
-from ... import db
-db.create_all()
-exit()
+12. Add deployed URL to `ALLOWED HOSTS` within 'settings.py' file
+13. Go to local CLI and login to Heroku using `heroku login -i` and enter heroku login details (email and password from Required Authenitcations within the Applications section).
+14. Initialise Heroku git remote to app by typing the following command:
 ```
+heroku git:remote -a <name_of_your_app>
+```
+15. Then push to heroku
+```
+git push heroku
+```
+
+#### Amazon Web Services (AWS)
+
+AWS is used to host the sites static and media files.
+
+##### Create S3 Bucket
+1. Create account [here](https://aws.amazon.com/).
+2. Login using Root to access the AWS console.
+3. Search for and select 'S3'.
+4. Click 'Create Bucket'.
+5. Type in a bucket name and select closest region to you.
+6. Enter a bucket name (this should relate to your Heroku app name), and select the region closest to you
+7. Uncheck 'Block all public access' and acknowledge that the bucket will be public, click 'ACLs enabled' and 'Bucket owner preferred', click 'Create bucket'
+8. Click the bucket instance you just created and navigate to the Properties tab
+9. Scroll down to 'static website hosting' and click 'use this bucket to host a website'
+10. Enter default values of index.HTML for the Index document, and error.HTML for the Error document then click 'Save'
+11. On the Permissions tab paste the following code into the CORS configuration editor and then click 'Save': 
+    ```
+    [
+    {
+        "AllowedHeaders": [
+            "Authorization"
+        ],
+        "AllowedMethods": [
+            "GET"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ],
+        "ExposeHeaders": []
+    }
+    ]
+    ```
 
 
 -   ### Run locally
 
 **Fork**
 1. Login or Sign Up to GitHub.
-2. Open the project [Repository]().
+2. Open the project [Repository](https://github.com/ChloeL-E/little-pont-msp4.git).
 3. Click the Fork button in the top right corner.
 4. You should now have a copy of the repository in your Github
 
 **Local Clone**
 1. Login or Sign Up to GitHub.
-2. Open the project [Repository]().
+2. Open the project [Repository](https://github.com/ChloeL-E/little-pont-msp4.git).
 3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
 4. Open the terminal in the code editor of your choice and change the current working directory to the location you want to use for the cloned directory. 
 5. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.

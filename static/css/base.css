@@ -31,6 +31,7 @@ main {
   scrollbar-gutter: auto;
 }
 
+/* Scroll to top button styling */
 .scroll-button {
   height: 42px;
   width: 42px;
@@ -62,7 +63,7 @@ header {
   font-family: var(--font-header);
   height: 300px;
 }
-
+/* sky backgound */
 #top-header-image {
   position: relative; /* Ensure it is positioned relative for .top-header to overlay correctly */
   z-index: 1; /* Ensure it is below .top-header */
@@ -73,7 +74,7 @@ header {
   border-bottom: 0.5px solid white;
   height: 308px;;
 }
-
+/* logo */
 #top-header-image img {
   height: 300px;
   width: 300px;
@@ -271,6 +272,7 @@ section {
   font-family: var(--font-header);
 }
 
+/* creating the underline element adapted from https://bootstrapmade.com/ */
 .section-title h1::before,
 .section-title h3::before,
 .section-title h2::before {
@@ -606,7 +608,7 @@ section {
   color: var(--font-color-main);
 }
 
-/*https://stackoverflow.com/questions/1125226/styling-checkboxes-radio-buttons-and-dropdowns*/
+/* https://stackoverflow.com/questions/1125226/styling-checkboxes-radio-buttons-and-dropdowns*/
 
 input[type="radio"] {
   display: none;
@@ -980,9 +982,6 @@ li::marker {
   .top-header {
     height: 218px;
   }
-  /*#top-header-image {
-    height: 228px;
-  }*/
   #top-header-image img{
     height: 218px;
     width: 218px;
@@ -1035,19 +1034,6 @@ li::marker {
     width: 25px;
     margin-right: 5px;
     padding: 2px;
-  }
-  .table-font,
-  .table-font-main {
-    font-size: 18px;
-  }
-  .table thead th,
-  .table tbody tr {
-    font-size: 16px;
-  }
-  #submit-button,
-  .update-link,
-  .remove-item {
-    padding: 2px 10px;
   }
 }
 

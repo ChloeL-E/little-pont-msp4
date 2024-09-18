@@ -970,7 +970,7 @@ li::marker {
 
 @media only screen and (max-width: 600px) {
   .top-header {
-    height: 228px;
+    height: 218px;
   }
   /*#top-header-image {
     height: 228px;

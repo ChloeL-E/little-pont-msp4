@@ -86,20 +86,20 @@
           <!-- Bag totals -->
           <tr>
             <td colspan="5" class="pt-5 text-right">
-              <h6 class="title-font"><strong>Total: £{{ total|floatformat:2 }}</strong></h6>
+              <h6 class="table-font"><strong>Total: £{{ total|floatformat:2 }}</strong></h6>
             </td>
           </tr>
           <tr>
             <!--Home and checkout buttons -->
             <td colspan="5" class="text-right">
-              <a href="{% url 'all_courses' %}" class="btn btn-outline-black rounded-0 btn-lg">
+              <a href="{% url 'all_courses' %}" class="btn btn-outline-black table-font rounded-0">
                 <span class="icon">
                   <i class="fas fa-chevron-left" style="color:var(--purple)"></i>
                 </span>
-                <span class="title-font">View Courses</span>
+                <span class="table-font">View Courses</span>
               </a>
               <a href="{% url 'checkout' %}" id="submit-button" class="btn btn-lg">
-                <span class="title-font">Secure Checkout</span>
+                <span class="table-font">Secure Checkout</span>
                 <span class="icon">
                   <i class="fas fa-lock"></i>
                 </span>

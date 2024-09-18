@@ -1038,11 +1038,11 @@ li::marker {
   }
   .table-font,
   .table-font-main {
-    font-size: 16px;
+    font-size: 18px;
   }
   .table thead th,
   .table tbody tr {
-    font-size: 14px;
+    font-size: 16px;
   }
   #submit-button,
   .update-link,

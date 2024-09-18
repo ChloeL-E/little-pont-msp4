@@ -428,62 +428,7 @@ This website was created using the CI full template (https://github.com/Code-Ins
 To create the database:
 1. Navigate to the CI Database Maker(https://dbs.ci-dbs.net/) which creates a new PostgreSQL database.
 2. Type in your email address into the input field as directed and click submit
-3. You will recieve an email with the new Postgres URL and secret key. Keep these details safe, they will be used shortly.
-
-Set up settings.py
-1. Ensure the following setup wihtin the settings.py file:
-```
-STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-if 'USE_AWS' in os.environ:
-     # Cache control
-    AWS_S3_OBJECT_PARAMETERS = {
-        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-        'CacheControl': 'max-age=94608000',
-    }
-    
-    # Bucket Config
-    AWS_STORAGE_BUCKET_NAME = 'little-pont-role-play'
-    AWS_S3_REGION_NAME = 'eu-west-2'
-    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-
-    # Static and media files
-    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-    STATICFILES_LOCATION = 'static'
-    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-    MEDIAFILES_LOCATION = 'media'
-
-    # Override static and media URLs in production
-    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Stripe
-STRIPE_CURRENCY = 'gbp'
-STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
-STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
-STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
-
-
-if 'DEVELOPMENT' in os.environ:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'littepont@example.com'
-else:
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_USE_TLS = True
-    EMAIL_PORT = 587
-    EMAIL_HOST = 'smtp.gmail.com'
-    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
-```
+3. You will recieve an email with the new PostgreSQL instance. Keep these details safe, they will be used shortly.
 
 #### Heroku
 To deploy Little Pont to Heroku, take the following steps:
@@ -495,7 +440,7 @@ To deploy Little Pont to Heroku, take the following steps:
 6. From the heroku dashboard of the new app, click on "Deploy" > "Deployment method" and select Github
 7. Confirm the link to the correct GitHub repository
 8. In the heroku dashboard for the application. click on the "settings" > "Reveal Config Vars"
-9. Set the following Config Vars:
+9. Ensure these config vars in the final setup:
 
 | Key                   | Value             |
 |-----------------------|-------------------|
@@ -513,24 +458,105 @@ To deploy Little Pont to Heroku, take the following steps:
 (this is an example, actual env variable not disclosed to maintain security. To get the db url follow [CI PosgreSQL]())
 
 10. In the Heroku dashboard, click "Deploy"
-11. In the "Manual Deployment" section, ensure the master branch is selected then click "Deploy Branch"
-11. The site is now deployed
-12. Add deployed URL to `ALLOWED HOSTS` within 'settings.py' file
-13. Go to local CLI and login to Heroku using `heroku login -i` and enter heroku login details (email and password from Required Authenitcations within the Applications section).
-14. Initialise Heroku git remote to app by typing the following command:
+11. In the "Manual Deployment" section, ensure the main branch is selected then click "Deploy Branch"
+
+
+#### Connect new DB to Heroku app
+1. In the terminal, install dj_database_url and psycopg2, both of these are needed to connect to your external database.
+
+2. pip3 install dj_database_url==0.5.0 psycopg2
+3. Update your requirements.txt file with the newly installed packages
+
+4. pip freeze > requirements.txt
+5. In your settings.py file, import dj_database_url underneath the import for os
+```
+ import os
+ import dj_database_url
+```
+6. Scroll to the DATABASES section and update it to the following code, so that the original connection to sqlite3 is commented out and we connect to the new database instead. Paste in the database URL from your PostgreSQL from Code Institute email as below (do not commit these changes)
+```
+#DATABASES = {
+#     'default': {
+#          'ENGINE': 'django.db.backends.sqlite3',
+#          'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#      }
+#  }
+     
+ DATABASES = {
+     'default': dj_database_url.parse('your-database-url-here')
+ }
+``` 
+7. In the terminal, run the showmigrations command to confirm you are connected to the external database
+```
+python3 manage.py showmigrations
+```
+you should see a list of all migrations
+8. Migrate your database models to your new database
+```
+ python3 manage.py migrate
+```
+9. Create a superuser- follow the stps after entering the following command
+```
+ python3 manage.py createsuperuser
+```
+10. Revert changes made in step 8.
+11. Update cose in settings.py as follows:
+```
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+```
+12. Install gunicorn and add to requirements:
+```
+pip3 install gunicorn
+pip3 freeze > requirements.txt
+```
+13. Within the Procfile add `web: gunicorn app-name.wsgi:application` (add app name where indicated), this tells Heroku to create a web dyno and serve our django app.
+14. Go to local CLI and login to Heroku using `heroku login -i` and enter heroku login details (email and password from Required Authenitcations within the Applications section). 
+15. temporarily disable collect static. This tells Heroku not to collect static files when we deploy:
+```
+heroku config:set DISABLE_COLLECTSTATIC=1 --app heroku-app-name-here
+```
+16. Add the Heroku app and localhost (which will allow GitPod to still work) to ALLOWED_HOSTS = [] in settings.py:
+```
+ALLOWED_HOSTS = ['heroku deployed site URL here', 'localhost' ]
+```
+
+17. Initialise Heroku git remote to app by typing the following command:
 ```
 heroku git:remote -a <name_of_your_app>
 ```
-15. Then push to heroku
+18. Then push to heroku
 ```
 git push heroku
 ```
+19. Save, add, commit and push the changes to GitHub. You can then also initialize the Heroku git remote in the terminal and push to Heroku with:
+```
+heroku git:remote -a {app name here}
+git push heroku main
+```
+You should now be able to see the deployed site (without any static files as we haven't set these up yet).
+20. Set app up to automatically deploy when we push to github. Go to Heroku and click 'Depoly' tab. Click Github option and search for github repo in input field. Once found, click connect. Now click 'Enable autmatic deploys'
+21. Generate a Django secret key using a secret key generator. Add this in config vars in Heroku.
+22. Add changes to settings.py:
+```
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
+DEBUG = 'DEVELOPMENT' in os.environ
+```
 
 #### Amazon Web Services (AWS)
+Setup instructions taken from CI.
+Next, set up AWS which is used to host the sites static and media files as Heroku is unable to host them.
 
-AWS is used to host the sites static and media files.
-
-##### Create S3 Bucket
+##### Create an S3 Bucket
 1. Create account [here](https://aws.amazon.com/).
 2. Login using Root to access the AWS console.
 3. Search for and select 'S3'.
@@ -558,7 +584,143 @@ AWS is used to host the sites static and media files.
     }
     ]
     ```
+12. For the Access control list (ACL) section, click edit and enable List for Everyone (public access) and
+accept the warning box. If the edit button is disabled, you need to change the Object Ownership
+section above to ACLs enabled.
+13. In the services tab navigate to IAM(Identify and Access Management). Click User Group and then Create Group. Follow the instructions to create the group.
+14. Create an S3 bucket Policy and add it. Copy the ARN from the Amazon resource tab and paste into the bucket policy where directed. To attach the policy, on the sidebar, click User Groups. Select your group, go to the permissions
+tab, open the Add permissions dropdown, and click Attach policies. Select the policy and click add permissions at the bottom.
+15. Copy the policy and paste it into the bucket policy editor and add '/*' to the end of the resourse ARN to allow access to all resources in the bucket, it should look similar to this:
+```
+{
+    "Version": "2012-10-17",
+    "Id": "Policynumber",
+    "Statement": [
+        {
+            "Sid": "Stmt1724847378401",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::chosen-name/*"
+        }
+    ]
+}
+```
+16. Within the permissions tab, grant Public Access to 'Everyone'
+17. Next, to retrieve the access key go to IAM and select 'Users'
+18. Select the user for whom you wish to create a CSV file.
+19. Select the 'Security Credentials' tab
+20. Scroll to 'Access Keys' and click 'Create access key'
+21. Select 'Application running outside AWS', and click next
+22. On the next screen, you can leave the 'Description tag value' blank. Click 'Create Access Key'
+22. Click the 'Download .csv file' button
 
+##### Connect Django and S3 bucket
+1. Install boto3 and django storages and freeze them to the requirements.txt file.
+```
+pip3 install boto3
+pip3 install django-storages
+pip3 freeze > requirements.txt
+```
+2. In settings.py add `'storages',` to installed apps
+3. To use our bucket if we are using the deployed site, in settings.py add the following:
+```
+if 'USE_AWS' in os.environ:
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=9460800',
+    }
+    
+    AWS_STORAGE_BUCKET_NAME = 'enter your bucket name here'
+    AWS_S3_REGION_NAME = 'enter the region you selected here'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+```
+4. Update Heroku config vars(see Heroku deployment section), remove the DISABLE_COLLECTSTATIC variable.
+5. Create a file called custom_storages.py in the root, add imports and custom classes. These will tell the app the location to store static and media files:
+```
+from django.conf import settings
+from storages.backends.s3boto3 import S3Boto3Storage
+
+
+class StaticStorage(S3Boto3Storage):
+    location = settings.STATICFILES_LOCATION
+
+
+class MediaStorage(S3Boto3Storage):
+    location = settings.MEDIAFILES_LOCATION
+```
+
+6. To let the app know where to store static and media files, and to override the static and media URLs in production, add to settings.py: 
+```
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+STATICFILES_LOCATION = 'static'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+MEDIAFILES_LOCATION = 'media'
+
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+```
+7. Save, add, commit and push these changes to make a deployment to Heroku. In the build log you will see that the static files were collected, and in our S3 bucket we can see the static folder with all the static files in it.
+8. Navigate to S3 and open the bucket. Create folder and name it 'media', to store all the media files for the site. Add media files for site by clicking upload and choosing the relevant files.
+
+#### Correct settings.py configuration
+1. Ensure the following final setup within the settings.py file looks like this:
+```
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+if 'USE_AWS' in os.environ:
+     # Cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+    
+    # Bucket Config
+    AWS_STORAGE_BUCKET_NAME = 'your-app-name'
+    AWS_S3_REGION_NAME = 'your-local-region'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+    # Static and media files
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Stripe
+STRIPE_CURRENCY = 'gbp'
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+
+
+if 'DEVELOPMENT' in os.environ:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'your-default-email'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+```
 
 -   ### Run locally
 

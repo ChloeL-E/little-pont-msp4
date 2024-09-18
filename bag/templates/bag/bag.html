@@ -22,8 +22,10 @@
 <div class="row">
   <div class="col">
       {% if bag_items %}
-          <div class="d-block d-md-none">
+      <!-- Mobile View -->
+      <div class="d-block d-md-none">
               <div class="row">
+                <!--Mobile View-->
                   <div class="col">
                       {% include "bag/bag-total.html" %}
                   </div>
@@ -49,7 +51,7 @@
                       <div class="col-12 col-sm-6">
                           {% include "bag/quantity-form.html" %}
                       </div>
-                  </div>
+                    </div>
                   <div class="row"><div class="col"><hr></div></div>
               {% endfor %}
               <div class="btt-button shadow-sm rounded-0 border border-black">
@@ -58,6 +60,7 @@
                   </a>	
               </div>
           </div>
+      <!--Desktop view-->
       <div class="table-responsive rounded d-none d-md-block">
         <table class="table table-sm table-borderless">
           <thead class="table-font-main">
@@ -123,30 +126,23 @@
 {% include 'products/includes/quantity_input_script.html' %}
 
 <script type="text/javascript">
+  // Update quantity on click
+  $('.update-link').click(function(e) {
+      var form = $(this).prev('.update-form');
+      form.submit();
+  })
 
-$(document).ready(function () {
+  // Remove item and reload on click
+  $('.remove-item').click(function(e) {
+      var csrfToken = "{{ csrf_token }}";
+      var itemId = $(this).attr('id').split('remove_')[1];
+      var url = `/bag/remove/${itemId}/`;
+      var data = {'csrfmiddlewaretoken': csrfToken};
 
-// Update quantity on click
-$('.update-link').click(function (e) {
-  e.preventDefault();
-  let itemId = $(this).data('item-id');
-  let form = $(this).closest('.form');  // Find the closest form (update-form)
-  form.submit();  // Submit the form to update the item quantity
-});
-
-// Remove item and reload on click
-$('.remove-item').click(function (e) {
-  e.preventDefault();
-  let csrfToken = "{{ csrf_token }}";
-  let itemId = $(this).data('item-id');  // Use data attribute to identify item
-  let url = `/bag/remove/${itemId}/`;
-  let data = {'csrfmiddlewaretoken': csrfToken};
-
-$.post(url, data)
-  .done(function() {
-    location.reload();
-      });
-  });
-});
+      $.post(url, data)
+       .done(function() {
+           location.reload();
+       });
+  })
 </script>
 {% endblock %}

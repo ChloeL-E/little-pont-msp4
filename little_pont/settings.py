@@ -14,8 +14,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-
-
 ALLOWED_HOSTS = [
     'localhost',
     '8000-chloele-littlepontmsp4-jfcyz069qfa.ws.codeinstitute-ide.net',

@@ -142,14 +142,16 @@ header {
   border: 1px solid #000 !important;
 }
 
-.main-heading {
+.main-heading,
+.table-font-main {
   font-family: var(--font-header);
   font-weight: 600;
   font-size: 44px;
   color: var(--font-color-main);
 }
 
-.title-font {
+.title-font,
+.table-font {
   font-family: var(--font-header);
   font-weight: 600;
   font-size: 28px;
@@ -936,6 +938,12 @@ li::marker {
   }
 }
 
+@media (max-width: 992px) {
+  .increment-qty, .decrement-qty {
+  padding: .25rem .5rem !important;
+  }
+}
+
 @media (max-width: 768px) {
   #hero h2,
   #hero h1 {
@@ -1027,6 +1035,19 @@ li::marker {
     width: 25px;
     margin-right: 5px;
     padding: 2px;
+  }
+  .table-font,
+  .table-font-main {
+    font-size: 16px;
+  }
+  .table thead th,
+  .table tbody tr {
+    font-size: 14px;
+  }
+  #submit-button,
+  .update-link,
+  .remove-item {
+    padding: 2px 10px;
   }
 }
 

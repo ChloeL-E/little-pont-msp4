@@ -24,7 +24,7 @@
       {% if bag_items %}
       <div class="table-responsive rounded">
         <table class="table table-sm table-borderless">
-          <thead class="main-heading">
+          <thead class="table-font-main">
             <tr>
               <th scope="col">Course Name</th>
               <th scope="col">Start Time</th>
@@ -37,7 +37,7 @@
           {% for item in bag_items %}
           <tr>
             <td class="py-3">
-              <p class="my-0 title-font"><strong>{{ item.course.name }}</strong></p>
+              <p class="my-0 table-font"><strong>{{ item.course.name }}</strong></p>
             </td>
             <td class="py-3">
               <p class="my-0">{{ item.course.start_time }}</p>

@@ -11,7 +11,9 @@ class Instructor(models.Model):
     instructor_name = models.CharField(max_length=50, null=False, blank=False)
     bio_description = models.TextField(null=False, blank=False)
     experience = models.TextField(null=False, blank=False)
-    speciality_age_group = models.CharField(max_length=50, null=False, blank=False)
+    speciality_age_group = models.CharField(
+        max_length=50, null=False, blank=False
+        )
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 

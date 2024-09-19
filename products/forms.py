@@ -1,6 +1,6 @@
 from django import forms
 
-from instructor.models import Instructor
+# from instructor.models import Instructor
 from .models import Course
 from .widgets import DateInput, TimeInput
 
@@ -29,9 +29,9 @@ class ProductForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         courses = Course.objects.all()  # Get all courses
-        course_choices = [("  ")] + [
-            (course.id, course.age_group) for course in courses
-        ]
+        # course_choices = [("  ")] + [
+        # (course.id, course.age_group) for course in courses
+        # ]
 
         # Get the age_group values and set them as choices
         age_group_set = set(
@@ -62,7 +62,8 @@ class ProductForm(forms.ModelForm):
             "instructor": "Lead Instructor",
         }
 
-        # autofocus to 'name' input field, adding * to required input placeholders and removing labels
+        # autofocus to 'name' input field
+        # adding * to required input placeholders and removing labels
         self.fields["name"].widget.attrs["autofocus"] = True
         for field in self.fields:
             if self.fields[field].required:

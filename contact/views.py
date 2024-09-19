@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, redirect
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
@@ -38,7 +38,8 @@ def send_booking_enquiry(request):
                 {"contact": booking_enquiry},
             ).strip()
             email_body = render_to_string(
-                "contact/contact_confirmation_emails/contact_confirmation_email.txt",
+                "contact/contact_confirmation_emails/"
+                "contact_confirmation_email.txt",
                 {
                     "contact": booking_enquiry,
                     "contact_email": settings.DEFAULT_FROM_EMAIL,
@@ -54,14 +55,17 @@ def send_booking_enquiry(request):
                 )
                 messages.success(
                     request,
-                    "Thank you for sending a party booking enquiry! We aim to respond within 2 working days.",
+                    "Thank you for sending a party booking enquiry!"
+                    "We aim to respond within 2 working days.",
                 )
                 return redirect("home")  # Success message and redirect to home
             # Log the exception or handle it as necessary
             except Exception as e:
                 messages.error(
                     request,
-                    f"Sorry, your booking enquiry couldn't be sent due to: {e}. Please ensure you have completed the form correctly and submit again. Thank you",
+                    f"Sorry, a booking enquiry couldn't be sent due to: {e}. "
+                    "Please ensure you have completed the form correctly "
+                    "and submit again. Thank you",
                 )
                 return redirect("send_booking_enquiry")
     else:

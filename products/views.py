@@ -55,7 +55,11 @@ def courses_by_age_group(request, age_group):
         "age_group": age_group,
         "instructor": instructor,
     }
-    return render(request, f"products/{template_name}_courses.html", context)
+    return render(
+        request,
+        f"products/{template_name}_courses.html",
+        context
+    )
 
 
 @login_required
@@ -74,7 +78,8 @@ def add_course(request):
             return redirect("all_courses")
         else:
             messages.error(
-                request, "Failed to add course. Please ensure the form is valid."
+                request,
+                "Failed to add course. Please ensure the form is valid."
             )
     else:
         form = ProductForm()
@@ -92,7 +97,9 @@ def edit_course(request, course_id):
     """Edit a course"""
     # Only site admin can edit a course
     if not request.user.is_superuser:
-        messages.error(request, "Sorry, only Little Pont administrators can do that.")
+        messages.error(request,
+                       "Sorry, only Little Pont administrators can do that."
+                       )
         return redirect(reverse("home"))
     # get the course using its id, handle form submission to edit/update
     course = get_object_or_404(Course, pk=course_id)
@@ -104,7 +111,8 @@ def edit_course(request, course_id):
             return redirect(reverse("all_courses"))
         else:
             messages.error(
-                request, "Failed to update course. Please ensure the form is valid."
+                request,
+                "Failed to update course. Please ensure the form is valid."
             )
     else:
         form = ProductForm(instance=course)
@@ -124,7 +132,10 @@ def delete_course(request, course_id):
     """Delete a course"""
     # only site administrators can delete a course
     if not request.user.is_superuser:
-        messages.error(request, "Sorry, only Little Pont administrators can do that.")
+        messages.error(
+            request,
+            "Sorry, only Little Pont administrators can do that."
+        )
         return redirect(reverse("home"))
     # get the course by id and delete
     course = get_object_or_404(Course, pk=course_id)

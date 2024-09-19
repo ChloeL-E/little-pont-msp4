@@ -38,14 +38,19 @@ def add_instructor(request):
     """A view to allow admin to add a new instructor"""
 
     if not request.user.is_superuser:
-        messages.error(request, "We're sorry but only administrators can do that.")
+        messages.error(request,
+                       "We're sorry but only administrators can do that."
+                       )
         return redirect("home")
 
     if request.method == "POST":
-        form = InstructorForm(request.POST, request.FILES)  # if an image atached
+        # if an image attached
+        form = InstructorForm(request.POST, request.FILES)
         if form.is_valid():
             instructor = form.save()
-            messages.success(request, "Successfully added a new member to our team!")
+            messages.success(request,
+                             "Successfully added a new member to our team!"
+                             )
             return redirect(reverse("instructor_detail", args=[instructor.id]))
         else:
             messages.error(
@@ -69,14 +74,19 @@ def edit_instructor(request, instructor_id):
 
     instructor = get_object_or_404(Instructor, pk=instructor_id)
     if request.method == "POST":
-        form = InstructorForm(request.POST, request.FILES, instance=instructor)
+        form = InstructorForm(
+            request.POST,
+            request.FILES,
+            instance=instructor
+        )
         if form.is_valid():
             form.save()
             messages.success(request, "Successfully updated instructor!")
             return redirect(reverse("instructor_detail", args=[instructor.id]))
         else:
             messages.error(
-                request, "Failed to update instructor. Please ensure the form is valid."
+                request, "Failed to update instructor."
+                "Please ensure the form is valid."
             )
     else:
         form = InstructorForm(instance=instructor)

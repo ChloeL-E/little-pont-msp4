@@ -72,7 +72,7 @@ header {
   top: 0;
   left: 0;
   border-bottom: 0.5px solid white;
-  height: 308px;;
+  height: 302px;;
 }
 /* logo */
 #top-header-image img {
@@ -979,7 +979,7 @@ li::marker {
 }
 
 @media only screen and (max-width: 600px) {
-  .top-header {
+  .top-header image {
     height: 218px;
   }
   #top-header-image img{

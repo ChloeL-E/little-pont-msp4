@@ -7,21 +7,39 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Course',
+            name="Course",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100)),
-                ('description', models.TextField()),
-                ('start_date', models.DateField()),
-                ('end_date', models.DateField()),
-                ('price', models.DecimalField(decimal_places=2, max_digits=5)),
-                ('age_group', models.CharField(choices=[('Babies', 'Babies'), ('Toddler', 'Toddler'), ('Preschool', 'Preschool'), ('Early Years', 'Early Years')], max_length=11)),
-                ('is_active', models.BooleanField(default=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=100)),
+                ("description", models.TextField()),
+                ("start_date", models.DateField()),
+                ("end_date", models.DateField()),
+                ("price", models.DecimalField(decimal_places=2, max_digits=5)),
+                (
+                    "age_group",
+                    models.CharField(
+                        choices=[
+                            ("Babies", "Babies"),
+                            ("Toddler", "Toddler"),
+                            ("Preschool", "Preschool"),
+                            ("Early Years", "Early Years"),
+                        ],
+                        max_length=11,
+                    ),
+                ),
+                ("is_active", models.BooleanField(default=True)),
             ],
         ),
     ]

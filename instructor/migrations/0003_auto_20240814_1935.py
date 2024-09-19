@@ -6,18 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('instructor', '0002_rename_intructor_instructor'),
+        ("instructor", "0002_rename_intructor_instructor"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='instructor',
-            name='image',
-            field=models.ImageField(blank=True, null=True, upload_to=''),
+            model_name="instructor",
+            name="image",
+            field=models.ImageField(blank=True, null=True, upload_to=""),
         ),
         migrations.AddField(
-            model_name='instructor',
-            name='image_url',
+            model_name="instructor",
+            name="image_url",
             field=models.URLField(blank=True, max_length=1024, null=True),
         ),
     ]

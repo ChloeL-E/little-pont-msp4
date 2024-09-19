@@ -6,23 +6,23 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('checkout', '0002_remove_order_grand_total'),
+        ("checkout", "0002_remove_order_grand_total"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='order',
-            name='original_bag',
-            field=models.TextField(default=''),
+            model_name="order",
+            name="original_bag",
+            field=models.TextField(default=""),
         ),
         migrations.AddField(
-            model_name='order',
-            name='stripe_pid',
-            field=models.CharField(default='', max_length=254),
+            model_name="order",
+            name="stripe_pid",
+            field=models.CharField(default="", max_length=254),
         ),
         migrations.AddField(
-            model_name='order',
-            name='total',
+            model_name="order",
+            name="total",
             field=models.DecimalField(decimal_places=2, default=0, max_digits=10),
         ),
     ]

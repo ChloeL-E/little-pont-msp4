@@ -10,23 +10,43 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('profiles', '0001_initial'),
+        ("profiles", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='BookingEnquiry',
+            name="BookingEnquiry",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('booking_full_name', models.CharField(max_length=50)),
-                ('booking_email', models.EmailField(max_length=254)),
-                ('subject', models.CharField(max_length=100)),
-                ('content', models.TextField()),
-                ('date_submitted', models.DateTimeField(default=django.utils.timezone.now, editable=False)),
-                ('booking_username', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='booking', to='profiles.userprofile')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("booking_full_name", models.CharField(max_length=50)),
+                ("booking_email", models.EmailField(max_length=254)),
+                ("subject", models.CharField(max_length=100)),
+                ("content", models.TextField()),
+                (
+                    "date_submitted",
+                    models.DateTimeField(
+                        default=django.utils.timezone.now, editable=False
+                    ),
+                ),
+                (
+                    "booking_username",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="booking",
+                        to="profiles.userprofile",
+                    ),
+                ),
             ],
             options={
-                'ordering': ['-date_submitted'],
+                "ordering": ["-date_submitted"],
             },
         ),
     ]

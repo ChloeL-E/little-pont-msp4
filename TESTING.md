@@ -168,7 +168,7 @@ Each action was tested and found to work as expected.
 
 Testing was an ongoing process throughout this project. Google Chrome Developer tools were used to ensure the app was running correctly at each stage and it supported troubleshooting of issues when the project wasnt running as expected or the design required further work. It was particularly useful when adjusting the site styling to improve responsiveness.
 
-The Website was tested on Google Chrome, Microsoft Edge, Firefox and Safari browsers. The site was viewed on a variety of devices such as Desktop, Laptop, Tablets and Phones using dev tools and real devices.
+<!--The Website was tested on Google Chrome, Microsoft Edge, Firefox and Safari browsers. The site was viewed on a variety of devices such as Desktop, Laptop, Tablets and Phones using dev tools and real devices.-->
 The deployed site sent to friends and young family members to review the site and test it from a user perspective.
 
 - - - 
@@ -204,7 +204,7 @@ The deployed site sent to friends and young family members to review the site an
 
 -   ### CSS Validation 
     All pages were tested using [W3C jigsaw css validator](https://jigsaw.w3.org/css-validator/) 
-    * [style.css]()- no errors or warnings
+    * [style.css]()- 
 
 - - - 
     

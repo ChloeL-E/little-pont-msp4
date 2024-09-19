@@ -4,17 +4,19 @@ from .models import Course
 
 # Register models
 
+
 class CourseAdmin(admin.ModelAdmin):
     list_display = (
-        'name',
-        'age_group',
-        'start_date',
-        'end_date',
-        'start_time',
-        'price',
-        'instructor',
+        "name",
+        "age_group",
+        "start_date",
+        "end_date",
+        "start_time",
+        "price",
+        "instructor",
     )
 
-    ordering = ('start_date',)
+    ordering = ("start_date",)
+
 
 admin.site.register(Course, CourseAdmin)

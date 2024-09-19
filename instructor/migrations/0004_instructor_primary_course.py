@@ -7,14 +7,20 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('products', '0002_auto_20240808_1313'),
-        ('instructor', '0003_auto_20240814_1935'),
+        ("products", "0002_auto_20240808_1313"),
+        ("instructor", "0003_auto_20240814_1935"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='instructor',
-            name='primary_course',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='primary_instructors', to='products.course'),
+            model_name="instructor",
+            name="primary_course",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="primary_instructors",
+                to="products.course",
+            ),
         ),
     ]

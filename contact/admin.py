@@ -4,15 +4,16 @@ from .models import BookingEnquiry
 
 class BookingEnquiryAdmin(admin.ModelAdmin):
     list_display = (
-        'id',
-        'booking_username',
-        'booking_full_name',
-        'booking_email',
-        'subject',
-        'content',
-        'date_submitted',
+        "id",
+        "booking_username",
+        "booking_full_name",
+        "booking_email",
+        "subject",
+        "content",
+        "date_submitted",
     )
 
-    ordering = ('-date_submitted',)
+    ordering = ("-date_submitted",)
+
 
 admin.site.register(BookingEnquiry, BookingEnquiryAdmin)

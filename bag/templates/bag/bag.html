@@ -15,7 +15,7 @@
 <div class="row">
    <div class="col-12 section-title">
       <!--Page title-->
-      <h2 class="logo-font mb-4 main-heading text-center">Shopping Bag</h2>
+      <h1 class="logo-font mb-4 main-heading text-center">Shopping Bag</h1>
    </div>
 </div>
 <!-- Order summary table -->
@@ -110,8 +110,8 @@
       </div>
       {% else %}
       <!--Bag empty course links-->
-      <p class="lead mb-5 main-heading">Your bag is empty!</p>
-      <p class="title-font">View our courses...</p>
+      <h2 class="lead mb-5 main-heading">Your bag is empty!</h2>
+      <h3 class="title-font">View our courses...</h3>
       <span class="icon mb-5 d-flex justify-content-between">
         <a class="btt-back-to-courses rounded-4" href="{% url 'courses_by_age_group' age_group='Babies' %}" >Babies</a>
         <a class="btt-back-to-courses rounded-4" href="{% url 'courses_by_age_group' age_group='Toddler' %}">Toddlers</a>

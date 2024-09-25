@@ -110,13 +110,10 @@ header {
 .nav-item, .list-inline-item {
   padding: 10px;
   font-size: 26px;
-}
-
-.nav-item {
   font-family: var(--font-header);
 }
 
-.list-inline-item {
+.dropdown-item {
   font-family: var( --font-main);
 }
 

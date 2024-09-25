@@ -16,7 +16,7 @@
         <div class="icon-box">
             <div class="section-title">
                 <!--Page title-->
-                <h2>Meet Our Team</h2>
+                <h1>Meet Our Team</h1>
                 <p>{{ instructor.image.url }}</p>
             </div>
             <!-- Loop through instructors to display each -->
@@ -32,8 +32,8 @@
                     {% endif %}
                     <!-- Image overlay -->
                     <div class="img-overlay">
-                        <h4>{{ instructor.instructor_name }}</h4>
-                        <h4>{{ instructor.speciality_age_group }}</h4>
+                        <p>{{ instructor.instructor_name }}</p>
+                        <p>{{ instructor.speciality_age_group }}</p>
                         <a class="update-link" href="{% url 'instructor_detail' instructor.id %}">More about
                             {{ instructor.instructor_name }}</a>
                     </div>

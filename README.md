@@ -753,6 +753,7 @@ else:
 - [Stack Overflow](https://stackoverflow.com/questions/16966383/jquery-change-url-of-form-submit) although an old post, gave me the guidance required to write the jquery for the course booking logic as i eeded some help understanding how to go about constructing the specific URL. On Course Booking form submission, the function gets the course_id of the 'checked' radio button. It then constrcuts the URL correctly, inserting the course_id value. 
 - [Stack Overflow](https://stackoverflow.com/questions/9729095/onclick-button-border-color-change) for changing the all-auth styling .active on border-color.
 - [FreeFormatter](https://www.freeformatter.com/html-formatter.html) - for tidy html formatting
+- [Stack Overflow](https://stackoverflow.com/questions/38724012/django-crispy-forms-set-label-text-for-multiple-fields) post assisted with finding out how to properly label a crispy form for accessibility but for screen readers only.
 - [HomeBrew]() to install Heroku CLI
 - Content was written by Chloe Livingstone-Evans.
 - - - - 

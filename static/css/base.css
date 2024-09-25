@@ -349,7 +349,7 @@ section {
   box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
 }
 
-.about .icon-box:hover h4 a,
+.about .icon-box:hover h3 a,
 .about .icon-box:hover .icon i {
   color: var(--blue);
 }

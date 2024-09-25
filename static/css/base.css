@@ -325,14 +325,14 @@ section {
   height:400px;
 }
 
-.about.icon-box h4 {
+.about.icon-box h3 {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 24px;
   font-family: var(--font-header);
 }
 
-.about .icon-box h4 a {
+.about .icon-box h3 a {
   color: #000;
   transition: ease-in-out 0.3s;
 }

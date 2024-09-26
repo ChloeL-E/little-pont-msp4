@@ -722,7 +722,7 @@ else:
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 ```
 
--   ### Run locally
+### Run locally
 
 **Fork**
 1. Login or Sign Up to GitHub.

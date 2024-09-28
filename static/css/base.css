@@ -400,12 +400,12 @@ section {
   color: var(--font-color-main);
 }
 
-.what-we-offer .icon-box h4 a {
+.what-we-offer .offer-name a {
   color: var(--font-color-main);
 }
 
 .courses-home:hover,
-.what-we-offer .icon-box h4 a:hover {
+.what-we-offer .offer-name a:hover {
   color: var(--pink);
   text-decoration: none;
 }

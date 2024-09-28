@@ -221,25 +221,27 @@ The deployed site sent to friends and young family members to review the site an
     * [Toddler Course page]()
     * [Preschool Course page]()
     * [Early Years Course page]()
-    * [Add course page]()
+    * [Add course page](documentation/testing/images/html_product_management.png)
     * [Edit course page]()
     * [My Profile page page]()
-    * [Instructor Info page]()
-    * [Instructor Detail page]()
-    * [Add Instructor page]()
+    * [Instructor Info page](documentation/testing/images/html_instructor_info.png)
+    * [Instructor Detail page](documentation/testing/images/html_instructor_detail.png)
+    * [Add Instructor page](documentation/testing/images/html_team_management.png)
     * [Edit Instructor page]()
-    * [Cafe page]()
+    * [Cafe page](documentation/testing/images/html_cafe.png)
     * [Checkout page]()
     * [Checkout Success page]()
-    * [Booking Enquiry page]() no errors or warnings
+    * [Booking Enquiry page](documentation/testing/images/html_contact.png) 
+    
+    No errors or warnings found
     
 
 - - - 
 
 -   ### CSS Validation 
     All pages were tested using [W3C jigsaw css validator](https://jigsaw.w3.org/css-validator/) 
-    * [style.css]()
-
+    * [style.css](documentation/testing/images/css_validation.png)
+    * [checkout.css](documentation/testing/images/css_checkout.png)
 - - - 
     
 -   ### Javascript Validation
@@ -331,7 +333,7 @@ The deployed site sent to friends and young family members to review the site an
     * [Register page]()
     * [Logout page]()
     * [Shopping Bag page]()
-    * [All Courses page]()
+    * [All Courses page](documentation/testing/images/all_courses_lighthouse.png)
     * [Babies Course page]()
     * [Toddler Course page]()
     * [Preschool Course page]()

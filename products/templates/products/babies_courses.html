@@ -126,26 +126,29 @@
                   {% csrf_token %}
                   <div class="form-row">
                      <div class="col-12">
-                        <ul class="ps-0" style="list-style-type: none;">
-                           {% for course in courses %}
-                           <li>
-                              <input type="radio" class="mt-3" id="course_{{ course.id }}" name="course_id"
-                                 value="{{ course.id }}">
-                              <label for="course_{{ course.id }}">
-                              <strong class="course-label"><i class="fa-regular fa-star fa-beat mr-3"></i>
-                              {{ course.name }}</strong>
-                              </label>
-                              Start Date: {{ course.start_date }}
-                              End Date: {{ course.end_date }}
-                              Start Time: {{ course.start_time }}
-                              Price: £{{ course.price }}
-                              Instructor: {{ course.instructor }}
-                           </li>
-                           {% endfor %}
-                        </ul>
+                        <fieldset>
+                           <legend class="sr-only">Select a Course</legend>
+                           <ul class="ps-0" style="list-style-type: none;">
+                              {% for course in courses %}
+                              <li>
+                                 <input type="radio" class="mt-3" id="course_{{ course.id }}" name="course_id"
+                                    value="{{ course.id }}">
+                                 <label for="course_{{ course.id }}">
+                                 <strong class="course-label"><i class="fa-regular fa-star fa-beat mr-3"></i>
+                                 {{ course.name }}</strong>
+                                 </label>
+                                 Start Date: {{ course.start_date }}
+                                 End Date: {{ course.end_date }}
+                                 Start Time: {{ course.start_time }}
+                                 Price: £{{ course.price }}
+                                 Instructor: {{ course.instructor }}
+                              </li>
+                              {% endfor %}
+                           </ul>
+                        </fieldset>
                         <!-- Quantity input  -->
                         <div class="col-12">
-                           <p class="mt-3 title-font"><strong>Quantity:</strong></p>
+                           <h4 class="mt-3 title-font"><strong>Quantity:</strong></h4>
                            <div class="form-group w-50">
                               <div class="input-group">
                                  <div class="input-group-prepend">

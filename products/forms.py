@@ -72,3 +72,8 @@ class ProductForm(forms.ModelForm):
             else:
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs["placeholder"] = placeholder
+        
+        self.fields["name"].widget.attrs["aria-label"] = "Course Name"
+        self.fields["description"].widget.attrs["aria-label"] = "Course Description"
+        self.fields["price"].widget.attrs["aria-label"] = "Price"
+        self.fields["age_group"].widget.attrs["aria-label"] = "Age Group"

@@ -59,12 +59,13 @@
                         </span>
                       </button>
                     </div>
+                    <label for="id_qty_{{ item.item_id }}" class="sr-only">Quantity Total</label>
                     <input class="form-control form-control-sm qty_input" type="number" name="quantity"
                       value="{{ item.quantity }}" min="1" max="10" data-item_id="{{ item.item_id }}"
-                      id="id_qty_{{ item.item_id }}">
+                      id="id_qty_{{ item.item_id }}" aria-label="Decrement Quantity">
                     <div class="input-group-append">
                       <button class="increment-qty btn btn-sm btn-black rounded-0" data-item_id="{{ item.item_id }}"
-                        id="increment-qty_{{ item.item_id }}">
+                        id="increment-qty_{{ item.item_id }}" aria-label="Increment Quantity">
                         <span>
                           <i class="fas fa-plus fa-sm"></i>
                         </span>
@@ -86,7 +87,7 @@
           <!-- Bag totals -->
           <tr>
             <td colspan="5" class="pt-5 text-right">
-              <h6 class="table-font"><strong>Total: £{{ total|floatformat:2 }}</strong></h6>
+              <h3 class="table-font"><strong>Total: £{{ total|floatformat:2 }}</strong></h3>
             </td>
           </tr>
           <tr>

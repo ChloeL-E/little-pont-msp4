@@ -82,7 +82,7 @@
 
 <!--Course Booking Section -->
 <!-- Course Details section and Course Booking Section Side by Side -->
-<section id="course-details pt-0">
+<section id="course-details" class="pt-0">
   <div class="container">
     <div class="row">
       <!-- Course Details Section -->
@@ -202,7 +202,7 @@
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
 
-<script type="text/javascript">
+<script>
   $(document).ready(function () {
     $('#courseForm').submit(function (event) {
       event.preventDefault();

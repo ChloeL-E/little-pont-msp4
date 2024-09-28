@@ -1,4 +1,5 @@
-/* Root Variables */
+/* ------------------------------ Root Variables */
+
 :root {
   --font-header: "Amatic SC";
   --font-main: "Roboto";
@@ -25,10 +26,6 @@ body {
 
 main {
   background-color: #fbfbfc;
-}
-
-.row {
-  scrollbar-gutter: auto;
 }
 
 /* Scroll to top button styling */
@@ -636,6 +633,7 @@ label i {
 input[type="radio"]:checked +label i  {
   content: '';
   color: var(--pink);
+  cursor: pointer;
 }
 
 .course-label {

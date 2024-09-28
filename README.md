@@ -66,7 +66,7 @@ This website has been built using HTML, CSS, Javascript and Python.
     -   #### Viewing and Navigation
 
         1. As a site user, i want to be able to view the website on a range of device size and it needs to be aestheitc and functional
-        2. As a parent/guardian, i want to easily understand the purpose of the webite
+        2. As a parent/guardian, i want to easily understand the purpose of the webite.
         3. As a parent/guardian, i want to be able to view course details to understand which course is suitable for my child.
         4. As a parent/guardian, i want to be able to see the available courses, the course dates and times so that i can decide if it is suitable to book.
         4. As a registered site user, i want to view the contents of my shopping basket and be able to add, edit or delete any items in it. 
@@ -355,6 +355,9 @@ There are 7 main apps within Little Pont: home, profiles, products, bag, checkou
         * Asks user if they are sure they wish to logout and allows user to either navigate back to site or continue to log out
 
         [Logout page]()
+    
+    -   #### Checkout confirmation
+        [Checkout Confirmation recieved](documentation/readme/images/email_confirmation.png)
 
 
 

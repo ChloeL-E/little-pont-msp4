@@ -945,6 +945,9 @@ li::marker {
   .increment-qty, .decrement-qty {
   padding: .25rem .5rem !important;
   }
+  .about img {
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {

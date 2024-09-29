@@ -947,13 +947,6 @@ li::marker {
   }
 }
 
-@media (min-width: 992px) {
-  .col-md-6 {
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
 @media (max-width: 768px) {
   #hero h2,
   #hero h1 {
@@ -1010,8 +1003,8 @@ li::marker {
     max-width: 100%;
   }
   .about .icon-box img {
-    width: 400px;
-    height: 200px;
+    width: 240px;
+    height: 180px;
   }
   footer h4 {
     font-size: medium;

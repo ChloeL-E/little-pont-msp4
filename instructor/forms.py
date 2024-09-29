@@ -55,4 +55,5 @@ class InstructorForm(forms.ModelForm):
         self.fields["instructor_name"].widget.attrs["aria-label"] = "Instructors Name"
         self.fields["bio_description"].widget.attrs["aria-label"] = "Bio Description"
         self.fields["experience"].widget.attrs["aria-label"] = "Experience"
+        self.fields["speciality_age_group"].widget.attrs["aria-label"] = "Speciality Age Group"
         self.fields["image"].widget.attrs["aria-label"] = "Image"

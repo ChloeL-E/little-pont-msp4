@@ -217,10 +217,7 @@ The deployed site sent to friends and young family members to review the site an
     * [Logout page](documentation/testing/images/html_logout.png)
     * [Shopping Bag page]()
     * [All Courses page](documentation/testing/images/html_all_courses.png)
-    * [Babies Course page]()
-    * [Toddler Course page]()
-    * [Preschool Course page]()
-    * [Early Years Course page]()
+    * [Babies, Toddlers, Preschool, Early Years Course pages]()
     * [Add course page](documentation/testing/images/html_product_management.png)
     * [Edit course page](documentation/testing/images/html_edit_course.png)
     * [My Profile page page](documentation/testing/images/html_my_profile.png)
@@ -301,23 +298,21 @@ The deployed site sent to friends and young family members to review the site an
     See the WAVE reports for:
 
     * [Home page](documentation/testing/images/wave_home.png)
-    * [Login page]()
-    * [Register page]()
-    * [Logout page]()
-    * [Shopping Bag page]()
+    * [Logout page](documentation/testing/images/wave_logout.png)
+    * [Shopping Bag page](documentation/testing/images/wave_bag.png)
     * [All Courses page](documentation/testing/images/wave_all_courses.png)
-    * [Add Course page]()
+    * [Add Course page](documentation/testing/images/wave_add_course.png)
     * [Babies, Toddlers, Early Years and Preschool pages](documentation/testing/images/wave-age-specific.png)
-    * [Edit course page]()
-    * [My Profile page page]()
-    * [Instructor Info page]()
-    * [Instructor Detail page]()
-    * [Add Instructor page]()
-    * [Edit Instructor page]()
-    * [Cafe page]()
-    * [Checkout page]()
-    * [Checkout Success page]()
-    * [Booking Enquiry page]()
+    * [Edit course page](documentation/testing/images/wave_edit_course.png)
+    * [My Profile page page](documentation/testing/images/wave_profile.png)
+    * [Instructor Info page](documentation/testing/images/wave_instructos_info.png)
+    * [Instructor Detail page](documentation/testing/images/wave_instructor_detail.png)
+    * [Add Instructor page](documentation/testing/images/wave_add_instructor.png)
+    * [Edit Instructor page](documentation/testing/images/wave_edit_instructor.png)
+    * [Cafe page](documentation/testing/images/wave_cafe.png)
+    * [Checkout page](documentation/testing/images/wave_checkout.png)
+    * [Checkout Success page](documentation/testing/images/wave_checkout_success.png)
+    * [Booking Enquiry page](documentation/testing/images/wave_contact.png)
 
 - - -
 
@@ -325,23 +320,23 @@ The deployed site sent to friends and young family members to review the site an
 
     Lighthouse within the Chrome Developer Tools was used to test performance, accessibility, best practices and SEO of this website. See the lighthouse reports for each page within the site:
   
-    * [Home page]()
     * [Login page](documentation/testing/images/lighthouse_login.png)
-    * [Register page]()
+    * [Register page](documentation/testing/images/lighthouse_register.png)
     * [Shopping Bag page](documentation/testing/images/lighthouse_bag.png)
+    * [Home page](documentation/testing/images/lighthouse_home.png)
     * [All Courses page](documentation/testing/images/all_courses_lighthouse.png)
     * [Babies, Toddlers, Preschool, Early years page](documentation/testing/images/lighthouse_course_details.png)
-    * [Add course page]()
-    * [Edit course page]()
-    * [My Profile page page]()
-    * [Instructor Info page]()
-    * [Instructor Detail page]()
-    * [Add Instructor page]()
-    * [Edit Instructor page]()
-    * [Cafe page]()
-    * [Checkout page]()
-    * [Checkout Success page]()
-    * [Booking Enquiry page]()
+    * [Add course page](documentation/testing/images/lighthouse_add_course.png)
+    * [Edit course page](documentation/testing/images/wave_add_instructor.png)
+    * [My Profile page page](documentation/testing/images/lighthouse_profile.png)
+    * [Instructor Info page](documentation/testing/images/lighthouse_instructor_info.png)
+    * [Instructor Detail page](documentation/testing/images/lighthouse_instructor_detail.png)
+    * [Add Instructor page](documentation/testing/images/lighthouse_add_instructor.png)
+    * [Edit Instructor page](documentation/testing/images/lighthouse_edit_instructor.png)
+    * [Cafe page](documentation/testing/images/lighthouse_cafe.png)
+    * [Checkout page]documentation/testing/images/lighthouse_checkout.png()
+    * [Checkout Success page](documentation/testing/images/lighthouse_checkout_success.png)
+    * [Booking Enquiry page](documentation/testing/images/lighthouse_contact.png)
 
   - - -
 
@@ -367,6 +362,9 @@ The deployed site sent to friends and young family members to review the site an
     * Instructor images were not rendering after depployment and hosting them within AWS. I added each instructor image via Django admin using the AWS S3 bucket url. They didnt render. I tried a number of things to try to get them to render correctly- cleared the cache, checked the permissions within AWS, checked the image URL was correct by loading the image in a new tab which it did, tried rendering the image in a paragraph outside of the instructor loop which didnt render the image. Checked the DB model to see if I had a mistake in the way the image was being stored. After a quick search of google i found a [Stack Overflow](https://stackoverflow.com/questions/8850535/how-to-get-an-imagefield-url-within-a-template) post which helped me to realise that i was trying to access the empty 'image' field rather than 'image_url', the field i was using to store the image in the database. Once accessing the image_url using `instructors.image_url` the images rendered correctly.
 
     * I found a bug whereby the Preschool courses, which had been rendering correctly on the Preschool courses page, were suddenly no longer rendering at all. This seemed strange as i hadnt changed any of the code relating to this feature and the other course pages which use the same view and template structure were rendering perfectly. It seemed strange that it was only preschool courses this was affecting. I thought it may have been an issue related to deploying the site as i had just done this. I re-added the data to the database and deleted the old preschool course data. This seemed to fix the issue however about 1 week later when testing the site i ran into the same bug again. This time, when having a closer look at the issue, i checked that the age group choices in the model matched the use of Preschool in the view. I noticed that Preschool file path was the only course of the four that was being passed as a lowercase which seemed to be was causing the issue. To tackle this i ammended the way i fitered the courses using `courses = Course.objects.filter(age_group__iexact=age_group)` to make it case insensitive. This addressed the issue.
+
+-   ### Unfixed Bugs
+    * When testing the site with HTML validator, i found that within the add/edit instructor form, where i was adding a new image using ID `new_image`, Django forms was adding its own ID to the same element. I tried to remove Django's ID but it caused a server 500 error. I would need to reconfigure my javascript to use the Django ID when adding or editing the image field.
 
 - - - 
 

@@ -52,4 +52,4 @@ class OrderForm(forms.ModelForm):
         self.fields["street_address2"].widget.attrs["aria-label"] = "Street Address 2"
         self.fields["town_or_city"].widget.attrs["aria-label"] = "Town or City"
         self.fields["county"].widget.attrs["aria-label"] = "County, State or Locality"
-        self.fields["postal_code"].widget.attrs["aria-label"] = "Postal Code"
+        self.fields["postcode"].widget.attrs["aria-label"] = "Postal Code"

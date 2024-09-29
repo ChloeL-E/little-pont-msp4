@@ -30,7 +30,7 @@ class InstructorForm(forms.ModelForm):
             "image_url": "Image URL",
         }
         # Set the id of the image field to 'new-image'
-        self.fields['image'].widget.attrs.update({'id': 'new-image'})
+        # self.fields['image'].widget.attrs.update({'id': 'new-image'})
         
         self.fields["instructor_name"].widget.attrs[
             "autofocus"

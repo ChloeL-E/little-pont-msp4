@@ -127,11 +127,12 @@
     </div>
   </div>
   <!-- Loading spinner -->
-  <div id="loading-overlay">
-    <h2 class="text-light logo-font loading-spinner">
+  <div id="loading-overlay" role="status" aria-live="polite">
+    <h2 class="text-light logo-font loading-spinner" role="presentation">
         <span class="icon">
           <i class="fa-solid fa-spinner fa-spin-pulse"></i>
         </span>
+        <span class="sr-only">Loading...</span>
     </h2>
 </div>
 </section>

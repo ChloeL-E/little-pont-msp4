@@ -87,7 +87,7 @@
          <!-- Course Details Section -->
          <div class="col-lg-6 order-lg-1 order-2">
             <div class="content mb-5">
-               <h4 class="title-font">Course Details</h4>
+               <h4 class="title-font pt-3">Course Details</h4>
                <p>
                   Courses run in 4 week blocks so you will get 4 classes per booking.
                   Each of our age groups run every day Monday - Thursday. The times differ
@@ -119,33 +119,30 @@
          <!-- Course Booking Section -->
          <div class="col-lg-6">
             <div class="pt-5 pt-lg-0">
-               <h4 class="title-font ml-5">Course Booking</h4>
+               <h4 class="title-font ml-5 pt-3">Course Booking</h4>
                <!--Form which loops through the course dates -->
                <form id="courseForm" class="form" method="POST" aria-labelledby="courseFormLabel">
                   <label id="courseFormLabel" class="sr-only">Course Booking Form</label>
                   {% csrf_token %}
                   <div class="form-row">
                      <div class="col-12">
-                        <!--<fieldset>
-                           <legend class="sr-only">Select a Course</legend>-->
-                           <ul class="ps-0" style="list-style-type: none;">
-                              {% for course in courses %}
-                              <li>
-                                 <input type="radio" class="mt-3" id="course_{{ course.id }}" name="course_id"
-                                    value="{{ course.id }}">
-                                 <label for="course_{{ course.id }}">
-                                 <strong class="course-label"><i class="fa-regular fa-star fa-beat mr-3"></i>
-                                 {{ course.name }}</strong>
-                                 </label>
-                                 Start Date: {{ course.start_date }}
-                                 End Date: {{ course.end_date }}
-                                 Start Time: {{ course.start_time }}
-                                 Price: £{{ course.price }}
-                                 Instructor: {{ course.instructor }}
-                              </li>
-                              {% endfor %}
-                           </ul>
-                        <!--</fieldset>-->
+                        <ul class="course-list ps-0" style="list-style-type: none;">
+                           {% for course in courses %}
+                           <li>
+                               <input type="radio" id="course_{{ course.id }}" name="course_id" value="{{ course.id }}">
+                               <label for="course_{{ course.id }}">
+                                   <strong class="course-name"><i class="fa-regular fa-star fa-beat mr-3"></i> {{ course.name }}</strong>
+                               </label>
+                               <ul class="course-details">
+                                   <li><strong>Start Date:</strong> {{ course.start_date }}</li>
+                                   <li><strong>End Date:</strong> {{ course.end_date }}</li>
+                                   <li><strong>Start Time:</strong> {{ course.start_time }}</li>
+                                   <li><strong>Price:</strong> £{{ course.price }}</li>
+                                   <li><strong>Instructor:</strong> {{ course.instructor }}</li>
+                               </ul>
+                           </li>
+                           {% endfor %}
+                       </ul>
                         <!-- Quantity input  -->
                         <div class="col-12">
                            <h4 class="mt-3 title-font"><strong>Quantity:</strong></h4>

@@ -51,3 +51,9 @@ class InstructorForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs["placeholder"] = placeholder
+                self.fields["name"].widget.attrs["aria-label"] = "Course Name"
+
+        self.fields["instructor_name"].widget.attrs["aria-label"] = "Instructors Name"
+        self.fields["bio_description"].widget.attrs["aria-label"] = "Bio Description"
+        self.fields["experience"].widget.attrs["aria-label"] = "Experience"
+        self.fields["image"].widget.attrs["aria-label"] = "Image"

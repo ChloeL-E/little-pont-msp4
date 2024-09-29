@@ -44,5 +44,5 @@ class UserProfileForm(forms.ModelForm):
         self.fields["default_street_address2"].widget.attrs["aria-label"] = "Street Address 2"
         self.fields["default_town_or_city"].widget.attrs["aria-label"] = "Town or City"
         self.fields["default_county"].widget.attrs["aria-label"] = "County, State or Locality"
-        self.fields["default_postal_code"].widget.attrs["aria-label"] = "Postal Code"
+        self.fields["default_postcode"].widget.attrs["aria-label"] = "Postal Code"
         self.fields["default_country"].widget.attrs["aria-label"] = "Country"

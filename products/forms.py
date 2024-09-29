@@ -2,7 +2,7 @@ from django import forms
 
 # from instructor.models import Instructor
 from .models import Course
-from .widgets import DateInput, TimeInput
+# from .widgets import DateInput, TimeInput
 
 
 # setting date input type
@@ -29,9 +29,6 @@ class ProductForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         courses = Course.objects.all()  # Get all courses
-        # course_choices = [("  ")] + [
-        # (course.id, course.age_group) for course in courses
-        # ]
 
         # Get the age_group values and set them as choices
         age_group_set = set(
@@ -72,8 +69,8 @@ class ProductForm(forms.ModelForm):
             else:
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs["placeholder"] = placeholder
-        
         self.fields["name"].widget.attrs["aria-label"] = "Course Name"
-        self.fields["description"].widget.attrs["aria-label"] = "Course Description"
+        self.fields["description"].widget.attrs["aria-label"] = (
+            "Course Description")
         self.fields["price"].widget.attrs["aria-label"] = "Price"
         self.fields["age_group"].widget.attrs["aria-label"] = "Age Group"

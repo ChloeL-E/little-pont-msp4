@@ -52,8 +52,11 @@ class InstructorForm(forms.ModelForm):
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs["placeholder"] = placeholder
         # set aria-labels for accessibility
-        self.fields["instructor_name"].widget.attrs["aria-label"] = "Instructors Name"
-        self.fields["bio_description"].widget.attrs["aria-label"] = "Bio Description"
+        self.fields["instructor_name"].widget.attrs["aria-label"] = (
+            "Instructors Name")
+        self.fields["bio_description"].widget.attrs["aria-label"] = (
+            "Bio Description")
         self.fields["experience"].widget.attrs["aria-label"] = "Experience"
-        self.fields["speciality_age_group"].widget.attrs["aria-label"] = "Speciality Age Group"
+        self.fields["speciality_age_group"].widget.attrs["aria-label"] = (
+            "Speciality Age Group")
         self.fields["image"].widget.attrs["aria-label"] = "Image"

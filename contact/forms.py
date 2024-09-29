@@ -11,7 +11,7 @@ class BookingEnquiryForm(forms.ModelForm):
             "booking_username",
             "date_submitted",
         )
-        
+
     def __init__(self, *args, **kwargs):
         """
         Add placeholders, classes, and style to form fields.

@@ -202,7 +202,7 @@ Each action was tested and found to work as expected.
 
 Testing was an ongoing process throughout this project. Google Chrome Developer tools were used to ensure the app was running correctly at each stage and it supported troubleshooting of issues when the project wasnt running as expected or the design required further work. It was particularly useful when adjusting the site styling to improve responsiveness.
 
-<!--The Website was tested on Google Chrome, Microsoft Edge, Firefox and Safari browsers. The site was viewed on a variety of devices such as Desktop, Laptop, Tablets and Phones using dev tools and real devices.-->
+The Website was tested on Google Chrome, Microsoft Edge, Firefox and Safari browsers. The site was viewed on a variety of devices such as Desktop, Laptop, Tablets and Phones using dev tools and real devices.
 The deployed site sent to friends and young family members to review the site and test it from a user perspective.
 
 - - - 
@@ -215,9 +215,9 @@ The deployed site sent to friends and young family members to review the site an
     * [Login page](documentation/testing/images/html_login.png)
     * [Register page](documentation/testing/images/html_register.png)
     * [Logout page](documentation/testing/images/html_logout.png)
-    * [Shopping Bag page]()
+    * [Shopping Bag page](documentation/testing/images/html_bag.png)
     * [All Courses page](documentation/testing/images/html_all_courses.png)
-    * [Babies, Toddlers, Preschool, Early Years Course pages]()
+    * [Babies, Toddlers, Preschool, Early Years Course pages](documentation/testing/images/html_course_page.png)
     * [Add course page](documentation/testing/images/html_product_management.png)
     * [Edit course page](documentation/testing/images/html_edit_course.png)
     * [My Profile page page](documentation/testing/images/html_my_profile.png)
@@ -226,13 +226,12 @@ The deployed site sent to friends and young family members to review the site an
     * [Add Instructor page](documentation/testing/images/html_team_management.png)
     * [Edit Instructor page](documentation/testing/images/html_instructor_edit.png)
     * [Cafe page](documentation/testing/images/html_cafe.png)
-    * [Checkout page]()
+    * [Checkout page](documentation/testing/images/html_checkout.png)
     * [Checkout Success page](documentation/testing/images/html_checkout_succss.png)
     * [Booking Enquiry page](documentation/testing/images/html_contact.png) 
     
-    No errors or warnings found. The Home page performance rating is a little lower than i would like, mainly due to the large images. I have converted all images to WEBp and reduced image size to get the highest score i can.
+    No errors or warnings found. 
     
-
 - - - 
 
 -   ### CSS Validation 
@@ -245,6 +244,7 @@ The deployed site sent to friends and young family members to review the site an
     [Jshint](https://jshint.com/) was utilised as the javascript validation tool
     * [base js](documentation/testing/images/base_js.png)- no errors, compatible with ES6
     * [quantity input script content](/workspace/little-pont-msp4/documentation/testing/images/jshint_q_script.png) - no errors, compatible with ES6
+    * [stripe js](documentation/testing/images/jshint_stripe.png) - no erros, compatible with ES6
 
 - - - 
 
@@ -338,9 +338,11 @@ The deployed site sent to friends and young family members to review the site an
     * [Add Instructor page](documentation/testing/images/lighthouse_add_instructor.png)
     * [Edit Instructor page](documentation/testing/images/lighthouse_edit_instructor.png)
     * [Cafe page](documentation/testing/images/lighthouse_cafe.png)
-    * [Checkout page]documentation/testing/images/lighthouse_checkout.png()
+    * [Checkout page](documentation/testing/images/lighthouse_checkout.png)
     * [Checkout Success page](documentation/testing/images/lighthouse_checkout_success.png)
     * [Booking Enquiry page](documentation/testing/images/lighthouse_contact.png)
+
+    The Home page performance rating is a little lower than i would like, mainly due to the large images. I have converted all images to WEBp and reduced image size to get the highest score I can.
 
   - - -
 

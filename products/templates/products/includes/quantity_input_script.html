@@ -1,5 +1,5 @@
-<script type="text/javascript">
-
+<script>
+    // use version ES6
     // Disable +/- buttons outside 1-10 range
     function handleEnableDisable(itemId) {
         let currentValue = parseInt($(`#id_qty_${itemId}`).val());
@@ -41,27 +41,5 @@
        let itemId = $(this).data('item_id');
        handleEnableDisable(itemId);
     });
-
-
-    // Update quantity on click of update button
-    //$('.update-link').click(function(e) {
-       // var form = $(this).prev('.update-form');
-        //form.submit();
-    //});
-  
-    // Remove item and reload on click of remove button
-    //$('.remove-item').click(function(e) {
-        //var csrfToken = "{{ csrf_token }}";  // Get the CSRF token from the template context
-        //var itemId = $(this).attr('id').split('remove_')[1];
-        //var url = `/bag/remove/${itemId}/`;
-  
-        //$.ajax({
-            //url: url,
-            //type: 'POST',
-            //headers: {
-                //'X-CSRFToken': csrfToken  // Include the CSRF token in the headers
-            //},
-       // });
-   // });
 
     </script>

@@ -230,13 +230,13 @@ The deployed site sent to friends and young family members to review the site an
     * [Checkout Success page](documentation/testing/images/html_checkout_succss.png)
     * [Booking Enquiry page](documentation/testing/images/html_contact.png) 
     
-    No errors or warnings found
+    No errors or warnings found. The Home page performance rating is a little lower than i would like, mainly due to the large images. I have converted all images to WEBp and reduced image size to get the highest score i can.
     
 
 - - - 
 
 -   ### CSS Validation 
-    All pages were tested using [W3C jigsaw css validator](https://jigsaw.w3.org/css-validator/) 
+    All pages were tested using [W3C jigsaw css validator](https://jigsaw.w3.org/css-validator/) and passed
     * [style.css](documentation/testing/images/css_validation.png)
     * [checkout.css](documentation/testing/images/css_checkout.png)
 - - - 
@@ -244,6 +244,7 @@ The deployed site sent to friends and young family members to review the site an
 -   ### Javascript Validation
     [Jshint](https://jshint.com/) was utilised as the javascript validation tool
     * [base js](documentation/testing/images/base_js.png)- no errors, compatible with ES6
+    * [quantity input script content](/workspace/little-pont-msp4/documentation/testing/images/jshint_q_script.png) - no errors, compatible with ES6
 
 - - - 
 
@@ -290,6 +291,9 @@ The deployed site sent to friends and young family members to review the site an
     * [forms.py(profiles app)](documentation/testing/images/profiles_forms.png)
     * [models.py(profiles app)](documentation/testing/images/profiles_models.png)
     * [views.py(profiles app)](documentation/testing/images/profiles_views.png)
+
+    Flake8 was installed locally and the whole site tested for python errors.
+    [Flake8]
 
 - - -
 

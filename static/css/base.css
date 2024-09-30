@@ -195,7 +195,7 @@ header {
   
 #hero .intro-container {
   position: absolute;
-  top: 25%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -941,6 +941,12 @@ li::marker {
   }
 }
 
+@media (max-width: 768px){
+  #hero .intro-container {
+    top: 25%;
+  }
+}
+
 @media (max-width: 992px) {
   .increment-qty, .decrement-qty {
   padding: .25rem .5rem !important;
@@ -986,7 +992,7 @@ li::marker {
   #top-header-image img{
     height: 218px;
     width: 218px;
-    margin-top: 70px;
+    margin-top: 75px;
   }
   .background {
     display: flex;

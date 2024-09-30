@@ -195,7 +195,7 @@ header {
   
 #hero .intro-container {
   position: absolute;
-  top: 50%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -986,6 +986,7 @@ li::marker {
   #top-header-image img{
     height: 218px;
     width: 218px;
+    margin-top: 70px;
   }
   .background {
     display: flex;

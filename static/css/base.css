@@ -660,14 +660,13 @@ input[type="radio"]:checked +label i  {
   border: 1px solid var(--font-color-main);
   border-radius: 25px;
   transition: 0.5s;
-  margin: 5px 5px 5px 0;
   color: #000;
   width: fit-content;
   text-align: center;
 }
 
 .update-link {
-  background-color: var(--blue);
+  background-color: var(--yellow);
 }
 
 #button-control a {
@@ -676,19 +675,19 @@ input[type="radio"]:checked +label i  {
 
 .btt-back-to-courses,
 .update-link:hover {
-  background: var(--yellow);
+  background: var(--blue);
   color: #000;
 }
 
 .remove-item,
 .btt-back-to-courses:hover {
-  background: var(--pink);
+  background: var(--purple);
   text-decoration: none;
   color: #000;
 }
 
 .remove-item:hover {
-  background-color: var(--purple);
+  background-color: var(--pink);
 }
 
 #submit-button{
@@ -941,12 +940,6 @@ li::marker {
   }
 }
 
-@media (max-width: 768px){
-  #hero .intro-container {
-    top: 25%;
-  }
-}
-
 @media (max-width: 992px) {
   .increment-qty, .decrement-qty {
   padding: .25rem .5rem !important;
@@ -954,6 +947,9 @@ li::marker {
 }
 
 @media (max-width: 768px) {
+  #hero .intro-container {
+    top: 25%;
+  }
   #hero h2,
   #hero h1 {
     font-size: 42px;
@@ -993,6 +989,10 @@ li::marker {
     height: 218px;
     width: 218px;
     margin-top: 75px;
+  }
+  .list-inline-item {
+    padding: 0;
+    margin: 0;
   }
   .background {
     display: flex;

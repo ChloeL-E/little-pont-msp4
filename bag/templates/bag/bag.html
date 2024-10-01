@@ -12,41 +12,64 @@
 
 {% block content %}
 <div class="container mb-2">
-<div class="row">
-   <div class="col-12 section-title">
+  <div class="row">
+    <div class="col-12 section-title">
       <!--Page title-->
       <h1 class="logo-font mb-4 main-heading text-center">Shopping Bag</h1>
-   </div>
-</div>
-<!-- Order summary table -->
+    </div>
+  </div>
+  <!-- Order summary table small screen -->
   <div class="row">
-    <div class="col">
+    <div class="col-12">
       {% if bag_items %}
-      <div class="table-responsive rounded">
-        <table class="table table-sm table-borderless">
-          <thead class="table-font-main">
-            <tr>
-              <th scope="col">Course Name</th>
-              <th scope="col">Start Time</th>
-              <th scope="col">Price</th>
-              <th scope="col">Quantity</th>
-              <th scope="col">Subtotal</th>
-            </tr>
-          </thead>
-
-          {% for item in bag_items %}
-          <tr>
-            <td class="py-3">
-              <p class="my-0 table-font"><strong>{{ item.course.name }}</strong></p>
-            </td>
-            <td class="py-3">
-              <p class="my-0">{{ item.course.start_time }}</p>
-            </td>
-            <td class="py-3">
-              <p class="my-0">£{{ item.course.price }}</p>
-            </td>
-            <td class="py-3 w-25">
-              <!-- Quantity update form -->
+      <div class="d-block d-md-none">
+        <!--Bag totals -->
+        <div class="row">
+          <div class="col-12 title-font">
+              <!-- bag total -->
+            <h3 class="title-font"><strong>Total: £{{ total|floatformat:2 }}</strong></h3>
+              <!-- Checkout button -->
+            <a href="{% url 'checkout' %}" id="submit-button" class="btn btn-lg">
+              <span class="title-font">Secure Checkout</span>
+              <span class="icon">
+                <i class="fas fa-lock"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+        <hr>
+        <br>
+            <div class="row">
+              <div class="col-12">
+            <p class="text-black mb-2">Check out what's in your bag so far or...</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12"> 
+            <span class="icon">
+              <i class="fas fa-chevron-left" style="color:var(--purple)"></i>
+            </span>
+            <a href="{% url 'all_courses' %}" class="btn btn-outline-black table-font rounded-0">View More Courses</a>
+              <!--<span class="title-font mb-5">View more Courses</span>-->
+            </a>
+            </div>
+            </div>
+            <hr>
+        {% for item in bag_items %}
+        <div class="row">
+          <div class="col-12 col-sm-6 mb-2">
+            <p class="my-0 table-font mt-2"><strong>{{ item.course.name }}</strong></p>
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <p class="my-0">{{ item.course.start_time }}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <p class="my-0 mb-2">£{{ item.course.price }}</p>
+              </div>
+            </div>
+            <div class="col-12">
               <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                 {% csrf_token %}
                 <div class="form-group">
@@ -74,10 +97,71 @@
                   </div>
                 </div>
               </form>
-              <!--Update and remove quantity buttons -->
+              <div class="row">
+                <div class="col-12">
+                  <a class="update-link"><small>Update</small></a>
+                  <a class="remove-item float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      
+      <!-- Order summary table for medium and above screens -->
+      <div class="table-responsive rounded d-none d-md-block">
+        <table class="table table-sm table-borderless">
+          <thead class="table-font-main">
+            <tr>
+              <th scope="col">Course</th>
+              <th scope="col">Start Time</th>
+              <th scope="col">Price</th>
+              <th scope="col">Qty</th>
+              <th scope="col">Subtotal</th>
+            </tr>
+          </thead>
+
+          {% for item in bag_items %}
+          <tr>
+            <td class="py-3 w-25">
+              <p class="my-0 table-font"><strong>{{ item.course.name }}</strong></p>
+            </td>
+            <td class="py-3 w-25">
+              <p class="my-0">{{ item.course.start_time }}</p>
+            </td>
+            <td class="py-3 w-25">
+              <p class="my-0">£{{ item.course.price }}</p>
+            </td>
+            <td class="py-3 w-25">
+              <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
+                {% csrf_token %}
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <button class="decrement-qty btn btn-sm btn-black rounded-0" data-item_id="{{ item.item_id }}"
+                        id="decrement-qty_{{ item.item_id }}" aria-label="Decrement Quantity">
+                        <span>
+                          <i class="fas fa-minus fa-sm"></i>
+                        </span>
+                      </button>
+                    </div>
+                    <input class="form-control form-control-sm qty_input" type="number" name="quantity"
+                      value="{{ item.quantity }}" min="1" max="10" data-item_id="{{ item.item_id }}"
+                      id="id_qty_{{ item.item_id }}" aria-label="Quantity Input">
+                    <div class="input-group-append">
+                      <button class="increment-qty btn btn-sm btn-black rounded-0" data-item_id="{{ item.item_id }}"
+                        id="increment-qty_{{ item.item_id }}" aria-label="Increment Quantity">
+                        <span>
+                          <i class="fas fa-plus fa-sm"></i>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
               <a class="update-link"><small>Update</small></a>
               <a class="remove-item float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
-            </td>
             </td>
             <td class="py-3">
               <p class="my-0">£{{ item.course.price | calc_subtotal:item.quantity }}</p>
@@ -86,12 +170,12 @@
           {% endfor %}
           <!-- Bag totals -->
           <tr>
-            <td colspan="5" class="pt-5 text-right">
+            <td colspan="5" class="pt-4 text-right">
               <h3 class="table-font"><strong>Total: £{{ total|floatformat:2 }}</strong></h3>
             </td>
           </tr>
           <tr>
-            <!--Home and checkout buttons -->
+            <!-- Home and checkout buttons -->
             <td colspan="5" class="text-right">
               <a href="{% url 'all_courses' %}" class="btn btn-outline-black table-font rounded-0">
                 <span class="icon">
@@ -110,20 +194,21 @@
         </table>
       </div>
       {% else %}
-      <!--Bag empty course links-->
+      <!-- Bag empty course links -->
       <h2 class="lead mb-5 main-heading">Your bag is empty!</h2>
       <h3 class="title-font">View our courses...</h3>
       <span class="icon mb-5 d-flex justify-content-between">
-        <a class="btt-back-to-courses rounded-4" href="{% url 'courses_by_age_group' age_group='Babies' %}" >Babies</a>
+        <a class="btt-back-to-courses rounded-4" href="{% url 'courses_by_age_group' age_group='Babies' %}">Babies</a>
         <a class="btt-back-to-courses rounded-4" href="{% url 'courses_by_age_group' age_group='Toddler' %}">Toddlers</a>
         <a class="btt-back-to-courses rounded-4" href="{% url 'courses_by_age_group' age_group='Preschool' %}">Preschool</a>
-        <a class="btt-back-to-courses rounded-4" href="{% url 'courses_by_age_group' age_group='Early Years' %}">EarlyYears</a>      
+        <a class="btt-back-to-courses rounded-4" href="{% url 'courses_by_age_group' age_group='Early Years' %}">Early Years</a>
       </span>
       {% endif %}
     </div>
   </div>
 </div>
 {% endblock %}
+
 
 {% block postloadjs %}
 {{ block.super }}

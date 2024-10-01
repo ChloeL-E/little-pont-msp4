@@ -129,30 +129,16 @@ This website has been built using HTML, CSS, Javascript and Python.
     * [Register Success](documentation/readme/images/register_success_wf.png) (desktop)
     * [Logout page](documentation/readme/images/logout_wf.png) (desktop)
     * [Shopping Bag page](documentation/readme/images/shopping_bag_wf.png) (desktop)
-    * [Shopping Bag page]() (tablet device)
-    * [Shopping Bag page]() (mobile device)
     * [All Courses page]() (desktop)
     * [Courses dropdown menu](documentation/readme/images/courses_dropdown_wf.png)
-    * [All Courses page]() (tablet device)
-    * [All Courses page]() (mobile device)
     * [Babies Course page](documentation/readme/images/babies_course_wf.png) (desktop)
     * [Babies Course page]() (tablet device)
     * [Babies Course page]() (mobile device)
     * [Toddler Course page](documentation/readme/images/toddler_course_wf.png) (desktop)
-    * [Toddler Course page]() (tablet device)
-    * [Toddler Course page]() (mobile device)
     * [Preschool Course page](documentation/readme/images/preschool_course_wf.png) (desktop)
-    * [Preschool Course page]() (tablet device)
-    * [Preschool Course page]() (mobile device)
     * [Early Years Course page](documentation/readme/images/early_years_course_page.png) (desktop)
-    * [Early Years Course page]() (tablet device)
-    * [Early Years Course page]() (mobile device)
     * [Course Management page](documentation/readme/images/course_management_wf.png) (desktop)
-    * [Course Management page]() (tablet device)
-    * [Course Management page]() (mobile device)
     * [My Profile page page](documentation/readme/images/my_profile_wf.png) (desktop)
-    * [My Profile page page]() (tablet device)
-    * [My Profile page page]() (mobile device)
     * [Instructor Info page](documentation/readme/images/instructor_info_wf.png) (desktop)
     * [Instructor Info page]() (tablet device)
     * [Instructor Info page]() (mobile device)
@@ -160,11 +146,7 @@ This website has been built using HTML, CSS, Javascript and Python.
     * [Instructor Detail page]() (tablet device)
     * [Instructor Detail page]() (mobile device)
     * [Team Management page](documentation/readme/images/team_management_wf.png) (desktop)
-    * [Team Management page]() (tablet device)
-    * [Team Management page]() (mobile device)
     * [Cafe page](documentation/readme/images/cafe_wf.png) (desktop)
-    * [Cafe page]() (tablet device)
-    * [Cafe page]() (mobile device)
     * [Checkout page](documentation/readme/images/checkout_wf.png) (desktop)
     * [Checkout page]() (tablet device)
     * [Checkout page]() (mobile device)
@@ -758,6 +740,7 @@ else:
 - [FreeFormatter](https://www.freeformatter.com/html-formatter.html) - for tidy html formatting
 - [Stack Overflow](https://stackoverflow.com/questions/38724012/django-crispy-forms-set-label-text-for-multiple-fields) post assisted with finding out how to properly label a crispy form for accessibility but for screen readers only.
 - [HomeBrew]() to install Heroku CLI
+- [Stack Overflow](https://stackoverflow.com/questions/41747667/bootstrap-4-responsive-tables-wont-take-up-100-width) gave me some valuable information about the responsive table desing. 
 - Content was written by Chloe Livingstone-Evans.
 - - - - 
 

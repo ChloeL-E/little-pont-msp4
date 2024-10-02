@@ -292,8 +292,8 @@ The deployed site sent to friends and young family members to review the site an
     * [models.py(profiles app)](documentation/testing/images/profiles_models.png)
     * [views.py(profiles app)](documentation/testing/images/profiles_views.png)
 
-    Flake8 was installed locally and the whole site tested for python errors.
-    [Flake8]
+    Flake8 was installed locally and the whole site tested for python errors. The errors were mostly related to files as part of django or previously migrated files. A few variables were highlighted as unused but these were used within error messages so were highlighted so they they have been used.
+    [Flake8](documentation/testing/images/flake.png)
 
 - - -
 

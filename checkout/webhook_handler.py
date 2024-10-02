@@ -67,7 +67,7 @@ class StripeWH_Handler:
             if save_info:
                 profile.default_phone_number = billing_details.phone
                 profile.default_country = billing_details.address.country
-                # profile.default_postcode = billing_details.address.postal_code
+                profile.default_postcode = billing_details.address.postal_code
                 profile.default_town_or_city = billing_details.address.city
                 profile.default_street_address1 = billing_details.address.line1
                 profile.default_street_address2 = billing_details.address.line2
@@ -80,13 +80,13 @@ class StripeWH_Handler:
             try:
                 order = Order.objects.get(
                     #full_name=billing_details.name,
-                    #email=billing_details.email,
+                    email=billing_details.email,
                     #phone_number=billing_details.phone,
                     #street_address1=billing_details.address.line1,
                     #street_address2=billing_details.address.line2,
                     #town_or_city=billing_details.address.city,
                     #county=billing_details.address.state,
-                    postcode=billing_details.address.postal_code,
+                    # postcode=billing_details.address.postal_code,
                     #country=billing_details.address.country,
                     #original_bag=bag,
                     #stripe_pid=pid,

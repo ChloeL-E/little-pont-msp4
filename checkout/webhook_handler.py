@@ -79,14 +79,14 @@ class StripeWH_Handler:
         while attempt <= 5:
             try:
                 order = Order.objects.get(
-                    #full_name=billing_details.name,
-                    email=billing_details.email,
+                    full_name=billing_details.name,
+                    # mail=billing_details.email,
                     #phone_number=billing_details.phone,
                     #street_address1=billing_details.address.line1,
                     #street_address2=billing_details.address.line2,
                     #town_or_city=billing_details.address.city,
                     #county=billing_details.address.state,
-                    # postcode=billing_details.address.postal_code,
+                    #postcode=billing_details.address.postal_code,
                     #country=billing_details.address.country,
                     #original_bag=bag,
                     #stripe_pid=pid,

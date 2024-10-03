@@ -86,7 +86,7 @@ class StripeWH_Handler:
                     street_address2=billing_details.address.line2,
                     town_or_city=billing_details.address.city,
                     county=billing_details.address.state,
-                    # postcode=billing_details.address.postal_code,
+                    postcode=billing_details.address.postal_code,
                     country=billing_details.address.country,
                     original_bag=bag,
                     stripe_pid=pid,

@@ -51,7 +51,6 @@ class StripeWH_Handler:
 
         #  Get the Charge object
         stripe_charge = stripe.Charge.retrieve(intent.latest_charge)
-        # billing_details = stripe_charge.billing_details
         billing_details = stripe_charge.billing_details
         shipping_details = intent.shipping
         total = round(stripe_charge.amount / 100, 2)
@@ -60,9 +59,6 @@ class StripeWH_Handler:
         for field, value in shipping_details.address.items():
             if value == "":
                 shipping_details.address[field] = None
-        #for field, value in billing_details.address.items():
-        #    if value == "":
-        #        billing_details.address[field] = None
 
         #  Update profile information if save_info was checked
         profile = None
@@ -70,7 +66,6 @@ class StripeWH_Handler:
         if username != "AnonymousUser":
             profile = UserProfile.objects.get(user__username=username)
             if save_info:
-                # udated to shipping_details from billinh
                 profile.default_phone_number = shipping_details.phone
                 profile.default_country = shipping_details.address.country
                 profile.default_postcode = shipping_details.address.postal_code
